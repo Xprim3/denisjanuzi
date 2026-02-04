@@ -3,7 +3,7 @@
     class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/95 backdrop-blur-sm transition-all duration-300"
     :class="{ 'shadow-lg': scrolled }"
   >
-    <nav class="container mx-auto px-6 py-4">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
       <div class="flex items-center justify-between">
         <!-- Logo -->
         <a 
@@ -19,7 +19,7 @@
         </a>
 
         <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden md:flex items-center space-x-6">
           <a 
             v-for="item in navItems" 
             :key="item.id"
@@ -27,23 +27,27 @@
             @click.prevent="smoothScroll(item.id)"
             class="text-white hover:text-accent-blue transition-colors duration-200 font-medium"
           >
-            {{ item.label }}
+            {{ $t(`nav.${item.id}`) }}
           </a>
+          <LanguageSwitcher />
           <button
             @click="smoothScroll('contact')"
             class="bg-accent-blue hover:bg-accent-light text-white px-4 py-1.5 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 text-sm"
           >
-            Get in Touch
+            {{ $t('nav.getInTouch') }}
           </button>
         </div>
 
-        <!-- Mobile: Get in Touch Button -->
-        <button
-          @click="smoothScroll('contact')"
-          class="md:hidden bg-accent-blue hover:bg-accent-light text-white px-3 py-1.5 md:px-6 md:py-2 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 text-xs md:text-base"
-        >
-          Get in Touch
-        </button>
+        <!-- Mobile Navigation -->
+        <div class="md:hidden flex items-center gap-3">
+          <LanguageSwitcher />
+          <button
+            @click="smoothScroll('contact')"
+            class="bg-accent-blue hover:bg-accent-light text-white px-3 py-1.5 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 text-xs"
+          >
+            {{ $t('nav.getInTouch') }}
+          </button>
+        </div>
       </div>
     </nav>
   </header>
@@ -51,13 +55,14 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import LanguageSwitcher from './LanguageSwitcher.vue'
 
 const scrolled = ref(false)
 
 const navItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About' },
-  { id: 'projects', label: 'Projects' },
+  { id: 'home' },
+  { id: 'about' },
+  { id: 'projects' },
 ]
 
 const smoothScroll = (id: string) => {

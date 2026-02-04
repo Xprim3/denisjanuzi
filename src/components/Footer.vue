@@ -1,18 +1,18 @@
 <template>
-  <footer class="bg-dark-bg border-t border-gray-800 py-12 md:py-16 px-4 md:px-6 relative z-10">
+  <footer class="bg-dark-bg border-t border-gray-800 py-12 sm:py-14 md:py-16 px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="container mx-auto max-w-6xl">
       <!-- Main Footer Content -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-10 md:mb-12">
         <!-- Brand & Description -->
         <div class="md:col-span-2">
-          <div class="flex items-center gap-3 mb-4">
+          <div class="flex items-center gap-3 mb-4 sm:mb-5">
             <svg class="w-6 h-6 text-accent-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
             <h3 class="text-2xl font-bold text-white">Denis Januzi</h3>
           </div>
           <p class="text-gray-400 text-sm leading-relaxed mb-4 max-w-md">
-            Web developer building modern, practical solutions. Available for remote projects outside working hours.
+            {{ $t('footer.description') }}
           </p>
           <div class="flex items-center gap-2 text-gray-400 text-sm">
             <i class="fas fa-map-marker-alt text-accent-blue"></i>
@@ -22,7 +22,7 @@
 
         <!-- Quick Links -->
         <div>
-          <h4 class="text-white font-semibold mb-4 text-lg">Quick Links</h4>
+          <h4 class="text-white font-semibold mb-4 text-lg">{{ $t('footer.quickLinks') }}</h4>
           <ul class="space-y-2.5">
             <li>
               <a 
@@ -31,7 +31,7 @@
                 class="text-gray-400 hover:text-accent-blue transition-colors text-sm inline-flex items-center gap-2 group"
               >
                 <i class="fas fa-chevron-right text-xs opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all"></i>
-                <span>Home</span>
+                <span>{{ $t('footer.home') }}</span>
               </a>
             </li>
             <li>
@@ -41,7 +41,7 @@
                 class="text-gray-400 hover:text-accent-blue transition-colors text-sm inline-flex items-center gap-2 group"
               >
                 <i class="fas fa-chevron-right text-xs opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all"></i>
-                <span>About</span>
+                <span>{{ $t('footer.about') }}</span>
               </a>
             </li>
             <li>
@@ -51,7 +51,7 @@
                 class="text-gray-400 hover:text-accent-blue transition-colors text-sm inline-flex items-center gap-2 group"
               >
                 <i class="fas fa-chevron-right text-xs opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all"></i>
-                <span>Projects</span>
+                <span>{{ $t('footer.projects') }}</span>
               </a>
             </li>
             <li>
@@ -61,7 +61,7 @@
                 class="text-gray-400 hover:text-accent-blue transition-colors text-sm inline-flex items-center gap-2 group"
               >
                 <i class="fas fa-chevron-right text-xs opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all"></i>
-                <span>Contact</span>
+                <span>{{ $t('footer.contact') }}</span>
               </a>
             </li>
           </ul>
@@ -69,17 +69,17 @@
       </div>
 
       <!-- Divider -->
-      <div class="border-t border-gray-800 my-8"></div>
+      <div class="border-t border-gray-800 my-6 sm:my-8 md:my-10"></div>
 
       <!-- Bottom Bar -->
       <div class="flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-gray-500 text-xs md:text-sm text-center md:text-left">
-          © {{ currentYear }} Denis Januzi. All rights reserved.
+          © {{ currentYear }} Denis Januzi. {{ $t('footer.rightsReserved') }}
         </p>
         <div class="flex items-center gap-2 text-gray-500 text-xs md:text-sm">
-          <span>Built with</span>
+          <span>{{ $t('footer.builtWith') }}</span>
           <i class="fas fa-heart text-accent-blue animate-pulse"></i>
-          <span>using</span>
+          <span>{{ $t('footer.using') }}</span>
           <span class="text-accent-blue font-medium">Vue.js</span>
           <span>&</span>
           <span class="text-accent-blue font-medium">TypeScript</span>

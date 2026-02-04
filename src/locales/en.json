@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "getInTouch": "Get in Touch"
+  },
+  "hero": {
+    "headline": "Building clear, practical",
+    "headlineHighlight": "web experiences",
+    "description": "Focused on well-structured websites and web applications designed with simplicity, performance, and usability in mind.",
+    "viewProjects": "View Projects",
+    "aboutMe": "About Me"
+  },
+  "about": {
+    "myStory": "My Story",
+    "story1": "My journey hasn't followed a straight path. Starting over in a new place taught me patience, adaptability, and the value of steady effort, even when progress takes time.",
+    "story2": "I live in Trier, Germany, and work full-time as a postman at DHL Deutsche Post, where reliability, structure, and responsibility are essential every day.",
+    "story3": "Outside working hours, coding is my focused personal pursuit. In my free time, I build and refine personal web projects, explore new technologies, and continue learning step by step.",
+    "story4": "This portfolio reflects that mindset: consistency, care, and long-term growth.",
+    "fullTimeCareer": "Full-Time Career",
+    "fullTimeJobTitle": "Postbote",
+    "fullTimeJobCompany": "DHL Deutsche Post",
+    "fullTimeJobDescription": "I work in mail and parcel delivery, where precision, reliability, and structure are part of everyday life. This role has strengthened my organizational skills, time management, and attention to detail. Outside working hours, I apply the same disciplined approach to personal web projects building simple, well-structured applications and continuously learning new technologies.",
+    "codingFocus": "Coding · A Free-Time Focus",
+    "codingDescription1": "Outside working hours, I focus on coding as a personal craft. It's where I learn, experiment, and gradually build practical web projects from clean, straightforward websites to small, well-structured applications.",
+    "codingDescription2": "Each project helps me deepen my understanding of modern technologies while reinforcing a careful, thoughtful approach to building clear and reliable solutions.",
+    "birthday": "Birthday",
+    "location": "Location",
+    "languages": "Languages",
+    "techStack": "Tech Stack",
+    "hobbies": "Hobbies & Interests"
+  },
+  "projects": {
+    "title": "Featured",
+    "titleHighlight": "Projects",
+    "subtitle": "A selection of projects that showcase my skills and expertise",
+    "liveDemo": "Live Demo",
+    "github": "GitHub",
+    "digitalMenu": {
+      "title": "Digital Menu",
+      "description": "A modern digital menu website providing an interactive dining experience with easy navigation and beautiful presentation."
+    },
+    "adria": {
+      "title": "Adria - Ristorante and Pizza",
+      "description": "A restaurant website showcasing authentic Italian cuisine, menu, and dining experience."
+    },
+    "cleanGenerale": {
+      "title": "Clean Generale",
+      "description": "A professional cleaning service website showcasing services and expertise."
+    }
+  },
+  "contact": {
+    "letsConnect": "Let's Connect",
+    "description1": "I take on a limited number of web projects independently and outside working hours. I'm always open to thoughtful conversations around ideas, personal projects, or simple web solutions that benefit from a clear and practical approach.",
+    "description2": "If you need a simple, well-built website for your business or have a small web project in mind, I'm happy to explore whether working together makes sense.",
+    "description3": "Based in Trier, Germany, I collaborate remotely when time allows. Feel free to reach out via email or connect with me on social media.",
+    "email": "Email",
+    "sendEmail": "Send me an email",
+    "directMessaging": "Direct Messaging",
+    "whatsapp": "WhatsApp",
+    "messenger": "Messenger",
+    "socialMedia": "Social Media",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
+  },
+  "common": {
+    "at": "at"
+  },
+  "footer": {
+    "description": "Web developer building modern, practical solutions. Available for remote projects outside working hours.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "builtWith": "Built with",
+    "using": "using",
+    "rightsReserved": "All rights reserved."
+  }
+}

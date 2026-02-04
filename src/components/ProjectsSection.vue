@@ -1,17 +1,17 @@
 <template>
-  <section id="projects" class="py-20 px-6 relative z-10">
+  <section id="projects" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="container mx-auto max-w-7xl">
-      <div class="text-center mb-16 fade-in-up">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20 fade-in-up">
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-          Featured <span class="text-accent-blue">Projects</span>
+          {{ $t('projects.title') }} <span class="text-accent-blue">{{ $t('projects.titleHighlight') }}</span>
         </h2>
         <div class="w-20 h-1 bg-accent-blue mx-auto mb-4"></div>
         <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-          A selection of projects that showcase my skills and expertise
+          {{ $t('projects.subtitle') }}
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8 lg:gap-10">
         <div 
           v-for="(project, index) in projects" 
           :key="index"
@@ -38,12 +38,12 @@
           </div>
           
           <!-- Project Content -->
-          <div class="p-6 flex-1 flex flex-col">
-            <h3 class="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-accent-blue transition-colors">
-              {{ project.title }}
+          <div class="p-5 sm:p-6 md:p-8 flex-1 flex flex-col">
+            <h3 class="text-xl sm:text-2xl md:text-2xl font-bold text-white mb-3 sm:mb-4 group-hover:text-accent-blue transition-colors">
+              {{ getProjectTitle(project.key) }}
             </h3>
             <p class="text-gray-400 mb-2 flex-1 leading-relaxed">
-              {{ project.description }}
+              {{ getProjectDescription(project.key) }}
             </p>
             <p v-if="project.website" class="text-accent-blue text-sm font-medium mb-5">
               {{ project.website }}
@@ -51,7 +51,7 @@
             <div v-else class="mb-5"></div>
 
             <!-- Links -->
-            <div class="flex gap-3 pt-4 border-t border-gray-800">
+            <div class="flex gap-3 sm:gap-4 pt-4 sm:pt-5 border-t border-gray-800">
               <a 
                 v-if="project.liveUrl"
                 :href="project.liveUrl" 
@@ -61,7 +61,7 @@
                 class="bg-accent-blue hover:bg-accent-light text-white px-4 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 text-center transform hover:scale-105"
               >
                 <i class="fas fa-external-link-alt mr-2"></i>
-                Live Demo
+                {{ $t('projects.liveDemo') }}
               </a>
               <a 
                 v-if="project.githubUrl"
@@ -71,7 +71,7 @@
                 class="flex-1 bg-dark-bg hover:bg-gray-800 text-gray-300 hover:text-white px-4 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 text-center border border-gray-700 hover:border-gray-600"
               >
                 <i class="fab fa-github mr-2"></i>
-                GitHub
+                {{ $t('projects.github') }}
               </a>
             </div>
           </div>
@@ -82,7 +82,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const screenshotErrors = ref<Record<number, boolean>>({})
 
@@ -91,8 +94,7 @@ const handleScreenshotError = (event: Event, index: number) => {
 }
 
 interface Project {
-  title: string
-  description: string
+  key: string
   technologies: string[]
   icon: string
   liveUrl?: string
@@ -103,8 +105,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Digital Menu',
-    description: 'A modern digital menu website providing an interactive dining experience with easy navigation and beautiful presentation.',
+    key: 'digitalMenu',
     technologies: [],
     icon: '🍽️',
     liveUrl: 'https://www.skanom.com',
@@ -113,8 +114,7 @@ const projects: Project[] = [
     website: 'www.skanom.com'
   },
   {
-    title: 'Adria - Ristorante and Pizza',
-    description: 'A restaurant website showcasing authentic Italian cuisine, menu, and dining experience.',
+    key: 'adria',
     technologies: [],
     icon: '🍕',
     liveUrl: 'https://www.adriatrier.de',
@@ -123,8 +123,7 @@ const projects: Project[] = [
     website: 'www.adriatrier.de'
   },
   {
-    title: 'Clean Generale',
-    description: 'A professional cleaning service website showcasing services and expertise.',
+    key: 'cleanGenerale',
     technologies: [],
     icon: '🧹',
     liveUrl: 'https://cleangenerale.com/',
@@ -133,4 +132,12 @@ const projects: Project[] = [
     website: 'www.cleangenerale.com'
   },
 ]
+
+const getProjectTitle = (key: string) => {
+  return t(`projects.${key}.title`)
+}
+
+const getProjectDescription = (key: string) => {
+  return t(`projects.${key}.description`)
+}
 </script>

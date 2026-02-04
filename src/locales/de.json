@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "getInTouch": "Kontakt aufnehmen"
+  },
+  "hero": {
+    "headline": "Klare, praktische",
+    "headlineHighlight": "Web-Erlebnisse schaffen",
+    "description": "Fokus auf gut strukturierte Websites und Webanwendungen, die mit Einfachheit, Leistung und Benutzerfreundlichkeit im Hinterkopf entwickelt wurden.",
+    "viewProjects": "Projekte ansehen",
+    "aboutMe": "Über mich"
+  },
+  "about": {
+    "myStory": "Meine Geschichte",
+    "story1": "Mein Weg war nicht geradlinig. Ein Neuanfang an einem neuen Ort hat mir Geduld, Anpassungsfähigkeit und den Wert stetiger Anstrengung gelehrt, auch wenn Fortschritt Zeit braucht.",
+    "story2": "Ich lebe in Trier, Deutschland, und arbeite Vollzeit als Briefträger bei DHL Deutsche Post, wo Zuverlässigkeit, Struktur und Verantwortung jeden Tag wesentlich sind.",
+    "story3": "Außerhalb der Arbeitszeiten ist Programmieren meine fokussierte persönliche Leidenschaft. In meiner Freizeit baue und verfeinere ich persönliche Webprojekte, erkunde neue Technologien und lerne Schritt für Schritt weiter.",
+    "story4": "Dieses Portfolio spiegelt diese Einstellung wider: Beständigkeit, Sorgfalt und langfristiges Wachstum.",
+    "fullTimeCareer": "Vollzeit-Beruf",
+    "fullTimeJobTitle": "Briefträger",
+    "fullTimeJobCompany": "DHL Deutsche Post",
+    "fullTimeJobDescription": "Ich arbeite im Post- und Paketversand, wo Präzision, Zuverlässigkeit und Struktur zum Alltag gehören. Diese Rolle hat meine organisatorischen Fähigkeiten, Zeitmanagement und Aufmerksamkeit für Details gestärkt. Außerhalb der Arbeitszeiten wende ich denselben disziplinierten Ansatz auf persönliche Webprojekte an, baue einfache, gut strukturierte Anwendungen und lerne kontinuierlich neue Technologien.",
+    "codingFocus": "Programmieren · Eine Freizeit-Leidenschaft",
+    "codingDescription1": "Außerhalb der Arbeitszeiten konzentriere ich mich auf das Programmieren als persönliches Handwerk. Hier lerne ich, experimentiere und baue schrittweise praktische Webprojekte von sauberen, unkomplizierten Websites bis hin zu kleinen, gut strukturierten Anwendungen.",
+    "codingDescription2": "Jedes Projekt hilft mir, mein Verständnis moderner Technologien zu vertiefen und gleichzeitig einen sorgfältigen, durchdachten Ansatz für den Aufbau klarer und zuverlässiger Lösungen zu festigen.",
+    "birthday": "Geburtstag",
+    "location": "Standort",
+    "languages": "Sprachen",
+    "techStack": "Technologie-Stack",
+    "hobbies": "Hobbys & Interessen"
+  },
+  "projects": {
+    "title": "Ausgewählte",
+    "titleHighlight": "Projekte",
+    "subtitle": "Eine Auswahl von Projekten, die meine Fähigkeiten und Expertise zeigen",
+    "liveDemo": "Live Demo",
+    "github": "GitHub",
+    "digitalMenu": {
+      "title": "Digitales Menü",
+      "description": "Eine moderne digitale Menü-Website, die ein interaktives Dinerlebnis mit einfacher Navigation und schöner Präsentation bietet."
+    },
+    "adria": {
+      "title": "Adria - Ristorante und Pizza",
+      "description": "Eine Restaurant-Website, die authentische italienische Küche, Menü und Dinerlebnis präsentiert."
+    },
+    "cleanGenerale": {
+      "title": "Clean Generale",
+      "description": "Eine professionelle Reinigungsdienst-Website, die Dienstleistungen und Expertise präsentiert."
+    }
+  },
+  "contact": {
+    "letsConnect": "Lass uns in Kontakt treten",
+    "description1": "Ich übernehme eine begrenzte Anzahl von Webprojekten unabhängig und außerhalb der Arbeitszeiten. Ich bin immer offen für durchdachte Gespräche über Ideen, persönliche Projekte oder einfache Web-Lösungen, die von einem klaren und praktischen Ansatz profitieren.",
+    "description2": "Wenn Sie eine einfache, gut gebaute Website für Ihr Unternehmen benötigen oder ein kleines Webprojekt im Kopf haben, erkunde ich gerne, ob eine Zusammenarbeit sinnvoll ist.",
+    "description3": "Mit Sitz in Trier, Deutschland, arbeite ich remote zusammen, wenn die Zeit es erlaubt. Kontaktieren Sie mich gerne per E-Mail oder verbinden Sie sich mit mir in den sozialen Medien.",
+    "email": "E-Mail",
+    "sendEmail": "Senden Sie mir eine E-Mail",
+    "directMessaging": "Direktnachrichten",
+    "whatsapp": "WhatsApp",
+    "messenger": "Messenger",
+    "socialMedia": "Soziale Medien",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
+  },
+  "common": {
+    "at": "bei"
+  },
+  "footer": {
+    "description": "Webentwickler, der moderne, praktische Lösungen entwickelt. Verfügbar für Remote-Projekte außerhalb der Arbeitszeiten.",
+    "quickLinks": "Schnelllinks",
+    "home": "Startseite",
+    "about": "Über mich",
+    "projects": "Projekte",
+    "contact": "Kontakt",
+    "builtWith": "Erstellt mit",
+    "using": "mit",
+    "rightsReserved": "Alle Rechte vorbehalten."
+  }
+}

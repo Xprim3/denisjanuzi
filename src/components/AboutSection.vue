@@ -1,7 +1,7 @@
 <template>
-  <section id="about" class="py-20 px-6 bg-dark-secondary/30 relative z-10">
+  <section id="about" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 bg-dark-secondary/30 relative z-10">
     <div class="container mx-auto max-w-6xl">
-      <div class="grid lg:grid-cols-3 gap-12 items-start">
+      <div class="grid lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-start">
         <!-- Combined Profile Image & Info Card -->
         <div class="lg:col-span-1 fade-in-up">
           <div class="bg-dark-secondary/50 rounded-2xl border border-gray-800 hover:border-accent-blue/50 transition-all duration-300 overflow-hidden">
@@ -23,22 +23,22 @@
             </div>
 
             <!-- Personal Info -->
-            <div class="p-6 space-y-5">
+            <div class="p-5 sm:p-6 md:p-8 space-y-4 sm:space-y-5">
               <h3 class="text-2xl font-bold text-white">{{ personalInfo.name }}</h3>
               
               <div class="space-y-3 text-sm">
                 <div>
-                  <p class="text-gray-400 mb-1">Birthday</p>
+                  <p class="text-gray-400 mb-1">{{ $t('about.birthday') }}</p>
                   <p class="text-white">{{ personalInfo.birthday }}</p>
                 </div>
 
                 <div>
-                  <p class="text-gray-400 mb-1">Location</p>
+                  <p class="text-gray-400 mb-1">{{ $t('about.location') }}</p>
                   <p class="text-white">{{ personalInfo.location }}</p>
                 </div>
 
                 <div>
-                  <p class="text-gray-400 mb-1">Languages</p>
+                  <p class="text-gray-400 mb-1">{{ $t('about.languages') }}</p>
                   <p class="text-white text-sm">
                     <span 
                       v-for="(lang, index) in personalInfo.languages" 
@@ -50,7 +50,7 @@
                 </div>
 
                 <div>
-                  <p class="text-gray-400 mb-2">Tech Stack</p>
+                  <p class="text-gray-400 mb-2">{{ $t('about.techStack') }}</p>
                   <div class="flex flex-wrap gap-2">
                     <span 
                       v-for="tech in personalInfo.primaryTech" 
@@ -63,7 +63,7 @@
                 </div>
 
                 <div>
-                  <p class="text-gray-400 mb-2">Hobbies & Interests</p>
+                  <p class="text-gray-400 mb-2">{{ $t('about.hobbies') }}</p>
                   <p class="text-white text-sm">
                     <span 
                       v-for="(hobby, index) in personalInfo.hobbies" 
@@ -79,44 +79,44 @@
         </div>
 
         <!-- About Content -->
-        <div class="lg:col-span-2 space-y-8 fade-in-up">
+        <div class="lg:col-span-2 space-y-6 sm:space-y-8 md:space-y-10 fade-in-up">
           <!-- Personal Story -->
-          <div class="space-y-4">
-            <h3 class="text-2xl font-bold text-white mb-4">My Story</h3>
+          <div class="space-y-4 sm:space-y-5">
+            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-5 sm:mb-6">{{ $t('about.myStory') }}</h3>
             <p class="text-gray-300 text-lg leading-relaxed">
-              My journey hasn't followed a straight path. Starting over in a new place taught me patience, adaptability, and the value of steady effort, even when progress takes time.
+              {{ $t('about.story1') }}
             </p>
             <p class="text-gray-300 text-lg leading-relaxed">
-              I live in Trier, Germany, and work full-time as a postman at DHL Deutsche Post, where reliability, structure, and responsibility are essential every day.
+              {{ $t('about.story2') }}
             </p>
             <p class="text-gray-300 text-lg leading-relaxed">
-              Outside working hours, coding is my focused personal pursuit. In my free time, I build and refine personal web projects, explore new technologies, and continue learning step by step.
+              {{ $t('about.story3') }}
             </p>
             <p class="text-gray-300 text-lg leading-relaxed">
-              This portfolio reflects that mindset: consistency, care, and long-term growth.
+              {{ $t('about.story4') }}
             </p>
           </div>
 
           <!-- Full-Time Job -->
-          <div class="bg-dark-secondary/50 rounded-xl p-6 border border-gray-800 hover:border-accent-blue/50 transition-all duration-300">
-            <h4 class="text-xl font-semibold text-white mb-3">Full-Time Career</h4>
+          <div class="bg-dark-secondary/50 rounded-xl p-5 sm:p-6 md:p-8 border border-gray-800 hover:border-accent-blue/50 transition-all duration-300">
+            <h4 class="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-5">{{ $t('about.fullTimeCareer') }}</h4>
             <p class="text-gray-400 mb-3">
-              <span class="text-accent-light font-medium">{{ fullTimeJob.title }}</span> at 
-              <span class="text-accent-light font-medium">{{ fullTimeJob.company }}</span>
+              <span class="text-accent-light font-medium">{{ $t('about.fullTimeJobTitle') }}</span> {{ $t('common.at') }} 
+              <span class="text-accent-light font-medium">{{ $t('about.fullTimeJobCompany') }}</span>
             </p>
             <p class="text-gray-300">
-              {{ fullTimeJob.description }}
+              {{ $t('about.fullTimeJobDescription') }}
             </p>
           </div>
 
           <!-- Coding Passion -->
-          <div class="bg-dark-secondary/50 rounded-xl p-6 border border-gray-800 hover:border-accent-blue/50 transition-all duration-300">
-            <h4 class="text-xl font-semibold text-white mb-3">Coding · A Free-Time Focus</h4>
+          <div class="bg-dark-secondary/50 rounded-xl p-5 sm:p-6 md:p-8 border border-gray-800 hover:border-accent-blue/50 transition-all duration-300">
+            <h4 class="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-5">{{ $t('about.codingFocus') }}</h4>
             <p class="text-gray-300 mb-3">
-              Outside working hours, I focus on coding as a personal craft. It's where I learn, experiment, and gradually build practical web projects from clean, straightforward websites to small, well-structured applications.
+              {{ $t('about.codingDescription1') }}
             </p>
             <p class="text-gray-300">
-              Each project helps me deepen my understanding of modern technologies while reinforcing a careful, thoughtful approach to building clear and reliable solutions.
+              {{ $t('about.codingDescription2') }}
             </p>
           </div>
         </div>
