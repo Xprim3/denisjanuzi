@@ -38,7 +38,7 @@
                 </span>
               </div>
             </div>
-            <div class="text-gray-500 font-medium whitespace-nowrap">
+            <div class="text-gray-500 font-medium text-sm md:text-base md:whitespace-nowrap">
               {{ exp.period }}
             </div>
           </div>

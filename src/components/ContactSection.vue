@@ -29,14 +29,14 @@
               <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 font-medium uppercase tracking-wider">{{ $t('contact.email') }}</p>
               <a 
                 href="mailto:denisjanuzi@gmail.com"
-                class="group flex items-center gap-4 p-4 bg-dark-bg/50 rounded-xl border border-gray-700 hover:border-accent-blue/50 transition-all duration-300"
+                class="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-dark-bg/50 rounded-xl border border-gray-700 hover:border-accent-blue/50 transition-all duration-300"
               >
-                <div class="w-12 h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center group-hover:bg-accent-blue/20 transition-colors">
-                  <i class="fas fa-envelope text-accent-blue text-xl"></i>
+                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center group-hover:bg-accent-blue/20 transition-colors flex-shrink-0">
+                  <i class="fas fa-envelope text-accent-blue text-lg sm:text-xl"></i>
                 </div>
-                <div>
-                  <p class="text-white font-semibold text-lg">denisjanuzi@gmail.com</p>
-                  <p class="text-gray-400 text-sm">{{ $t('contact.sendEmail') }}</p>
+                <div class="min-w-0 flex-1">
+                  <p class="text-white font-semibold text-base sm:text-lg break-all">denisjanuzi@gmail.com</p>
+                  <p class="text-gray-400 text-xs sm:text-sm">{{ $t('contact.sendEmail') }}</p>
                 </div>
               </a>
             </div>

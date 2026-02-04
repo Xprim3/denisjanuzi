@@ -76,7 +76,7 @@
         <p class="text-gray-500 text-xs md:text-sm text-center md:text-left">
           © {{ currentYear }} Denis Januzi. {{ $t('footer.rightsReserved') }}
         </p>
-        <div class="flex items-center gap-2 text-gray-500 text-xs md:text-sm">
+        <div class="flex flex-wrap items-center justify-center gap-2 text-gray-500 text-xs md:text-sm">
           <span>{{ $t('footer.builtWith') }}</span>
           <i class="fas fa-heart text-accent-blue animate-pulse"></i>
           <span>{{ $t('footer.using') }}</span>

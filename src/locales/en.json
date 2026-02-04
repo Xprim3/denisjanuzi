@@ -19,7 +19,7 @@
     "story3": "Outside working hours, coding is my focused personal pursuit. In my free time, I build and refine personal web projects, explore new technologies, and continue learning step by step.",
     "story4": "This portfolio reflects that mindset: consistency, care, and long-term growth.",
     "fullTimeCareer": "Full-Time Career",
-    "fullTimeJobTitle": "Postbote",
+    "fullTimeJobTitle": "Postman",
     "fullTimeJobCompany": "DHL Deutsche Post",
     "fullTimeJobDescription": "I work in mail and parcel delivery, where precision, reliability, and structure are part of everyday life. This role has strengthened my organizational skills, time management, and attention to detail. Outside working hours, I apply the same disciplined approach to personal web projects building simple, well-structured applications and continuously learning new technologies.",
     "codingFocus": "Coding · A Free-Time Focus",
@@ -29,7 +29,16 @@
     "location": "Location",
     "languages": "Languages",
     "techStack": "Tech Stack",
-    "hobbies": "Hobbies & Interests"
+    "hobbies": "Hobbies & Interests",
+    "languageLevels": {
+      "native": "Native",
+      "fluent": "Fluent"
+    },
+    "hobbyList": {
+      "webDevelopment": "Web Development",
+      "learning": "Learning new Technologies",
+      "traveling": "Traveling"
+    }
   },
   "projects": {
     "title": "Featured",
@@ -67,6 +76,9 @@
   },
   "common": {
     "at": "at"
+  },
+  "trustedBy": {
+    "title": "TRUSTED BY MODERN TECH TEAMS"
   },
   "footer": {
     "description": "Web developer building modern, practical solutions. Available for remote projects outside working hours.",

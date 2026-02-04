@@ -17,7 +17,7 @@
         <!-- Left Content -->
         <div class="space-y-5 sm:space-y-6 md:space-y-8 fade-in-up">
             <!-- Logo Icon -->
-            <div class="flex justify-center mb-4 sm:mb-6">
+            <div class="flex justify-center mb-4 sm:mb-6 md:hidden">
               <svg class="w-12 h-12 sm:w-16 sm:h-16 text-accent-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
@@ -74,24 +74,24 @@
               </div>
 
               <!-- Code Editor Body -->
-              <div class="bg-gray-950 p-3 sm:p-4">
+              <div class="bg-gray-950 p-2 sm:p-3 md:p-4 overflow-x-auto">
                 <!-- Line Numbers & Code -->
-                <div class="flex font-mono text-xs sm:text-sm">
-                  <div class="text-gray-600 pr-2 sm:pr-4 text-right select-none">
-                    <div v-for="i in 12" :key="i" class="leading-5 sm:leading-6">{{ i }}</div>
+                <div class="flex font-mono text-[10px] sm:text-xs md:text-sm min-w-max">
+                  <div class="text-gray-600 pr-2 sm:pr-3 md:pr-4 text-right select-none">
+                    <div v-for="i in 12" :key="i" class="leading-4 sm:leading-5 md:leading-6">{{ i }}</div>
                   </div>
                   <div class="flex-1 text-gray-100">
-                    <div class="space-y-0 leading-5 sm:leading-6">
+                    <div class="space-y-0 leading-4 sm:leading-5 md:leading-6">
                       <div><span class="text-purple-400">import</span> <span class="text-yellow-400">{</span> <span class="text-accent-light">Developer</span> <span class="text-yellow-400">}</span> <span class="text-purple-400">from</span> <span class="text-green-400">'./skills'</span>;</div>
                       <div class="opacity-0">.</div>
                       <div><span class="text-purple-400">const</span> <span class="text-accent-light">denis</span>: <span class="text-accent-blue">Developer</span> <span class="text-white">=</span> <span class="text-yellow-400">{</span></div>
-                      <div class="ml-4"><span class="text-gray-400">name:</span> <span class="text-green-400">'Denis Januzi'</span><span class="text-white">,</span></div>
-                      <div class="ml-4"><span class="text-gray-400">role:</span> <span class="text-green-400">'Full-Stack Developer'</span><span class="text-white">,</span></div>
-                      <div class="ml-4"><span class="text-gray-400">skills:</span> <span class="text-yellow-400">[</span></div>
-                      <div class="ml-8"><span class="text-green-400">'Vue.js'</span><span class="text-white">,</span> <span class="text-green-400">'TypeScript'</span><span class="text-white">,</span></div>
-                      <div class="ml-8"><span class="text-green-400">'Node.js'</span><span class="text-white">,</span> <span class="text-green-400">'PostgreSQL'</span></div>
-                      <div class="ml-4"><span class="text-yellow-400">]</span><span class="text-white">,</span></div>
-                      <div class="ml-4"><span class="text-gray-400">passion:</span> <span class="text-green-400">'Building amazing products'</span></div>
+                      <div class="ml-2 sm:ml-3 md:ml-4"><span class="text-gray-400">name:</span> <span class="text-green-400">'Denis Januzi'</span><span class="text-white">,</span></div>
+                      <div class="ml-2 sm:ml-3 md:ml-4"><span class="text-gray-400">role:</span> <span class="text-green-400">'Full-Stack Developer'</span><span class="text-white">,</span></div>
+                      <div class="ml-2 sm:ml-3 md:ml-4"><span class="text-gray-400">skills:</span> <span class="text-yellow-400">[</span></div>
+                      <div class="ml-4 sm:ml-6 md:ml-8"><span class="text-green-400">'Vue.js'</span><span class="text-white">,</span> <span class="text-green-400">'TypeScript'</span><span class="text-white">,</span></div>
+                      <div class="ml-4 sm:ml-6 md:ml-8"><span class="text-green-400">'Node.js'</span><span class="text-white">,</span> <span class="text-green-400">'PostgreSQL'</span></div>
+                      <div class="ml-2 sm:ml-3 md:ml-4"><span class="text-yellow-400">]</span><span class="text-white">,</span></div>
+                      <div class="ml-2 sm:ml-3 md:ml-4"><span class="text-gray-400">passion:</span> <span class="text-green-400">'Building amazing products'</span></div>
                       <div><span class="text-yellow-400">}</span><span class="text-white">;</span></div>
                       <div class="opacity-0">.</div>
                       <div><span class="text-purple-400">export</span> <span class="text-purple-400">default</span> <span class="text-accent-light">denis</span>;</div>
@@ -133,8 +133,8 @@
                   <span class="text-green-400">$</span>
                   <span class="text-gray-300">npm run dev</span>
                 </div>
-                <div class="text-gray-500 ml-6">
-                  <span class="inline-block animate-pulse">▋</span> Vite server running at http://localhost:5173
+                <div class="text-gray-500 ml-6 break-words">
+                  <span class="inline-block animate-pulse">▋</span> <span class="break-all">Vite server running at http://localhost:5173</span>
                 </div>
                 <div class="text-gray-500 ml-6">
                   <span class="inline-block animate-pulse">▋</span> Building for production...

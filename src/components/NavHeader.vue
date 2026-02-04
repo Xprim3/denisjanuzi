@@ -15,11 +15,11 @@
           <svg class="w-6 h-6 text-white group-hover:text-accent-blue transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
           </svg>
-          <span class="hidden md:inline text-white font-bold text-xl group-hover:text-accent-blue transition-colors">Denis Januzi</span>
+          <span class="hidden sm:inline text-white font-bold text-xl group-hover:text-accent-blue transition-colors">Denis Januzi</span>
         </a>
 
-        <!-- Desktop Navigation -->
-        <div class="hidden md:flex items-center space-x-6">
+        <!-- Desktop Navigation (Large screens - 1024px+) -->
+        <div class="hidden lg:flex items-center space-x-6">
           <a 
             v-for="item in navItems" 
             :key="item.id"
@@ -29,24 +29,44 @@
           >
             {{ $t(`nav.${item.id}`) }}
           </a>
-          <LanguageSwitcher />
           <button
             @click="smoothScroll('contact')"
             class="bg-accent-blue hover:bg-accent-light text-white px-4 py-1.5 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 text-sm"
           >
             {{ $t('nav.getInTouch') }}
           </button>
+          <LanguageSwitcher />
         </div>
 
-        <!-- Mobile Navigation -->
-        <div class="md:hidden flex items-center gap-3">
+        <!-- Tablet Navigation (Medium screens - 768px to 1023px) -->
+        <div class="hidden md:flex lg:hidden items-center space-x-4">
+          <a 
+            v-for="item in navItems" 
+            :key="item.id"
+            :href="`#${item.id}`"
+            @click.prevent="smoothScroll(item.id)"
+            class="text-white hover:text-accent-blue transition-colors duration-200 font-medium text-sm"
+          >
+            {{ $t(`nav.${item.id}`) }}
+          </a>
+          <button
+            @click="smoothScroll('contact')"
+            class="bg-accent-blue hover:bg-accent-light text-white px-3 py-1.5 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 text-xs"
+          >
+            {{ $t('nav.getInTouch') }}
+          </button>
           <LanguageSwitcher />
+        </div>
+
+        <!-- Mobile Navigation (Small screens - below 768px) -->
+        <div class="md:hidden flex items-center gap-3">
           <button
             @click="smoothScroll('contact')"
             class="bg-accent-blue hover:bg-accent-light text-white px-3 py-1.5 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 text-xs"
           >
             {{ $t('nav.getInTouch') }}
           </button>
+          <LanguageSwitcher />
         </div>
       </div>
     </nav>

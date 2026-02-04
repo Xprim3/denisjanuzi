@@ -55,7 +55,7 @@
                     <span 
                       v-for="tech in personalInfo.primaryTech" 
                       :key="tech"
-                      class="bg-accent-blue/10 px-3 py-1 rounded text-xs text-accent-light"
+                      class="bg-accent-blue/10 px-2 sm:px-3 py-1 rounded text-xs text-accent-light whitespace-nowrap"
                     >
                       {{ tech }}
                     </span>
@@ -64,12 +64,12 @@
 
                 <div>
                   <p class="text-gray-400 mb-2">{{ $t('about.hobbies') }}</p>
-                  <p class="text-white text-sm">
+                  <p class="text-white text-xs sm:text-sm break-words">
                     <span 
-                      v-for="(hobby, index) in personalInfo.hobbies" 
+                      v-for="(hobby, index) in hobbies" 
                       :key="hobby"
                     >
-                      <span class="font-medium">{{ hobby }}</span><span v-if="index < personalInfo.hobbies.length - 1">, </span>
+                      <span class="font-medium">{{ hobby }}</span><span v-if="index < hobbies.length - 1">, </span>
                     </span>
                   </p>
                 </div>
@@ -126,7 +126,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const imageError = ref(false)
 // Profile image - place your image in the public folder as 'profile.jpg'
@@ -159,19 +162,14 @@ const personalInfo = {
     'Git',
     'Docker'
   ],
-  hobbies: [
-    'Web Development',
-    'Learning new Technologies',
-    'Traveling'
-  ],
   availability: 'Available for remote projects outside working hours',
   email: 'denis@example.com' // Optional - set to null or empty string to hide
 }
 
-const fullTimeJob = {
-  title: 'Postbote',
-  company: 'DHL Deutsche Post',
-  description: 'I work in mail and parcel delivery, where precision, reliability, and structure are part of everyday life. This role has strengthened my organizational skills, time management, and attention to detail. Outside working hours, I apply the same disciplined approach to personal web projects building simple, well-structured applications and continuously learning new technologies.'
-}
+const hobbies = computed(() => [
+  t('about.hobbyList.webDevelopment'),
+  t('about.hobbyList.learning'),
+  t('about.hobbyList.traveling')
+])
 
 </script>

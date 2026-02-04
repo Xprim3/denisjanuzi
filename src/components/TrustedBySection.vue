@@ -3,7 +3,7 @@
     <div class="container mx-auto max-w-6xl">
       <div class="text-center fade-in-up">
         <p class="text-gray-500 text-xs uppercase tracking-wider mb-8">
-          TRUSTED BY MODERN TECH TEAMS
+          {{ $t('trustedBy.title') }}
         </p>
         
         <!-- Company Logos -->

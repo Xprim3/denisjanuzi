@@ -6,8 +6,8 @@
     "getInTouch": "Kontakt aufnehmen"
   },
   "hero": {
-    "headline": "Klare, praktische",
-    "headlineHighlight": "Web-Erlebnisse schaffen",
+    "headline": "Entwicklung klarer, praktischer",
+    "headlineHighlight": "Web-Erlebnisse",
     "description": "Fokus auf gut strukturierte Websites und Webanwendungen, die mit Einfachheit, Leistung und Benutzerfreundlichkeit im Hinterkopf entwickelt wurden.",
     "viewProjects": "Projekte ansehen",
     "aboutMe": "Über mich"
@@ -29,7 +29,16 @@
     "location": "Standort",
     "languages": "Sprachen",
     "techStack": "Technologie-Stack",
-    "hobbies": "Hobbys & Interessen"
+    "hobbies": "Hobbys & Interessen",
+    "languageLevels": {
+      "native": "Muttersprache",
+      "fluent": "Fließend"
+    },
+    "hobbyList": {
+      "webDevelopment": "Webentwicklung",
+      "learning": "Neue Technologien lernen",
+      "traveling": "Reisen"
+    }
   },
   "projects": {
     "title": "Ausgewählte",
@@ -67,6 +76,9 @@
   },
   "common": {
     "at": "bei"
+  },
+  "trustedBy": {
+    "title": "VERTRAUT VON MODERNEN TECH-TEAMS"
   },
   "footer": {
     "description": "Webentwickler, der moderne, praktische Lösungen entwickelt. Verfügbar für Remote-Projekte außerhalb der Arbeitszeiten.",

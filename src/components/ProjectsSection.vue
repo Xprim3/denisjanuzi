@@ -51,27 +51,27 @@
             <div v-else class="mb-5"></div>
 
             <!-- Links -->
-            <div class="flex gap-3 sm:gap-4 pt-4 sm:pt-5 border-t border-gray-800">
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-5 border-t border-gray-800">
               <a 
                 v-if="project.liveUrl"
                 :href="project.liveUrl" 
                 target="_blank"
                 rel="noopener noreferrer"
                 :class="project.githubUrl ? 'flex-1' : 'w-full'"
-                class="bg-accent-blue hover:bg-accent-light text-white px-4 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 text-center transform hover:scale-105"
+                class="bg-accent-blue hover:bg-accent-light text-white px-4 py-2.5 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 text-center transform hover:scale-105 flex items-center justify-center gap-2"
               >
-                <i class="fas fa-external-link-alt mr-2"></i>
-                {{ $t('projects.liveDemo') }}
+                <i class="fas fa-external-link-alt"></i>
+                <span>{{ $t('projects.liveDemo') }}</span>
               </a>
               <a 
                 v-if="project.githubUrl"
                 :href="project.githubUrl" 
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex-1 bg-dark-bg hover:bg-gray-800 text-gray-300 hover:text-white px-4 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 text-center border border-gray-700 hover:border-gray-600"
+                class="flex-1 bg-dark-bg hover:bg-gray-800 text-gray-300 hover:text-white px-4 py-2.5 rounded-lg font-semibold text-xs sm:text-sm transition-all duration-200 text-center border border-gray-700 hover:border-gray-600 flex items-center justify-center gap-2"
               >
-                <i class="fab fa-github mr-2"></i>
-                {{ $t('projects.github') }}
+                <i class="fab fa-github"></i>
+                <span>{{ $t('projects.github') }}</span>
               </a>
             </div>
           </div>
