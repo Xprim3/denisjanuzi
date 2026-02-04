@@ -1,0 +1,367 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0F172A;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Smooth scroll with offset for fixed header */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1E293B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3B82F6;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #60A5FA;
+}
+
+/* Smooth fade-in animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Social Icons Hover Colors */
+.social-icon:hover i {
+  color: var(--hover-color) !important;
+}
+
+.social-icon[data-color="#1877F2"]:hover i {
+  color: #1877F2 !important;
+}
+
+.social-icon[data-color="#E4405F"]:hover i {
+  color: #E4405F !important;
+}
+
+.social-icon[data-color="#000000"]:hover i {
+  color: #000000 !important;
+}
+
+.social-icon[data-color="#0077B5"]:hover i {
+  color: #0077B5 !important;
+}
+
+.social-icon[data-color="#EA4335"]:hover i {
+  color: #EA4335 !important;
+}
+
+.social-icon[data-color="#25D366"]:hover i {
+  color: #25D366 !important;
+}
+
+.social-icon[data-color="#0084FF"]:hover i {
+  color: #0084FF !important;
+}
+
+/* Animated Background Decorations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(20px) translateX(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-25%);
+  }
+}
+
+/* Background Gradient Orbs */
+.bg-gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.bg-gradient-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #3B82F6, transparent);
+  top: 10%;
+  left: -10%;
+  animation-duration: 25s;
+}
+
+.bg-gradient-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #60A5FA, transparent);
+  bottom: 20%;
+  right: -5%;
+  animation-duration: 30s;
+  animation-name: floatReverse;
+}
+
+.bg-gradient-orb-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #8B5CF6, transparent);
+  top: 50%;
+  right: 20%;
+  animation-duration: 35s;
+}
+
+/* Floating Geometric Shapes */
+.floating-shape {
+  position: absolute;
+  opacity: 0.05;
+  pointer-events: none;
+  animation: float 15s ease-in-out infinite;
+}
+
+.floating-shape-1 {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #3B82F6;
+  border-radius: 20% 80% 20% 80%;
+  top: 20%;
+  left: 5%;
+  animation-duration: 20s;
+}
+
+.floating-shape-2 {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #60A5FA;
+  border-radius: 50%;
+  bottom: 30%;
+  right: 10%;
+  animation-duration: 25s;
+  animation-name: floatReverse;
+}
+
+.floating-shape-3 {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(45deg, #3B82F6, transparent);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  top: 60%;
+  left: 15%;
+  animation-duration: 18s;
+}
+
+/* Grid Pattern Overlay */
+.grid-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Animated Wave Divider */
+.wave-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wave-divider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
+.wave-divider .shape-fill {
+  fill: #1E293B;
+}
+
+.wave-divider-top {
+  top: 0;
+  transform: rotate(180deg);
+}
+
+/* Section Background Overlay */
+.section-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(96, 165, 250, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scroll Reveal Animation */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  animation: slideInFromBottom 0.8s ease-out forwards;
+}
+
+/* Glow Effect */
+.glow-effect {
+  position: relative;
+}
+
+.glow-effect::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #3B82F6, #60A5FA, #3B82F6);
+  border-radius: inherit;
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+
+.glow-effect:hover::before {
+  opacity: 0.3;
+}
+
+/* Mobile Menu Animations */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-enter-active {
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.slide-leave-active {
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.slide-enter-from {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.slide-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* Mobile Menu Slide Animation */
+.mobile-menu {
+  animation: slideInFromRight 0.3s ease-out;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Scroll to Top Button Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}

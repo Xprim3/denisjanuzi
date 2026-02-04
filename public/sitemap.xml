@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://denisjanuzi.com/</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://denisjanuzi.com/profile.jpg.jpg</image:loc>
+      <image:title>Denis Januzi - Web Developer</image:title>
+      <image:caption>Professional web developer portfolio</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://denisjanuzi.com/#home</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://denisjanuzi.com/#about</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denisjanuzi.com/#projects</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://denisjanuzi.com/skanom.png</image:loc>
+      <image:title>Digital Menu Project</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://denisjanuzi.com/adria.png</image:loc>
+      <image:title>Adria Restaurant Project</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://denisjanuzi.com/Cleangenerale.png</image:loc>
+      <image:title>Clean Generale Project</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://denisjanuzi.com/#contact</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
