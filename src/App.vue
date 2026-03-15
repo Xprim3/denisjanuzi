@@ -77,11 +77,14 @@
         <i class="fas fa-arrow-up text-xl"></i>
       </button>
     </transition>
+
+    <Analytics />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { Analytics } from '@vercel/analytics/vue'
 import NavHeader from './components/NavHeader.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
