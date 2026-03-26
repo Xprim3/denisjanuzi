@@ -46,7 +46,7 @@
               <p class="text-gray-400 text-xs sm:text-sm mb-4 sm:mb-5 font-medium uppercase tracking-wider">{{ $t('contact.directMessaging') }}</p>
               <div class="grid grid-cols-2 gap-3 sm:gap-4">
                 <a 
-                  href="https://wa.me/491636851928"
+                  href="https://wa.me/4915229502316"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
