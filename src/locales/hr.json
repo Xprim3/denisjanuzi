@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Početna",
+    "about": "O meni",
+    "projects": "Projekti",
+    "getInTouch": "Kontakt"
+  },
+  "hero": {
+    "headline": "Gradim jasna, praktična",
+    "headlineHighlight": "web iskustva",
+    "description": "Fokusiran na dobro strukturirane web stranice i web aplikacije dizajnirane s jednostavnošću, performansama i upotrebljivošću.",
+    "viewProjects": "Pogledaj projekte",
+    "aboutMe": "O meni"
+  },
+  "about": {
+    "myStory": "Moja priča",
+    "story1": "Moj put nije bio pravocrtan. Novi početak na novom mjestu naučio me strpljenju, prilagodljivosti i vrijednosti ustrajnog rada, čak i kada napredak traži vrijeme.",
+    "story2": "Živim u Trieru, Njemačka, i radim puno radno vrijeme kao poštar u DHL Deutsche Post, gdje su pouzdanost, struktura i odgovornost ključni svaki dan.",
+    "story3": "Izvan radnog vremena, programiranje je moj osobni fokus. U slobodno vrijeme gradim i usavršavam osobne web projekte, istražujem nove tehnologije i nastavljam učiti korak po korak.",
+    "story4": "Ovaj portfolio odražava taj način razmišljanja: dosljednost, pažnju i dugoročni rast.",
+    "fullTimeCareer": "Karijera s punim radnim vremenom",
+    "fullTimeJobTitle": "Poštar",
+    "fullTimeJobCompany": "DHL Deutsche Post",
+    "fullTimeJobDescription": "Radim u dostavi pošte i paketa, gdje su preciznost, pouzdanost i struktura dio svakodnevice. Ova uloga ojačala je moje organizacijske vještine, upravljanje vremenom i pažnju na detalje. Izvan radnog vremena isti disciplinirani pristup primjenjujem na osobne web projekte, gradeći jednostavne, dobro strukturirane aplikacije i kontinuirano učeći nove tehnologije.",
+    "codingFocus": "Programiranje · Fokus u slobodno vrijeme",
+    "codingDescription1": "Izvan radnog vremena fokusiram se na programiranje kao osobni zanat. Tu učim, eksperimentiram i postupno gradim praktične web projekte, od čistih i jednostavnih web stranica do manjih, dobro strukturiranih aplikacija.",
+    "codingDescription2": "Svaki projekt pomaže mi produbiti razumijevanje modernih tehnologija, uz jačanje pažljivog i promišljenog pristupa izradi jasnih i pouzdanih rješenja.",
+    "birthday": "Datum rođenja",
+    "location": "Lokacija",
+    "languages": "Jezici",
+    "techStack": "Tehnološki stack",
+    "hobbies": "Hobiji i interesi",
+    "languageLevels": {
+      "native": "Materinji",
+      "fluent": "Tečno"
+    },
+    "hobbyList": {
+      "webDevelopment": "Web razvoj",
+      "learning": "Učenje novih tehnologija",
+      "traveling": "Putovanja"
+    }
+  },
+  "projects": {
+    "title": "Istaknuti",
+    "titleHighlight": "Projekti",
+    "subtitle": "Odabir projekata koji prikazuju moje vještine i stručnost",
+    "liveDemo": "Live Demo",
+    "github": "GitHub",
+    "digitalMenu": {
+      "title": "Digitalni meni",
+      "description": "Moderna web stranica digitalnog menija koja pruža interaktivno iskustvo uz jednostavnu navigaciju i lijep prikaz."
+    },
+    "adria": {
+      "title": "Adria - Ristorante i Pizza",
+      "description": "Web stranica restorana koja prikazuje autentičnu talijansku kuhinju, meni i iskustvo objedovanja."
+    },
+    "cleanGenerale": {
+      "title": "Clean Generale",
+      "description": "Profesionalna web stranica za usluge čišćenja koja predstavlja usluge i stručnost."
+    },
+    "ivofresh": {
+      "title": "IvoFresh",
+      "description": "Svježi sokovi, smoothieji i zdrav stil života, sezonski lokalni proizvodi i prirodni sastojci."
+    }
+  },
+  "contact": {
+    "letsConnect": "Povežimo se",
+    "description1": "Prihvaćam ograničen broj web projekata samostalno i izvan radnog vremena. Uvijek sam otvoren za promišljene razgovore o idejama, osobnim projektima ili jednostavnim web rješenjima koja imaju koristi od jasnog i praktičnog pristupa.",
+    "description2": "Ako vam treba jednostavna, kvalitetno izrađena web stranica za vaš posao ili imate manji web projekt na umu, rado ću istražiti ima li suradnja smisla.",
+    "description3": "Sa sjedištem u Trieru, Njemačka, surađujem na daljinu kada vrijeme to dopušta. Slobodno me kontaktirajte putem emaila ili se povežite sa mnom na društvenim mrežama.",
+    "email": "Email",
+    "sendEmail": "Pošalji mi email",
+    "directMessaging": "Izravne poruke",
+    "whatsapp": "WhatsApp",
+    "messenger": "Messenger",
+    "socialMedia": "Društvene mreže",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
+  },
+  "common": {
+    "at": "u"
+  },
+  "trustedBy": {
+    "title": "VJERUJU MI MODERNI TEH TIMOVI"
+  },
+  "footer": {
+    "description": "Web developer koji gradi moderna, praktična rješenja. Dostupan za remote projekte izvan radnog vremena.",
+    "quickLinks": "Brze poveznice",
+    "home": "Početna",
+    "about": "O meni",
+    "projects": "Projekti",
+    "contact": "Kontakt",
+    "builtWith": "Izrađeno s",
+    "using": "koristeći",
+    "rightsReserved": "Sva prava pridržana."
+  }
+}

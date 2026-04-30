@@ -50,7 +50,9 @@ const dropdownRef = ref<HTMLElement | null>(null)
 
 const languages = [
   { code: 'en', name: 'English' },
-  { code: 'de', name: 'Deutsch' }
+  { code: 'de', name: 'Deutsch' },
+  { code: 'sq', name: 'Shqip' },
+  { code: 'hr', name: 'Hrvatski' }
 ]
 
 const currentLanguage = computed(() => locale.value)

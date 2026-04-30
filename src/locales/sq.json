@@ -1,0 +1,98 @@
+{
+  "nav": {
+    "home": "Ballina",
+    "about": "Rreth meje",
+    "projects": "Projektet",
+    "getInTouch": "Kontakto"
+  },
+  "hero": {
+    "headline": "Ndërtoj përvoja web",
+    "headlineHighlight": "të qarta dhe praktike",
+    "description": "I fokusuar në faqe interneti dhe aplikacione web të strukturuara mirë, të dizajnuara me thjeshtësi, performancë dhe përdorshmëri.",
+    "viewProjects": "Shiko projektet",
+    "aboutMe": "Rreth meje"
+  },
+  "about": {
+    "myStory": "Historia ime",
+    "story1": "Rruga ime nuk ka qenë lineare. Fillimi nga e para në një vend të ri më ka mësuar durimin, përshtatshmërinë dhe vlerën e përpjekjes së vazhdueshme, edhe kur përparimi kërkon kohë.",
+    "story2": "Jetoj në Trier, Gjermani, dhe punoj me orar të plotë si postier te DHL Deutsche Post, ku besueshmëria, struktura dhe përgjegjësia janë thelbësore çdo ditë.",
+    "story3": "Jashtë orarit të punës, programimi është përqendrimi im personal. Në kohën e lirë ndërtoj dhe përmirësoj projekte personale web, eksploroj teknologji të reja dhe vazhdoj të mësoj hap pas hapi.",
+    "story4": "Ky portofol pasqyron këtë mendësi: qëndrueshmëri, kujdes dhe rritje afatgjatë.",
+    "fullTimeCareer": "Karriera me orar të plotë",
+    "fullTimeJobTitle": "Postier",
+    "fullTimeJobCompany": "DHL Deutsche Post",
+    "fullTimeJobDescription": "Punoj në shpërndarjen e postës dhe pakove, ku saktësia, besueshmëria dhe struktura janë pjesë e përditshmërisë. Ky rol ka forcuar aftësitë e mia organizative, menaxhimin e kohës dhe vëmendjen ndaj detajeve. Jashtë orarit të punës, të njëjtën qasje të disiplinuar e zbatoj në projektet personale web, duke ndërtuar aplikacione të thjeshta, të strukturuara mirë dhe duke mësuar vazhdimisht teknologji të reja.",
+    "codingFocus": "Programim · Fokus në kohën e lirë",
+    "codingDescription1": "Jashtë orarit të punës, fokusohem te programimi si zanat personal. Aty mësoj, eksperimentoj dhe ndërtoj gradualisht projekte praktike web, nga faqe të pastra dhe të drejtpërdrejta deri te aplikacione të vogla dhe të strukturuara mirë.",
+    "codingDescription2": "Çdo projekt më ndihmon të thelloj kuptimin tim për teknologjitë moderne, duke forcuar njëkohësisht një qasje të kujdesshme dhe të menduar mirë për ndërtimin e zgjidhjeve të qarta dhe të besueshme.",
+    "birthday": "Datëlindja",
+    "location": "Vendndodhja",
+    "languages": "Gjuhët",
+    "techStack": "Teknologjitë",
+    "hobbies": "Hobi & Interesa",
+    "languageLevels": {
+      "native": "Gjuhë amtare",
+      "fluent": "Rrjedhshëm"
+    },
+    "hobbyList": {
+      "webDevelopment": "Zhvillim web",
+      "learning": "Mësimi i teknologjive të reja",
+      "traveling": "Udhëtimi"
+    }
+  },
+  "projects": {
+    "title": "Projektet",
+    "titleHighlight": "Kryesore",
+    "subtitle": "Një përzgjedhje projektesh që tregojnë aftësitë dhe ekspertizën time",
+    "liveDemo": "Demo Live",
+    "github": "GitHub",
+    "digitalMenu": {
+      "title": "Menu Digjitale",
+      "description": "Një faqe moderne për menu digjitale që ofron përvojë interaktive me navigim të lehtë dhe prezantim të bukur."
+    },
+    "adria": {
+      "title": "Adria - Ristorante dhe Pizza",
+      "description": "Një faqe restoranti që prezanton kuzhinë autentike italiane, menunë dhe përvojën e ngrënies."
+    },
+    "cleanGenerale": {
+      "title": "Clean Generale",
+      "description": "Një faqe profesionale për shërbime pastrimi që prezanton shërbimet dhe ekspertizën."
+    },
+    "ivofresh": {
+      "title": "IvoFresh",
+      "description": "Lëngje të freskëta, smoothie dhe stil jetese i shëndetshëm, produkte sezonale lokale dhe përbërës natyralë."
+    }
+  },
+  "contact": {
+    "letsConnect": "Të lidhemi",
+    "description1": "Marr një numër të kufizuar projektesh web në mënyrë të pavarur dhe jashtë orarit të punës. Jam gjithmonë i hapur për biseda të menduara rreth ideve, projekteve personale ose zgjidhjeve të thjeshta web me qasje të qartë dhe praktike.",
+    "description2": "Nëse ke nevojë për një faqe interneti të thjeshtë dhe të ndërtuar mirë për biznesin tënd, ose ke një projekt të vogël web në mendje, me kënaqësi mund të shohim nëse bashkëpunimi ka kuptim.",
+    "description3": "Me bazë në Trier, Gjermani, bashkëpunoj në distancë kur koha e lejon. Mos hezito të më kontaktosh me email ose në rrjetet sociale.",
+    "email": "Email",
+    "sendEmail": "Më dërgo një email",
+    "directMessaging": "Mesazhe direkte",
+    "whatsapp": "WhatsApp",
+    "messenger": "Messenger",
+    "socialMedia": "Rrjete sociale",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
+  },
+  "common": {
+    "at": "te"
+  },
+  "trustedBy": {
+    "title": "I BESUAR NGA SKUADRA MODERNE TEKNOLOGJIKE"
+  },
+  "footer": {
+    "description": "Zhvillues web që ndërton zgjidhje moderne dhe praktike. I disponueshëm për projekte remote jashtë orarit të punës.",
+    "quickLinks": "Lidhje të shpejta",
+    "home": "Ballina",
+    "about": "Rreth meje",
+    "projects": "Projektet",
+    "contact": "Kontakt",
+    "builtWith": "Ndërtuar me",
+    "using": "duke përdorur",
+    "rightsReserved": "Të gjitha të drejtat e rezervuara."
+  }
+}
