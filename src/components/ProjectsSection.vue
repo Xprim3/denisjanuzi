@@ -117,6 +117,15 @@ const projects: Project[] = [
     screenshot: 'https://www.ivofresh.com/logo.png',
     website: 'www.ivofresh.com'
   },
+  {
+    key: 'euromiti',
+    technologies: [],
+    icon: '⛽',
+    liveUrl: 'https://www.euromiti-ks.com/',
+    githubUrl: undefined,
+    screenshot: '/euromiti.png',
+    website: 'www.euromiti-ks.com'
+  },
 ]
 
 const getProjectTitle = (key: string) => {
