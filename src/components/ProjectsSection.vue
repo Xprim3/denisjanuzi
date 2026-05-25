@@ -126,6 +126,15 @@ const projects: Project[] = [
     screenshot: '/euromiti.png',
     website: 'www.euromiti-ks.com'
   },
+  {
+    key: 'royalCeramics',
+    technologies: [],
+    icon: '🛁',
+    liveUrl: 'https://royalceramica-ks.com/',
+    githubUrl: undefined,
+    screenshot: '/royal-ceramica.png',
+    website: 'www.royalceramica-ks.com'
+  },
 ]
 
 const getProjectTitle = (key: string) => {
