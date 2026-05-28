@@ -122,7 +122,7 @@ const projects: Project[] = [
     key: 'euromiti',
     technologies: [],
     icon: '⛽',
-    liveUrl: 'https://www.euromiti-ks.com/',
+    liveUrl: 'https://euromitinew.vercel.app/',
     githubUrl: undefined,
     screenshot: '/euromiti.png',
     website: 'www.euromiti-ks.com'
