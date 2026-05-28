@@ -135,6 +135,15 @@ const projects: Project[] = [
     screenshot: '/royal-ceramica.png',
     website: 'www.royalceramica-ks.com'
   },
+  {
+    key: 'yummyPita',
+    technologies: [],
+    icon: '🥙',
+    liveUrl: 'https://yummy-six-pi.vercel.app/',
+    githubUrl: undefined,
+    screenshot: '/yummy-pita.png',
+    website: 'www.yummypita-ks.com'
+  },
 ]
 
 const getProjectTitle = (key: string) => {
