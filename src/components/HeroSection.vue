@@ -15,36 +15,36 @@
     <div class="container mx-auto max-w-6xl relative z-10">
         <div class="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
         <!-- Left Content -->
-        <div class="space-y-5 sm:space-y-6 md:space-y-8 fade-in-up">
+        <div class="space-y-5 sm:space-y-6 md:space-y-8">
             <!-- Logo Icon -->
-            <div class="flex justify-center mb-4 sm:mb-6 md:hidden">
+            <div class="flex justify-center mb-4 sm:mb-6 md:hidden hero-enter hero-delay-1">
               <svg class="w-12 h-12 sm:w-16 sm:h-16 text-accent-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
             </div>
             
             <!-- Headline -->
-            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-tight text-center md:text-left">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight sm:leading-tight text-center md:text-left hero-enter hero-delay-2">
               {{ $t('hero.headline') }} 
               <span class="text-accent-blue">{{ $t('hero.headlineHighlight') }}</span>.
             </h1>
 
           <!-- Description -->
-          <p class="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed text-center md:text-left">
+          <p class="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed text-center md:text-left hero-enter hero-delay-3">
             {{ $t('hero.description') }}
           </p>
 
           <!-- CTA Buttons -->
-          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6">
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 sm:pt-6 hero-enter hero-delay-4">
             <button
               @click="smoothScroll('projects')"
-              class="bg-accent-blue hover:bg-accent-light text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-200 transform hover:scale-105"
+              class="btn-primary bg-accent-blue hover:bg-accent-light text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold text-sm sm:text-base"
             >
               {{ $t('hero.viewProjects') }}
             </button>
             <button
               @click="smoothScroll('about')"
-              class="bg-transparent border-2 border-gray-600 hover:border-accent-blue text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-200"
+              class="btn-outline bg-transparent border-2 border-gray-600 hover:border-accent-blue text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold text-sm sm:text-base"
             >
               {{ $t('hero.aboutMe') }}
             </button>
@@ -52,10 +52,10 @@
         </div>
 
         <!-- Right Visual - Modern Code Editor -->
-        <div class="relative fade-in-up">
+        <div class="relative hero-enter hero-delay-3">
           <!-- VS Code Style Editor -->
           <div class="relative">
-            <div class="bg-dark-secondary rounded-lg shadow-2xl border border-gray-800 overflow-hidden">
+            <div class="bg-dark-secondary rounded-lg shadow-2xl border border-gray-800 overflow-hidden transition-shadow duration-500 hover:shadow-accent-blue/10">
               <!-- Editor Header/Tabs -->
               <div class="bg-gray-900 border-b border-gray-800 px-3 sm:px-4 py-1.5 sm:py-2 flex items-center gap-2">
                 <div class="flex gap-1.5">
@@ -114,7 +114,7 @@
               </div>
             </div>
             <!-- Glow Effect -->
-            <div class="absolute -inset-4 bg-accent-blue/20 blur-2xl rounded-lg -z-10"></div>
+            <div class="absolute -inset-4 bg-accent-blue/20 blur-2xl rounded-lg -z-10 animate-pulse" style="animation-duration: 4s;"></div>
           </div>
 
           <!-- Terminal Window -->

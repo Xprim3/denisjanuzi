@@ -4,8 +4,8 @@
 
       <div class="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
         <!-- Left Side - Text Content -->
-        <div class="fade-in-up">
-          <div class="bg-dark-secondary/50 rounded-2xl p-6 sm:p-8 lg:p-10 border border-gray-800">
+        <div v-reveal>
+          <div class="bg-dark-secondary/50 rounded-2xl p-6 sm:p-8 lg:p-10 border border-gray-800 hover-lift transition-colors duration-300 hover:border-accent-blue/30">
             <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-5 sm:mb-6 md:mb-8">{{ $t('contact.letsConnect') }}</h3>
             <div class="space-y-4 sm:space-y-5 md:space-y-6 text-gray-300 leading-relaxed text-base sm:text-lg md:text-xl">
               <p>
@@ -22,14 +22,14 @@
         </div>
 
         <!-- Right Side - Contact Methods -->
-        <div class="fade-in-up">
-          <div class="bg-dark-secondary/50 rounded-2xl p-5 sm:p-6 md:p-8 lg:p-10 border border-gray-800 space-y-6 sm:space-y-7 md:space-y-8">
+        <div v-reveal="{ delay: 120 }">
+          <div class="bg-dark-secondary/50 rounded-2xl p-5 sm:p-6 md:p-8 lg:p-10 border border-gray-800 space-y-6 sm:space-y-7 md:space-y-8 hover-lift transition-colors duration-300 hover:border-accent-blue/30">
             <!-- Email Contact -->
             <div>
               <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 font-medium uppercase tracking-wider">{{ $t('contact.email') }}</p>
               <a 
                 href="mailto:denisjanuzi@gmail.com"
-                class="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-dark-bg/50 rounded-xl border border-gray-700 hover:border-accent-blue/50 transition-all duration-300"
+                class="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-dark-bg/50 rounded-xl border border-gray-700 hover:border-accent-blue/50 hover-lift transition-all duration-300"
               >
                 <div class="w-10 h-10 sm:w-12 sm:h-12 bg-accent-blue/10 rounded-lg flex items-center justify-center group-hover:bg-accent-blue/20 transition-colors flex-shrink-0">
                   <i class="fas fa-envelope text-accent-blue text-lg sm:text-xl"></i>

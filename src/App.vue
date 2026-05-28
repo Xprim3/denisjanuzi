@@ -67,14 +67,14 @@
     </div>
 
     <!-- Scroll to Top Button -->
-    <transition name="fade">
+    <transition name="scroll-top">
       <button
         v-if="showScrollTop"
         @click="scrollToTop"
-        class="fixed bottom-8 right-8 z-50 w-12 h-12 bg-accent-blue hover:bg-accent-light text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+        class="fixed bottom-8 right-8 z-50 w-12 h-12 bg-accent-blue hover:bg-accent-light text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-accent-blue/40 animate-fade-in"
         aria-label="Scroll to top"
       >
-        <i class="fas fa-arrow-up text-xl"></i>
+        <i class="fas fa-arrow-up text-xl transition-transform duration-300 group-hover:-translate-y-0.5"></i>
       </button>
     </transition>
 

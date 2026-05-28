@@ -4,7 +4,7 @@
       <!-- Main Footer Content -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-10 md:mb-12">
         <!-- Brand & Description -->
-        <div class="md:col-span-2">
+        <div class="md:col-span-2" v-reveal>
           <div class="flex items-center gap-3 mb-4 sm:mb-5">
             <svg class="w-6 h-6 text-accent-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -21,7 +21,7 @@
         </div>
 
         <!-- Quick Links -->
-        <div>
+        <div v-reveal="{ delay: 100 }">
           <h4 class="text-white font-semibold mb-4 text-lg">{{ $t('footer.quickLinks') }}</h4>
           <ul class="space-y-2.5">
             <li>
@@ -72,7 +72,7 @@
       <div class="border-t border-gray-800 my-6 sm:my-8 md:my-10"></div>
 
       <!-- Bottom Bar -->
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4" v-reveal="{ delay: 180 }">
         <p class="text-gray-500 text-xs md:text-sm text-center md:text-left">
           © {{ currentYear }} Denis Januzi. {{ $t('footer.rightsReserved') }}
         </p>

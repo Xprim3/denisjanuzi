@@ -3,15 +3,15 @@
     <div class="container mx-auto max-w-6xl">
       <div class="grid lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-start">
         <!-- Combined Profile Image & Info Card -->
-        <div class="lg:col-span-1 fade-in-up">
-          <div class="bg-dark-secondary/50 rounded-2xl border border-gray-800 hover:border-accent-blue/50 transition-all duration-300 overflow-hidden">
+        <div class="lg:col-span-1" v-reveal>
+          <div class="bg-dark-secondary/50 rounded-2xl border border-gray-800 hover:border-accent-blue/50 hover-lift overflow-hidden">
             <!-- Profile Image -->
             <div class="relative w-full aspect-square">
               <img 
                 v-if="profileImage && !imageError"
                 :src="profileImage" 
                 alt="Denis Januzi"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover transition-transform duration-700 ease-smooth hover:scale-105"
                 @error="handleImageError"
               />
               <!-- Fallback -->
@@ -79,9 +79,9 @@
         </div>
 
         <!-- About Content -->
-        <div class="lg:col-span-2 space-y-6 sm:space-y-8 md:space-y-10 fade-in-up">
+        <div class="lg:col-span-2 space-y-6 sm:space-y-8 md:space-y-10">
           <!-- Personal Story -->
-          <div class="space-y-4 sm:space-y-5">
+          <div class="space-y-4 sm:space-y-5" v-reveal="{ delay: 100 }">
             <h3 class="text-2xl sm:text-3xl font-bold text-white mb-5 sm:mb-6">{{ $t('about.myStory') }}</h3>
             <p class="text-gray-300 text-lg leading-relaxed">
               {{ $t('about.story1') }}
@@ -98,7 +98,7 @@
           </div>
 
           <!-- Full-Time Job -->
-          <div class="bg-dark-secondary/50 rounded-xl p-5 sm:p-6 md:p-8 border border-gray-800 hover:border-accent-blue/50 transition-all duration-300">
+          <div class="bg-dark-secondary/50 rounded-xl p-5 sm:p-6 md:p-8 border border-gray-800 hover:border-accent-blue/50 hover-lift" v-reveal="{ delay: 180 }">
             <h4 class="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-5">{{ $t('about.fullTimeCareer') }}</h4>
             <p class="text-gray-400 mb-3">
               <span class="text-accent-light font-medium">{{ $t('about.fullTimeJobTitle') }}</span> {{ $t('common.at') }} 
@@ -110,7 +110,7 @@
           </div>
 
           <!-- Coding Passion -->
-          <div class="bg-dark-secondary/50 rounded-xl p-5 sm:p-6 md:p-8 border border-gray-800 hover:border-accent-blue/50 transition-all duration-300">
+          <div class="bg-dark-secondary/50 rounded-xl p-5 sm:p-6 md:p-8 border border-gray-800 hover:border-accent-blue/50 hover-lift" v-reveal="{ delay: 260 }">
             <h4 class="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-5">{{ $t('about.codingFocus') }}</h4>
             <p class="text-gray-300 mb-3">
               {{ $t('about.codingDescription1') }}

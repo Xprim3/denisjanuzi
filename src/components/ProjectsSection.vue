@@ -1,11 +1,11 @@
 <template>
   <section id="projects" class="py-16 sm:py-20 md:py-24 px-4 sm:px-6 lg:px-8 relative z-10">
     <div class="container mx-auto max-w-7xl">
-      <div class="text-center mb-12 sm:mb-16 md:mb-20 fade-in-up">
+      <div class="text-center mb-12 sm:mb-16 md:mb-20 section-heading" v-reveal>
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
           {{ $t('projects.title') }} <span class="text-accent-blue">{{ $t('projects.titleHighlight') }}</span>
         </h2>
-        <div class="w-20 h-1 bg-accent-blue mx-auto mb-4"></div>
+        <div class="w-20 h-1 bg-accent-blue mx-auto mb-4 heading-accent-line"></div>
         <p class="text-gray-400 text-lg max-w-2xl mx-auto">
           {{ $t('projects.subtitle') }}
         </p>
@@ -18,7 +18,8 @@
           :href="project.liveUrl || '#'"
           target="_blank"
           rel="noopener noreferrer"
-          class="group bg-dark-secondary/50 rounded-2xl overflow-hidden border border-gray-800 hover:border-accent-blue/50 transition-all duration-300 fade-in-up flex flex-col cursor-pointer"
+          v-reveal="index * 90"
+          class="group bg-dark-secondary/50 rounded-2xl overflow-hidden border border-gray-800 hover:border-accent-blue/50 hover-lift flex flex-col cursor-pointer"
         >
           <!-- Project Image/Visual -->
           <div class="relative h-56 bg-gradient-to-br from-accent-blue/10 via-purple-500/10 to-pink-500/10 overflow-hidden">
@@ -27,7 +28,7 @@
               v-if="project.screenshot"
               :src="project.screenshot"
               :alt="`${getProjectTitle(project.key)} - ${getProjectDescription(project.key)}`"
-              class="absolute inset-0 w-full h-full object-cover object-center"
+              class="project-image-zoom absolute inset-0 w-full h-full object-cover object-center"
               loading="lazy"
             />
             <!-- Fallback Icon -->
