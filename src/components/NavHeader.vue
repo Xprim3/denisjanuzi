@@ -33,12 +33,13 @@
           >
             {{ $t(`nav.${item.id}`) }}
           </a>
-          <button
-            @click="smoothScroll('contact')"
-            class="btn-primary bg-accent-blue hover:bg-accent-light text-white px-4 py-1.5 rounded-lg font-medium text-sm"
+          <RouterLink
+            to="/webform"
+            class="btn-primary bg-accent-blue hover:bg-accent-light text-white px-4 py-1.5 rounded-lg font-medium text-sm inline-flex items-center gap-2"
           >
-            {{ $t('nav.getInTouch') }}
-          </button>
+            <i class="fas fa-paper-plane text-xs" aria-hidden="true"></i>
+            {{ $t('nav.getQuote') }}
+          </RouterLink>
           <LanguageSwitcher />
         </div>
 
@@ -54,23 +55,25 @@
           >
             {{ $t(`nav.${item.id}`) }}
           </a>
-          <button
-            @click="smoothScroll('contact')"
-            class="btn-primary bg-accent-blue hover:bg-accent-light text-white px-3 py-1.5 rounded-lg font-medium text-xs"
+          <RouterLink
+            to="/webform"
+            class="btn-primary bg-accent-blue hover:bg-accent-light text-white px-3 py-1.5 rounded-lg font-medium text-xs inline-flex items-center gap-1.5"
           >
-            {{ $t('nav.getInTouch') }}
-          </button>
+            <i class="fas fa-paper-plane text-[10px]" aria-hidden="true"></i>
+            {{ $t('nav.getQuote') }}
+          </RouterLink>
           <LanguageSwitcher />
         </div>
 
         <!-- Mobile Navigation (Small screens - below 768px) -->
         <div class="md:hidden flex items-center gap-3">
-          <button
-            @click="smoothScroll('contact')"
-            class="btn-primary bg-accent-blue hover:bg-accent-light text-white px-3 py-1.5 rounded-lg font-semibold text-xs"
+          <RouterLink
+            to="/webform"
+            class="btn-primary bg-accent-blue hover:bg-accent-light text-white px-3 py-1.5 rounded-lg font-semibold text-xs inline-flex items-center gap-1.5"
           >
-            {{ $t('nav.getInTouch') }}
-          </button>
+            <i class="fas fa-paper-plane text-[10px]" aria-hidden="true"></i>
+            {{ $t('nav.getQuote') }}
+          </RouterLink>
           <LanguageSwitcher />
         </div>
       </div>
@@ -80,6 +83,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { RouterLink } from 'vue-router'
 import LanguageSwitcher from './LanguageSwitcher.vue'
 import { useActiveSection } from '../composables/useActiveSection'
 

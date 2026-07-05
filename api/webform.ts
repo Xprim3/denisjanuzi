@@ -177,7 +177,7 @@ function formatDomainAnswer(body: WebFormPayload): string {
 
 function buildPlainText(body: WebFormPayload, name: string, email: string, description: string, websiteType: string, referenceUrls: string[], languages: string[], socialLinks: string[]): string {
   const lines = [
-    'New Website Request',
+    'New Website Quote',
     'Submitted via denisjanuzi.com/webform',
     '',
     '--- Contact ---',
@@ -258,7 +258,7 @@ function buildHtml(body: WebFormPayload, name: string, email: string, descriptio
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Website Request</title>
+  <title>New Website Quote</title>
 </head>
 <body style="margin:0;padding:0;background-color:#f1f5f9;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f1f5f9;">
@@ -268,7 +268,7 @@ function buildHtml(body: WebFormPayload, name: string, email: string, descriptio
           <tr>
             <td style="padding:28px 24px;background-color:#1e293b;">
               <p style="margin:0 0 6px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#93c5fd;">New lead</p>
-              <h1 style="margin:0 0 8px;font-family:Arial,Helvetica,sans-serif;font-size:24px;line-height:1.3;font-weight:700;color:#ffffff;">Website Request</h1>
+              <h1 style="margin:0 0 8px;font-family:Arial,Helvetica,sans-serif;font-size:24px;line-height:1.3;font-weight:700;color:#ffffff;">Website Quote</h1>
               <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#cbd5e1;">${escapeHtml(name)}${body.company?.trim() ? ` · ${escapeHtml(body.company.trim())}` : ''}</p>
             </td>
           </tr>
@@ -416,7 +416,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const toEmail = process.env.CONTACT_EMAIL || 'denisjanuzi@gmail.com'
   const html = buildHtml(body, name, email, description, websiteType, referenceUrls, languages, socialLinks)
   const text = buildPlainText(body, name, email, description, websiteType, referenceUrls, languages, socialLinks)
-  const subject = `Website Request: ${name}${body.company?.trim() ? ` (${body.company.trim()})` : ''}`
+  const subject = `Website Quote: ${name}${body.company?.trim() ? ` (${body.company.trim()})` : ''}`
   const mailOptions = { to: toEmail, replyTo: email, subject, html, text }
 
   const hasGmail = Boolean((process.env.GMAIL_USER || toEmail) && process.env.GMAIL_APP_PASSWORD)

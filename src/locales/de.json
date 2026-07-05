@@ -4,7 +4,7 @@
     "about": "Über mich",
     "projects": "Projekte",
     "getInTouch": "Kontakt aufnehmen",
-    "requestWebsite": "Website anfragen"
+    "getQuote": "Angebot anfordern"
   },
   "hero": {
     "headline": "Entwicklung klarer, praktischer",
@@ -82,8 +82,8 @@
     "description2": "Wenn Sie eine einfache, gut gebaute Website für Ihr Unternehmen benötigen oder ein kleines Webprojekt im Kopf haben, erkunde ich gerne, ob eine Zusammenarbeit sinnvoll ist.",
     "description3": "Mit Sitz in Trier, Deutschland, arbeite ich remote zusammen, wenn die Zeit es erlaubt. Kontaktieren Sie mich gerne per E-Mail oder verbinden Sie sich mit mir in den sozialen Medien.",
     "clientFormBadge": "Wichtig",
-    "clientFormTitle": "Website-Projekt? Möglicherweise müssen Sie ein Formular ausfüllen",
-    "clientFormNote": "Wenn Sie mich wegen einer Website kontaktieren, sende ich Ihnen gegebenenfalls zuerst ein kurzes Projekt-Anfrageformular. So verstehe ich Ihre Ziele, den Zeitplan und Ihre Anforderungen, bevor wir die Details besprechen.",
+    "clientFormTitle": "Website geplant? Reichen Sie Ihr Projekt für ein Angebot ein",
+    "clientFormNote": "Beschreiben Sie Ihren Bedarf im Angebotsformular. Ich prüfe jede Einreichung persönlich — passt es, melde ich mich innerhalb von 1–2 Tagen. Nicht jedes Projekt wird angenommen.",
     "email": "E-Mail",
     "sendEmail": "Senden Sie mir eine E-Mail",
     "directMessaging": "Direktnachrichten",
@@ -112,17 +112,17 @@
     "rightsReserved": "Alle Rechte vorbehalten."
   },
   "webform": {
-    "title": "Website-Anfrage",
-    "heroTitle": "Erzählen Sie mir von Ihrem Projekt",
-    "subtitle": "Füllen Sie die Details unten aus — ich melde mich mit einer durchdachten Antwort, in der Regel innerhalb von 1–2 Tagen.",
+    "title": "Website-Angebot",
+    "heroTitle": "Sagen Sie mir, was Sie brauchen",
+    "subtitle": "Teilen Sie unten Ihre Projektdetails mit. Ich prüfe Ihre Einreichung und melde mich, wenn ich das Projekt übernehmen kann — in der Regel innerhalb von 1–2 Tagen.",
     "backHome": "Zurück zum Portfolio",
     "close": "Schließen",
     "selectPlaceholder": "Option wählen",
-    "submit": "Anfrage senden",
+    "submit": "Zur Prüfung senden",
     "submitting": "Wird gesendet...",
     "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt per E-Mail.",
-    "agreeLabel": "Ich bestätige, dass die angegebenen Informationen korrekt sind, und willige ein, dass sie ausschließlich direkt per E-Mail an Denis Januzi zur Prüfung und Beantwortung meiner Website-Anfrage gesendet werden. Ihre Angaben werden in keiner Datenbank gespeichert.",
-    "agreeNotice": "Bitte rechnen Sie mit 1–2 Tagen für die Prüfung Ihrer Anfrage. Bei Zusage werden Sie benachrichtigt und für ein weiteres Gespräch kontaktiert.",
+    "agreeLabel": "Ich bestätige, dass die angegebenen Informationen korrekt sind, und willige ein, dass sie ausschließlich direkt per E-Mail an Denis Januzi zur Prüfung meiner Angebotsanfrage gesendet werden. Ihre Angaben werden in keiner Datenbank gespeichert.",
+    "agreeNotice": "Bitte rechnen Sie mit 1–2 Tagen für die Prüfung. Bei Annahme werden Sie kontaktiert, um das Projekt weiter zu besprechen.",
     "agreeRequired": "Bitte bestätigen Sie Ihre Einwilligung, bevor Sie das Formular absenden.",
     "websiteReferencesRequired": "Bitte fügen Sie mindestens eine Website-Referenz hinzu.",
     "sections": {
@@ -215,8 +215,8 @@
       "flexible": "Flexibel / Keine Eile"
     },
     "success": {
-      "title": "Anfrage gesendet!",
-      "message": "Vielen Dank für Ihre Nachricht. Ich habe Ihre Website-Anfrage erhalten und melde mich so schnell wie möglich — in der Regel innerhalb von 1–2 Tagen."
+      "title": "Zur Prüfung gesendet!",
+      "message": "Vielen Dank für Ihre Einreichung. Ich prüfe Ihre Projektdetails und melde mich innerhalb von 1–2 Tagen, wenn eine Zusammenarbeit passt."
     }
   }
 }

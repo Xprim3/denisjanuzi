@@ -25,16 +25,16 @@ const portfolioMeta: PageMeta = {
 }
 
 const webformMeta: PageMeta = {
-  title: 'Website Request | Denis Januzi',
+  title: 'Website Quote | Denis Januzi',
   description:
-    'Private client form to request a website from Denis Januzi. Describe your business, design preferences, content, and timeline — get a personal response within 1–2 days.',
+    'Private quote form for website projects. Share what you need — Denis Januzi reviews each submission personally and responds within 1–2 days if the project is a good fit.',
   robots: 'noindex, nofollow',
   canonical: `${SITE_URL}/webform`,
-  ogTitle: 'Request a Website | Denis Januzi',
+  ogTitle: 'Get a Website Quote | Denis Januzi',
   ogDescription:
-    'Fill in this private form to tell Denis about your website project — business details, design ideas, and what you need built. Response within 1–2 days.',
+    'Share your website project details for review. Each submission is checked personally — you will hear back within 1–2 days if accepted.',
   ogUrl: `${SITE_URL}/webform`,
-  ogImageAlt: 'Denis Januzi — Website Request Form',
+  ogImageAlt: 'Denis Januzi — Website Quote Form',
 }
 
 function setMeta(attr: 'name' | 'property', key: string, content: string) {

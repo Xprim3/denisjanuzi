@@ -3,7 +3,8 @@
     "home": "Početna",
     "about": "O meni",
     "projects": "Projekti",
-    "getInTouch": "Kontakt"
+    "getInTouch": "Kontakt",
+    "getQuote": "Zatraži ponudu"
   },
   "hero": {
     "headline": "Gradim jasna, praktična",
@@ -81,8 +82,8 @@
     "description2": "Ako vam treba jednostavna, kvalitetno izrađena web stranica za vaš posao ili imate manji web projekt na umu, rado ću istražiti ima li suradnja smisla.",
     "description3": "Sa sjedištem u Trieru, Njemačka, surađujem na daljinu kada vrijeme to dopušta. Slobodno me kontaktirajte putem emaila ili se povežite sa mnom na društvenim mrežama.",
     "clientFormBadge": "Važno",
-    "clientFormTitle": "Web projekt? Možda ćete morati ispuniti obrazac",
-    "clientFormNote": "Kada me kontaktirate o web stranici, mogu vam prvo poslati kratki obrazac zahtjeva za projekt. To mi pomaže razumjeti vaše ciljeve, rokove i zahtjeve prije nego što razgovaramo o detaljima.",
+    "clientFormTitle": "Trebate web stranicu? Pošaljite projekt za ponudu",
+    "clientFormNote": "Recite mi što vam treba putem obrasca za ponudu. Svaku prijavu osobno pregledavam — ako odgovara, javit ću vam se unutar 1–2 dana. Ne svaki projekt bude prihvaćen.",
     "email": "Email",
     "sendEmail": "Pošalji mi email",
     "directMessaging": "Izravne poruke",
@@ -111,17 +112,17 @@
     "rightsReserved": "Sva prava pridržana."
   },
   "webform": {
-    "title": "Zahtjev za web stranicu",
-    "heroTitle": "Recite mi o svom projektu",
-    "subtitle": "Ispunite detalje ispod i javit ću vam se s pažnjom — obično unutar 1–2 dana.",
+    "title": "Ponuda za web stranicu",
+    "heroTitle": "Recite mi što vam treba",
+    "subtitle": "Podijelite detalje projekta ispod. Pregledat ću vašu prijavu i javiti vam mogu li preuzeti projekt — obično unutar 1–2 dana.",
     "backHome": "Natrag na portfolio",
     "close": "Zatvori",
     "selectPlaceholder": "Odaberite opciju",
-    "submit": "Pošalji zahtjev",
+    "submit": "Pošalji na pregled",
     "submitting": "Slanje...",
     "error": "Nešto je pošlo po krivu. Pokušajte ponovno ili mi pišite izravno na email.",
-    "agreeLabel": "Potvrđujem da su navedeni podaci točni i pristajem na njihovo slanje izravno e-poštom Denis Januziju isključivo u svrhu pregleda i odgovora na moj zahtjev za web stranicu. Vaši podaci se ne pohranjuju u nijednu bazu podataka.",
-    "agreeNotice": "Molimo pričekajte 1–2 dana da se vaš zahtjev pregleda. Ako bude odobren, bit ćete obaviješteni i kontaktirani za daljnji razgovor.",
+    "agreeLabel": "Potvrđujem da su navedeni podaci točni i pristajem na njihovo slanje izravno e-poštom Denis Januziju isključivo u svrhu pregleda moje ponude. Vaši podaci se ne pohranjuju u nijednu bazu podataka.",
+    "agreeNotice": "Molimo pričekajte 1–2 dana da se vaša prijava pregleda. Ako bude prihvaćena, bit ćete kontaktirani za daljnji razgovor.",
     "agreeRequired": "Molimo potvrdite svoj pristanak prije slanja obrasca.",
     "websiteReferencesRequired": "Molimo dodajte barem jednu referencu web stranice.",
     "sections": {
@@ -214,8 +215,8 @@
       "flexible": "Fleksibilno / bez žurbe"
     },
     "success": {
-      "title": "Zahtjev poslan!",
-      "message": "Hvala na javljanju. Primio sam vaš zahtjev i javit ću vam se što prije — obično unutar 1–2 dana."
+      "title": "Poslano na pregled!",
+      "message": "Hvala na prijavi. Pregledat ću detalje projekta i javit ću vam se unutar 1–2 dana ako suradnja odgovara."
     }
   }
 }

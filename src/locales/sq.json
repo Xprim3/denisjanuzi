@@ -4,7 +4,7 @@
     "about": "Rreth meje",
     "projects": "Projektet",
     "getInTouch": "Kontakto",
-    "requestWebsite": "Kërko Website"
+    "getQuote": "Kërko Ofertë"
   },
   "hero": {
     "headline": "Ndërtoj përvoja web",
@@ -82,8 +82,8 @@
     "description2": "Nëse ke nevojë për një faqe interneti të thjeshtë dhe të ndërtuar mirë për biznesin tënd, ose ke një projekt të vogël web në mendje, me kënaqësi mund të shohim nëse bashkëpunimi ka kuptim.",
     "description3": "Me bazë në Trier, Gjermani, bashkëpunoj në distancë kur koha e lejon. Mos hezito të më kontaktosh me email ose në rrjetet sociale.",
     "clientFormBadge": "E rëndësishme",
-    "clientFormTitle": "Projekt website? Mund të duhet të plotësoni një formular",
-    "clientFormNote": "Kur më kontaktoni për një website, mund t'ju dërgoj fillimisht një formular të shkurtër kërkesë projekti. Kjo më ndihmon të kuptoj qëllimet, afatin kohor dhe kërkesat tuaja para se të diskutojmë detajet.",
+    "clientFormTitle": "Keni nevojë për website? Dërgoni projektin për ofertë",
+    "clientFormNote": "Tregoni çfarë ju nevojitet përmes formularit të ofertës. I shqyrtoj çdo kërkesë personalisht — nëse përshtatet, do t'ju kontaktoj brenda 1–2 ditëve. Jo çdo projekt pranohet.",
     "email": "Email",
     "sendEmail": "Më dërgo një email",
     "directMessaging": "Mesazhe direkte",
@@ -112,17 +112,17 @@
     "rightsReserved": "Të gjitha të drejtat e rezervuara."
   },
   "webform": {
-    "title": "Kërkesë për Website",
-    "heroTitle": "Më tregoni për projektin tuaj",
-    "subtitle": "Plotësoni detajet më poshtë dhe do t'ju përgjigjem me kujdes — zakonisht brenda 1–2 ditëve.",
+    "title": "Ofertë Website",
+    "heroTitle": "Më tregoni çfarë ju nevojitet",
+    "subtitle": "Ndani detajet e projektit më poshtë. Do ta shqyrtoj dhe do t'ju njoftoj nëse mund ta marr — zakonisht brenda 1–2 ditëve.",
     "backHome": "Kthehu te Portofoli",
     "close": "Mbyll",
     "selectPlaceholder": "Zgjidh një opsion",
-    "submit": "Dërgo Kërkesën",
+    "submit": "Dërgo për Shqyrtim",
     "submitting": "Duke dërguar...",
     "error": "Diçka shkoi keq. Ju lutem provoni përsëri ose më shkruani direkt me email.",
-    "agreeLabel": "Konfirmoj se informacioni i dhënë është i saktë dhe pajtohem që të dërgohet direkt me email te Denis Januzi vetëm për shqyrtimin dhe përgjigjen e kërkesës sime për website. Të dhënat tuaja nuk ruhen në asnjë databazë.",
-    "agreeNotice": "Ju lutem prisni 1–2 ditë që kërkesa juaj të shqyrtohet. Nëse aprovohet, do të njoftoheni dhe do t'ju kontaktoj për diskutim të mëtejshëm.",
+    "agreeLabel": "Konfirmoj se informacioni i dhënë është i saktë dhe pajtohem që të dërgohet direkt me email te Denis Januzi vetëm për shqyrtimin e ofertës sime. Të dhënat tuaja nuk ruhen në asnjë databazë.",
+    "agreeNotice": "Ju lutem prisni 1–2 ditë që kërkesa juaj të shqyrtohet. Nëse pranohet, do t'ju kontaktoj për diskutim të mëtejshëm.",
     "agreeRequired": "Ju lutem konfirmoni pëlqimin tuaj para se të dërgoni formularin.",
     "websiteReferencesRequired": "Ju lutem shtoni të paktën një referencë website.",
     "sections": {
@@ -215,8 +215,8 @@
       "flexible": "Flexible / Pa nxitim"
     },
     "success": {
-      "title": "Kërkesa u Dërgua!",
-      "message": "Faleminderit që më kontaktuat. E kam marrë kërkesën tuaj dhe do t'ju përgjigjem sa më shpejt — zakonisht brenda 1–2 ditëve."
+      "title": "Dërguar për Shqyrtim!",
+      "message": "Faleminderit për dërgesën. Do ta shqyrtoj projektin tuaj dhe do t'ju përgjigjem brenda 1–2 ditëve nëse është e përshtatshme të punojmë së bashku."
     }
   }
 }

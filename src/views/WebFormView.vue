@@ -306,8 +306,8 @@
                 </div>
               </section>
 
-              <!-- Budget & Timeline -->
-              <section class="webform-group" aria-labelledby="wf-section-details">
+              <!-- Budget & Timeline (hidden for now) -->
+              <section v-if="showBudgetSection" class="webform-group" aria-labelledby="wf-section-details">
                 <header class="webform-group-head">
                   <div class="webform-group-head-text">
                     <h2 id="wf-section-details" class="webform-group-title">{{ $t('webform.sections.details') }}</h2>
@@ -432,6 +432,8 @@ type DynamicListExpose = {
 const socialLinksRef = ref<DynamicListExpose | null>(null)
 const languagesRef = ref<DynamicListExpose | null>(null)
 const referencesRef = ref<DynamicListExpose | null>(null)
+
+const showBudgetSection = false
 
 const form = ref({
   name: '',

@@ -134,9 +134,16 @@
             <h3 class="text-xl sm:text-2xl md:text-[1.65rem] font-bold text-white mb-3 leading-tight">
               {{ $t('contact.clientFormTitle') }}
             </h3>
-            <p class="text-gray-100 text-base sm:text-lg leading-relaxed">
+            <p class="text-gray-100 text-base sm:text-lg leading-relaxed mb-5 sm:mb-6">
               {{ $t('contact.clientFormNote') }}
             </p>
+            <RouterLink
+              to="/webform"
+              class="btn-primary inline-flex items-center justify-center gap-2 bg-accent-blue hover:bg-accent-light text-white px-5 py-3 sm:px-6 sm:py-3.5 rounded-lg font-semibold text-sm sm:text-base transition-colors duration-300 w-full sm:w-auto"
+            >
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              {{ $t('nav.getQuote') }}
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -145,4 +152,5 @@
 </template>
 
 <script setup lang="ts">
+import { RouterLink } from 'vue-router'
 </script>

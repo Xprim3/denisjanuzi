@@ -4,7 +4,7 @@
     "about": "About",
     "projects": "Projects",
     "getInTouch": "Get in Touch",
-    "requestWebsite": "Request a Website"
+    "getQuote": "Get a Quote"
   },
   "hero": {
     "headline": "Building clear, practical",
@@ -82,8 +82,8 @@
     "description2": "If you need a simple, well-built website for your business or have a small web project in mind, I'm happy to explore whether working together makes sense.",
     "description3": "Based in Trier, Germany, I collaborate remotely when time allows. Feel free to reach out via email or connect with me on social media.",
     "clientFormBadge": "Important",
-    "clientFormTitle": "Website project? You may need to fill out a form",
-    "clientFormNote": "When you contact me about a website, I may send you a short project request form to fill out first. It helps me understand your goals, timeline, and requirements before we discuss the details.",
+    "clientFormTitle": "Need a website? Submit your project for a quote",
+    "clientFormNote": "Tell me what you need through the quote form. I review every submission personally — if it's a good fit, I'll get back to you within 1–2 days to discuss next steps. Not every project is accepted.",
     "email": "Email",
     "sendEmail": "Send me an email",
     "directMessaging": "Direct Messaging",
@@ -112,17 +112,17 @@
     "rightsReserved": "All rights reserved."
   },
   "webform": {
-    "title": "Website Request",
-    "heroTitle": "Tell me about your project",
-    "subtitle": "Fill in the details below and I'll get back to you with a thoughtful response — usually within 1–2 days.",
+    "title": "Website Quote",
+    "heroTitle": "Tell me what you need",
+    "subtitle": "Share your project details below. I'll review your submission and let you know if I can take it on — usually within 1–2 days.",
     "backHome": "Back to Portfolio",
     "close": "Close",
     "selectPlaceholder": "Select an option",
-    "submit": "Send Request",
+    "submit": "Submit for Review",
     "submitting": "Sending...",
     "error": "Something went wrong. Please try again or email me directly.",
-    "agreeLabel": "I confirm that the information provided is accurate and I consent to it being sent directly to Denis Januzi's email solely to review and respond to my website request. Your details are not stored in any database.",
-    "agreeNotice": "Please allow 1–2 days for your request to be reviewed. If approved, you will be notified and contacted to discuss the project further.",
+    "agreeLabel": "I confirm that the information provided is accurate and I consent to it being sent directly to Denis Januzi's email solely to review my quote submission. Your details are not stored in any database.",
+    "agreeNotice": "Please allow 1–2 days for your submission to be reviewed. If accepted, you will be contacted to discuss the project further.",
     "agreeRequired": "Please confirm your consent before submitting the form.",
     "websiteReferencesRequired": "Please add at least one website reference.",
     "sections": {
@@ -215,8 +215,8 @@
       "flexible": "Flexible / No rush"
     },
     "success": {
-      "title": "Request Sent!",
-      "message": "Thank you for reaching out. I've received your website request and will get back to you as soon as possible — usually within 1–2 days."
+      "title": "Submitted for Review!",
+      "message": "Thank you for your submission. I'll review your project details and get back to you within 1–2 days if it's a good fit to work together."
     }
   }
 }
