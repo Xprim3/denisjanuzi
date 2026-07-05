@@ -70,48 +70,17 @@
                       <input id="wf-company" v-model="form.company" type="text" autocomplete="organization" class="form-input webform-input" />
                     </div>
                   </div>
-                  <div class="webform-field">
-                    <div class="webform-references-head">
-                      <label class="form-label webform-references-label">{{ $t('webform.fields.socialLinks') }}</label>
-                      <button
-                        v-if="socialLinks.length < 5"
-                        type="button"
-                        class="webform-reference-add"
-                        @click="addSocialLink"
-                      >
-                        {{ $t('webform.fields.addSocialLink') }}
-                      </button>
-                    </div>
-
-                    <div class="webform-references space-y-3">
-                      <div
-                        v-for="(_, index) in socialLinks"
-                        :key="index"
-                        class="webform-reference-row"
-                      >
-                        <label :for="`wf-social-${index}`" class="sr-only">
-                          {{ $t('webform.fields.socialLinkLabel', { number: index + 1 }) }}
-                        </label>
-                        <input
-                          :id="`wf-social-${index}`"
-                          v-model="socialLinks[index]"
-                          type="url"
-                          inputmode="url"
-                          class="form-input webform-input"
-                          :placeholder="$t('webform.fields.socialLinkPlaceholder')"
-                        />
-                        <button
-                          v-if="socialLinks.length > 1"
-                          type="button"
-                          class="webform-reference-remove"
-                          :aria-label="$t('webform.fields.removeSocialLink')"
-                          @click="removeSocialLink(index)"
-                        >
-                          <i class="fas fa-times" aria-hidden="true"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                  <WebFormDynamicList
+                    ref="socialLinksRef"
+                    id-prefix="wf-social"
+                    :label="$t('webform.fields.socialLinks')"
+                    :add-label="$t('webform.fields.addSocialLink')"
+                    :remove-label="$t('webform.fields.removeSocialLink')"
+                    item-label-key="webform.fields.socialLinkLabel"
+                    :placeholder="$t('webform.fields.socialLinkPlaceholder')"
+                    input-type="url"
+                    :max="5"
+                  />
                 </div>
               </section>
 
@@ -160,48 +129,17 @@
                       :placeholder="$t('webform.fields.featuresPlaceholder')"
                     />
                   </div>
-                  <div class="webform-field">
-                    <div class="webform-references-head">
-                      <label class="form-label webform-references-label">{{ $t('webform.fields.languages') }}</label>
-                      <button
-                        v-if="websiteLanguages.length < 5"
-                        type="button"
-                        class="webform-reference-add"
-                        @click="addLanguage"
-                      >
-                        {{ $t('webform.fields.addLanguage') }}
-                      </button>
-                    </div>
-                    <p class="webform-field-hint">{{ $t('webform.fields.languagesHint') }}</p>
-
-                    <div class="webform-references space-y-3">
-                      <div
-                        v-for="(_, index) in websiteLanguages"
-                        :key="index"
-                        class="webform-reference-row"
-                      >
-                        <label :for="`wf-lang-${index}`" class="sr-only">
-                          {{ $t('webform.fields.languageLabel', { number: index + 1 }) }}
-                        </label>
-                        <input
-                          :id="`wf-lang-${index}`"
-                          v-model="websiteLanguages[index]"
-                          type="text"
-                          class="form-input webform-input"
-                          :placeholder="$t('webform.fields.languagePlaceholder')"
-                        />
-                        <button
-                          v-if="websiteLanguages.length > 1"
-                          type="button"
-                          class="webform-reference-remove"
-                          :aria-label="$t('webform.fields.removeLanguage')"
-                          @click="removeLanguage(index)"
-                        >
-                          <i class="fas fa-times" aria-hidden="true"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                  <WebFormDynamicList
+                    ref="languagesRef"
+                    id-prefix="wf-lang"
+                    :label="$t('webform.fields.languages')"
+                    :hint="$t('webform.fields.languagesHint')"
+                    :add-label="$t('webform.fields.addLanguage')"
+                    :remove-label="$t('webform.fields.removeLanguage')"
+                    item-label-key="webform.fields.languageLabel"
+                    :placeholder="$t('webform.fields.languagePlaceholder')"
+                    :max="5"
+                  />
                 </div>
               </section>
 
@@ -216,50 +154,19 @@
                 </header>
 
                 <div class="webform-fields">
-                  <div class="webform-field">
-                    <div class="webform-references-head">
-                      <label class="form-label webform-references-label">{{ $t('webform.fields.websiteReferences') }} <span class="text-accent-blue">*</span></label>
-                      <button
-                        v-if="websiteReferences.length < 3"
-                        type="button"
-                        class="webform-reference-add"
-                        @click="addReference"
-                      >
-                        {{ $t('webform.fields.addWebsiteReference') }}
-                      </button>
-                    </div>
-                    <p class="webform-field-hint">{{ $t('webform.fields.websiteReferencesHint') }}</p>
-
-                    <div class="webform-references space-y-3">
-                      <div
-                        v-for="(_, index) in websiteReferences"
-                        :key="index"
-                        class="webform-reference-row"
-                      >
-                        <label :for="`wf-ref-${index}`" class="sr-only">
-                          {{ $t('webform.fields.websiteReferenceLabel', { number: index + 1 }) }}
-                        </label>
-                        <input
-                          :id="`wf-ref-${index}`"
-                          v-model="websiteReferences[index]"
-                          type="url"
-                          inputmode="url"
-                          :required="index === 0"
-                          class="form-input webform-input"
-                          :placeholder="$t('webform.fields.websiteReferencePlaceholder')"
-                        />
-                        <button
-                          v-if="websiteReferences.length > 1"
-                          type="button"
-                          class="webform-reference-remove"
-                          :aria-label="$t('webform.fields.removeWebsiteReference')"
-                          @click="removeReference(index)"
-                        >
-                          <i class="fas fa-times" aria-hidden="true"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                  <WebFormDynamicList
+                    ref="referencesRef"
+                    id-prefix="wf-ref"
+                    :label="$t('webform.fields.websiteReferences')"
+                    :hint="$t('webform.fields.websiteReferencesHint')"
+                    :add-label="$t('webform.fields.addWebsiteReference')"
+                    :remove-label="$t('webform.fields.removeWebsiteReference')"
+                    item-label-key="webform.fields.websiteReferenceLabel"
+                    :placeholder="$t('webform.fields.websiteReferencePlaceholder')"
+                    input-type="url"
+                    :max="3"
+                    required
+                  />
                   <div class="webform-field">
                     <label for="wf-colors" class="form-label">{{ $t('webform.fields.colors') }}</label>
                     <p class="webform-field-hint">{{ $t('webform.fields.colorsHint') }}</p>
@@ -513,8 +420,18 @@ import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { RouterLink } from 'vue-router'
 import WebFormHeader from '../components/WebFormHeader.vue'
+import WebFormDynamicList from '../components/WebFormDynamicList.vue'
 
 const { t } = useI18n()
+
+type DynamicListExpose = {
+  getValues: () => string[]
+  hasRequiredValue: () => boolean
+}
+
+const socialLinksRef = ref<DynamicListExpose | null>(null)
+const languagesRef = ref<DynamicListExpose | null>(null)
+const referencesRef = ref<DynamicListExpose | null>(null)
 
 const form = ref({
   name: '',
@@ -537,10 +454,6 @@ const form = ref({
   notes: '',
   _gotcha: '',
 })
-
-const websiteReferences = ref([''])
-const websiteLanguages = ref([''])
-const socialLinks = ref([''])
 
 const isSubmitting = ref(false)
 const submitted = ref(false)
@@ -592,42 +505,6 @@ const yesNoAnswers = computed(() => [
   { value: 'no', label: t('webform.assetAnswers.no') },
 ])
 
-const addReference = () => {
-  if (websiteReferences.value.length < 3) {
-    websiteReferences.value.push('')
-  }
-}
-
-const removeReference = (index: number) => {
-  if (websiteReferences.value.length > 1) {
-    websiteReferences.value.splice(index, 1)
-  }
-}
-
-const addLanguage = () => {
-  if (websiteLanguages.value.length < 5) {
-    websiteLanguages.value.push('')
-  }
-}
-
-const removeLanguage = (index: number) => {
-  if (websiteLanguages.value.length > 1) {
-    websiteLanguages.value.splice(index, 1)
-  }
-}
-
-const addSocialLink = () => {
-  if (socialLinks.value.length < 5) {
-    socialLinks.value.push('')
-  }
-}
-
-const removeSocialLink = (index: number) => {
-  if (socialLinks.value.length > 1) {
-    socialLinks.value.splice(index, 1)
-  }
-}
-
 const handleSubmit = async () => {
   errorMessage.value = ''
   agreeError.value = false
@@ -637,7 +514,7 @@ const handleSubmit = async () => {
     return
   }
 
-  const referenceUrls = websiteReferences.value.map((url) => url.trim()).filter(Boolean)
+  const referenceUrls = referencesRef.value?.getValues() ?? []
   if (!referenceUrls.length) {
     errorMessage.value = t('webform.websiteReferencesRequired')
     return
@@ -652,8 +529,8 @@ const handleSubmit = async () => {
       body: JSON.stringify({
         ...form.value,
         websiteReferences: referenceUrls,
-        languages: websiteLanguages.value.map((lang) => lang.trim()).filter(Boolean),
-        socialLinks: socialLinks.value.map((url) => url.trim()).filter(Boolean),
+        languages: languagesRef.value?.getValues() ?? [],
+        socialLinks: socialLinksRef.value?.getValues() ?? [],
       }),
     })
 

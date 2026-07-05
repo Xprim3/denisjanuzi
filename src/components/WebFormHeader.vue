@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/95 backdrop-blur-sm shadow-lg">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-dark-bg shadow-lg md:bg-dark-bg/95 md:backdrop-blur-sm">
     <nav class="webform-shell py-3 sm:py-4 safe-top">
       <div class="flex items-center justify-between">
         <RouterLink
