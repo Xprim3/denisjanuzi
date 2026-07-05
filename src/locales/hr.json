@@ -120,7 +120,7 @@
     "submit": "Pošalji zahtjev",
     "submitting": "Slanje...",
     "error": "Nešto je pošlo po krivu. Pokušajte ponovno ili mi pišite izravno na email.",
-    "agreeLabel": "Potvrđujem da su navedeni podaci točni i pristajem na njihovo slanje Denis Januziju isključivo u svrhu pregleda i odgovora na moj zahtjev za web stranicu.",
+    "agreeLabel": "Potvrđujem da su navedeni podaci točni i pristajem na njihovo slanje izravno e-poštom Denis Januziju isključivo u svrhu pregleda i odgovora na moj zahtjev za web stranicu. Vaši podaci se ne pohranjuju u nijednu bazu podataka.",
     "agreeNotice": "Molimo pričekajte 1–2 dana da se vaš zahtjev pregleda. Ako bude odobren, bit ćete obaviješteni i kontaktirani za daljnji razgovor.",
     "agreeRequired": "Molimo potvrdite svoj pristanak prije slanja obrasca.",
     "websiteReferencesRequired": "Molimo dodajte barem jednu referencu web stranice.",

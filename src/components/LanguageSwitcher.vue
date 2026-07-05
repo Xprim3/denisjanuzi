@@ -2,10 +2,11 @@
   <div class="relative">
     <button
       @click="toggleDropdown"
-      class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-gray-700 hover:border-accent-blue/50 bg-dark-bg/50 hover:bg-dark-bg transition-all duration-200 text-white text-sm font-medium"
-      :class="{ 'border-accent-blue/50': isOpen }"
+      class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-dark-bg/50 hover:bg-dark-bg transition-all duration-200 text-white text-sm font-medium"
+      :class="{ 'bg-dark-bg': isOpen }"
+      :aria-label="`Language: ${currentLang.name}`"
     >
-      <i class="fas fa-globe text-accent-blue"></i>
+      <LanguageFlag :locale="currentLanguage" :alt="currentLang.name" />
       <span class="hidden sm:inline">{{ currentLanguage.toUpperCase() }}</span>
       <i class="fas fa-chevron-down text-xs transition-transform duration-200" :class="{ 'rotate-180': isOpen }"></i>
     </button>
@@ -28,10 +29,11 @@
           v-for="lang in languages"
           :key="lang.code"
           @click="changeLanguage(lang.code)"
-          class="w-full px-4 py-3 text-left text-white hover:bg-accent-blue/10 transition-colors duration-200 flex items-center gap-3"
+          class="w-full px-4 py-3 text-left text-sm text-white hover:bg-accent-blue/10 transition-colors duration-200 flex items-center gap-3"
           :class="{ 'bg-accent-blue/20': currentLanguage === lang.code }"
         >
-          <span class="text-sm font-medium">{{ lang.name }}</span>
+          <LanguageFlag :locale="lang.code" :alt="lang.name" />
+          <span class="font-medium">{{ lang.name }}</span>
           <i v-if="currentLanguage === lang.code" class="fas fa-check text-accent-blue ml-auto"></i>
         </button>
       </div>
@@ -42,6 +44,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import LanguageFlag from './LanguageFlag.vue'
 
 const { locale } = useI18n()
 
@@ -52,10 +55,14 @@ const languages = [
   { code: 'en', name: 'English' },
   { code: 'de', name: 'Deutsch' },
   { code: 'sq', name: 'Shqip' },
-  { code: 'hr', name: 'Hrvatski' }
+  { code: 'hr', name: 'Hrvatski' },
 ]
 
 const currentLanguage = computed(() => locale.value)
+
+const currentLang = computed(
+  () => languages.find((lang) => lang.code === currentLanguage.value) ?? languages[0],
+)
 
 const toggleDropdown = () => {
   isOpen.value = !isOpen.value

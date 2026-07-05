@@ -121,7 +121,7 @@
     "submit": "Anfrage senden",
     "submitting": "Wird gesendet...",
     "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt per E-Mail.",
-    "agreeLabel": "Ich bestätige, dass die angegebenen Informationen korrekt sind, und willige ein, dass sie ausschließlich zur Prüfung und Beantwortung meiner Website-Anfrage an Denis Januzi übermittelt werden.",
+    "agreeLabel": "Ich bestätige, dass die angegebenen Informationen korrekt sind, und willige ein, dass sie ausschließlich direkt per E-Mail an Denis Januzi zur Prüfung und Beantwortung meiner Website-Anfrage gesendet werden. Ihre Angaben werden in keiner Datenbank gespeichert.",
     "agreeNotice": "Bitte rechnen Sie mit 1–2 Tagen für die Prüfung Ihrer Anfrage. Bei Zusage werden Sie benachrichtigt und für ein weiteres Gespräch kontaktiert.",
     "agreeRequired": "Bitte bestätigen Sie Ihre Einwilligung, bevor Sie das Formular absenden.",
     "websiteReferencesRequired": "Bitte fügen Sie mindestens eine Website-Referenz hinzu.",

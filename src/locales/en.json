@@ -121,7 +121,7 @@
     "submit": "Send Request",
     "submitting": "Sending...",
     "error": "Something went wrong. Please try again or email me directly.",
-    "agreeLabel": "I confirm that the information provided is accurate and I consent to it being submitted to Denis Januzi solely to review and respond to my website request.",
+    "agreeLabel": "I confirm that the information provided is accurate and I consent to it being sent directly to Denis Januzi's email solely to review and respond to my website request. Your details are not stored in any database.",
     "agreeNotice": "Please allow 1–2 days for your request to be reviewed. If approved, you will be notified and contacted to discuss the project further.",
     "agreeRequired": "Please confirm your consent before submitting the form.",
     "websiteReferencesRequired": "Please add at least one website reference.",
