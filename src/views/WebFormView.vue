@@ -1,5 +1,5 @@
 <template>
-  <div class="webform-page min-h-[100dvh] bg-dark-bg relative flex flex-col">
+  <div class="webform-page min-h-[100dvh] bg-dark-bg relative">
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       <div class="bg-gradient-orb bg-gradient-orb-1 opacity-[0.07]"></div>
       <div class="bg-gradient-orb bg-gradient-orb-2 opacity-[0.07]"></div>
@@ -7,9 +7,9 @@
 
     <WebFormHeader />
 
-    <main class="webform-main relative z-10 flex-1 flex flex-col min-h-0">
+    <main class="webform-main relative z-10">
       <!-- Success -->
-      <div v-if="submitted" class="flex-1 flex items-center justify-center px-4 py-12 sm:py-16">
+      <div v-if="submitted" class="min-h-[calc(100dvh-4rem)] flex items-center justify-center px-4 py-12 sm:py-16">
         <div class="webform-success w-full max-w-md text-center">
           <div class="webform-success-icon mx-auto mb-6">
             <i class="fas fa-check text-green-400 text-2xl" aria-hidden="true"></i>
@@ -28,8 +28,7 @@
 
       <!-- Form -->
       <template v-else>
-        <div class="flex-1 overflow-y-auto overscroll-contain">
-          <div class="webform-shell webform-page-body">
+        <div class="webform-shell webform-page-body">
             <header class="webform-intro">
               <h1 class="text-2xl sm:text-3xl font-bold text-white mb-3 leading-tight">
                 {{ $t('webform.heroTitle') }}
@@ -331,7 +330,6 @@
                 </div>
               </div>
             </form>
-          </div>
         </div>
       </template>
     </main>
