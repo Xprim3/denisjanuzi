@@ -124,21 +124,26 @@
     "agreeLabel": "I confirm that the information provided is accurate and I consent to it being submitted to Denis Januzi solely to review and respond to my website request.",
     "agreeNotice": "Please allow 1–2 days for your request to be reviewed. If approved, you will be notified and contacted to discuss the project further.",
     "agreeRequired": "Please confirm your consent before submitting the form.",
+    "websiteReferencesRequired": "Please add at least one website reference.",
     "sections": {
       "contact": "Your Details",
-      "project": "Project Overview",
-      "brand": "Brand & Colors",
+      "project": "Your Website",
+      "brand": "Design & Content",
       "hosting": "Domain & Hosting",
       "details": "Budget & Timeline"
     },
     "sectionHints": {
-      "contact": "How can I reach you?",
-      "project": "What do you need built?",
-      "brand": "Colors and materials you already have",
-      "hosting": "Can you provide these for deployment?",
-      "details": "Optional — helps me plan better"
+      "contact": "Who you are and how I can reach you.",
+      "project": "What the website should include.",
+      "brand": "Style inspiration, colors, and materials you can provide.",
+      "hosting": "What you already have for going live online.",
+      "details": "Rough budget and timing — optional but helpful."
     },
     "hostingNotice": "Domain and hosting must be registered in your name and paid for directly by you. They are required only to publish your website online. You are responsible for keeping both services active and covering all renewal fees.",
+    "namecheapProvider": {
+      "title": "Purchase at Namecheap",
+      "hint": "You can register your domain and hosting in your name at Namecheap."
+    },
     "fields": {
       "name": "Full Name",
       "email": "Email Address",
@@ -149,8 +154,14 @@
       "descriptionPlaceholder": "What is your business about? What should the website achieve?",
       "features": "Pages or features needed",
       "featuresPlaceholder": "e.g. Home, About, Menu, Contact form, Gallery, Blog...",
-      "websiteReferences": "Website references (optional)",
-      "websiteReferencesHint": "Add up to 3 websites you like — for inspiration or as style examples.",
+      "languages": "Website languages",
+      "languagesHint": "Add the languages the website should be available in.",
+      "languagePlaceholder": "e.g. English",
+      "languageLabel": "Language {number}",
+      "addLanguage": "Add language",
+      "removeLanguage": "Remove language",
+      "websiteReferences": "Website references",
+      "websiteReferencesHint": "Add at least one website you like — for inspiration or as a style example (up to 3).",
       "websiteReferenceLabel": "Reference {number}",
       "websiteReferencePlaceholder": "https://example.com",
       "addWebsiteReference": "Add reference",
@@ -164,6 +175,12 @@
       "hasPhotos": "Photos",
       "hasVideos": "Videos",
       "hasText": "Text / copy",
+      "socialLinks": "Business social links",
+      "socialLinksHint": "Optional — Instagram, Facebook, LinkedIn, etc.",
+      "socialLinkPlaceholder": "https://instagram.com/yourbusiness",
+      "socialLinkLabel": "Social link {number}",
+      "addSocialLink": "Add social link",
+      "removeSocialLink": "Remove social link",
       "hasDomain": "Domain name",
       "domainName": "Your domain name",
       "domainNamePlaceholder": "e.g. mybusiness.com",
@@ -171,7 +188,7 @@
       "budget": "Estimated Budget",
       "timeline": "Preferred Timeline",
       "notes": "Anything else?",
-      "notesPlaceholder": "Design preferences, inspiration links, languages, or other details..."
+      "notesPlaceholder": "Anything else I should know about your project..."
     },
     "websiteTypes": {
       "onePage": "One Page Website",

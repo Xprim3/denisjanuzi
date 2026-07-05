@@ -123,21 +123,26 @@
     "agreeLabel": "Potvrđujem da su navedeni podaci točni i pristajem na njihovo slanje Denis Januziju isključivo u svrhu pregleda i odgovora na moj zahtjev za web stranicu.",
     "agreeNotice": "Molimo pričekajte 1–2 dana da se vaš zahtjev pregleda. Ako bude odobren, bit ćete obaviješteni i kontaktirani za daljnji razgovor.",
     "agreeRequired": "Molimo potvrdite svoj pristanak prije slanja obrasca.",
+    "websiteReferencesRequired": "Molimo dodajte barem jednu referencu web stranice.",
     "sections": {
       "contact": "Vaši podaci",
-      "project": "Pregled projekta",
-      "brand": "Brend i boje",
+      "project": "Vaša web stranica",
+      "brand": "Dizajn i sadržaj",
       "hosting": "Domena i hosting",
       "details": "Budžet i rok"
     },
     "sectionHints": {
-      "contact": "Kako vas mogu kontaktirati?",
-      "project": "Što treba izgraditi?",
-      "brand": "Boje i materijali koje već imate",
-      "hosting": "Možete li ovo osigurati za objavu stranice?",
-      "details": "Opcionalno — pomaže u planiranju"
+      "contact": "Tko ste i kako vas mogu kontaktirati.",
+      "project": "Što web stranica treba uključivati.",
+      "brand": "Stilska inspiracija, boje i materijali koje možete dostaviti.",
+      "hosting": "Što već imate za objavu online.",
+      "details": "Okvirni budžet i rok — opcionalno, ali korisno."
     },
     "hostingNotice": "Domena i hosting moraju biti registrirani na vaše ime i plaćeni izravno od vas. Potrebni su samo za objavu web stranice online. Vi ste odgovorni za održavanje oba servisa aktivnima i pokrivanje svih naknada za obnovu.",
+    "namecheapProvider": {
+      "title": "Kupnja na Namecheapu",
+      "hint": "Domenu i hosting možete registrirati na svoje ime na Namecheapu."
+    },
     "fields": {
       "name": "Puno ime",
       "email": "Email adresa",
@@ -148,8 +153,14 @@
       "descriptionPlaceholder": "Čime se bavi vaš posao? Što web stranica treba postići?",
       "features": "Potrebne stranice ili značajke",
       "featuresPlaceholder": "npr. Početna, O nama, Jelovnik, Kontakt obrazac, Galerija...",
-      "websiteReferences": "Reference web stranica (opcionalno)",
-      "websiteReferencesHint": "Dodajte do 3 web stranice koje vam se sviđaju — za inspiraciju ili kao primjer stila.",
+      "languages": "Jezici web stranice",
+      "languagesHint": "Dodajte jezike na kojima web stranica treba biti dostupna.",
+      "languagePlaceholder": "npr. hrvatski",
+      "languageLabel": "Jezik {number}",
+      "addLanguage": "Dodaj jezik",
+      "removeLanguage": "Ukloni jezik",
+      "websiteReferences": "Reference web stranica",
+      "websiteReferencesHint": "Dodajte barem jednu web stranicu koja vam se sviđa — za inspiraciju ili kao primjer stila (do 3).",
       "websiteReferenceLabel": "Referenca {number}",
       "websiteReferencePlaceholder": "https://primjer.com",
       "addWebsiteReference": "Dodaj referencu",
@@ -163,6 +174,12 @@
       "hasPhotos": "Fotografije",
       "hasVideos": "Videozapisi",
       "hasText": "Tekst / sadržaj",
+      "socialLinks": "Društvene mreže posla",
+      "socialLinksHint": "Opcionalno — Instagram, Facebook, LinkedIn itd.",
+      "socialLinkPlaceholder": "https://instagram.com/vasposao",
+      "socialLinkLabel": "Link društvene mreže {number}",
+      "addSocialLink": "Dodaj link",
+      "removeSocialLink": "Ukloni link",
       "hasDomain": "Naziv domene",
       "domainName": "Vaša domena",
       "domainNamePlaceholder": "npr. mojposao.hr",
@@ -170,7 +187,7 @@
       "budget": "Procijenjeni budžet",
       "timeline": "Željeni rok",
       "notes": "Nešto drugo?",
-      "notesPlaceholder": "Preferencije dizajna, linkovi inspiracije, jezici ili drugi detalji..."
+      "notesPlaceholder": "Sve ostalo što bih trebao znati o vašem projektu..."
     },
     "websiteTypes": {
       "onePage": "Web stranica s jednom stranicom",

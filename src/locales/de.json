@@ -124,21 +124,26 @@
     "agreeLabel": "Ich bestätige, dass die angegebenen Informationen korrekt sind, und willige ein, dass sie ausschließlich zur Prüfung und Beantwortung meiner Website-Anfrage an Denis Januzi übermittelt werden.",
     "agreeNotice": "Bitte rechnen Sie mit 1–2 Tagen für die Prüfung Ihrer Anfrage. Bei Zusage werden Sie benachrichtigt und für ein weiteres Gespräch kontaktiert.",
     "agreeRequired": "Bitte bestätigen Sie Ihre Einwilligung, bevor Sie das Formular absenden.",
+    "websiteReferencesRequired": "Bitte fügen Sie mindestens eine Website-Referenz hinzu.",
     "sections": {
       "contact": "Ihre Angaben",
-      "project": "Projektübersicht",
-      "brand": "Marke & Farben",
+      "project": "Ihre Website",
+      "brand": "Design & Inhalte",
       "hosting": "Domain & Hosting",
       "details": "Budget & Zeitplan"
     },
     "sectionHints": {
-      "contact": "Wie kann ich Sie erreichen?",
-      "project": "Was soll gebaut werden?",
-      "brand": "Farben und vorhandene Materialien",
-      "hosting": "Können Sie diese für die Veröffentlichung bereitstellen?",
-      "details": "Optional — hilft bei der Planung"
+      "contact": "Wer Sie sind und wie ich Sie erreichen kann.",
+      "project": "Was die Website enthalten soll.",
+      "brand": "Stilinspiration, Farben und Materialien, die Sie bereitstellen können.",
+      "hosting": "Was Sie bereits für die Veröffentlichung online haben.",
+      "details": "Ungefähres Budget und Timing — optional, aber hilfreich."
     },
     "hostingNotice": "Domain und Hosting müssen auf Ihren Namen registriert und von Ihnen direkt bezahlt werden. Sie werden nur benötigt, um Ihre Website online zu veröffentlichen. Sie sind dafür verantwortlich, beide Dienste aktiv zu halten und alle Verlängerungsgebühren zu tragen.",
+    "namecheapProvider": {
+      "title": "Bei Namecheap kaufen",
+      "hint": "Sie können Domain und Hosting auf Ihren Namen bei Namecheap registrieren."
+    },
     "fields": {
       "name": "Vollständiger Name",
       "email": "E-Mail-Adresse",
@@ -149,8 +154,14 @@
       "descriptionPlaceholder": "Worum geht es in Ihrem Unternehmen? Was soll die Website erreichen?",
       "features": "Benötigte Seiten oder Funktionen",
       "featuresPlaceholder": "z. B. Startseite, Über uns, Menü, Kontaktformular, Galerie...",
-      "websiteReferences": "Website-Referenzen (optional)",
-      "websiteReferencesHint": "Bis zu 3 Websites hinzufügen — als Inspiration oder Stilbeispiel.",
+      "languages": "Website-Sprachen",
+      "languagesHint": "Fügen Sie die Sprachen hinzu, in denen die Website verfügbar sein soll.",
+      "languagePlaceholder": "z. B. Deutsch",
+      "languageLabel": "Sprache {number}",
+      "addLanguage": "Sprache hinzufügen",
+      "removeLanguage": "Sprache entfernen",
+      "websiteReferences": "Website-Referenzen",
+      "websiteReferencesHint": "Mindestens eine Website hinzufügen — als Inspiration oder Stilbeispiel (bis zu 3).",
       "websiteReferenceLabel": "Referenz {number}",
       "websiteReferencePlaceholder": "https://beispiel.de",
       "addWebsiteReference": "Referenz hinzufügen",
@@ -164,6 +175,12 @@
       "hasPhotos": "Fotos",
       "hasVideos": "Videos",
       "hasText": "Texte / Inhalte",
+      "socialLinks": "Social-Media-Links des Unternehmens",
+      "socialLinksHint": "Optional — Instagram, Facebook, LinkedIn usw.",
+      "socialLinkPlaceholder": "https://instagram.com/ihrefirma",
+      "socialLinkLabel": "Social-Media-Link {number}",
+      "addSocialLink": "Link hinzufügen",
+      "removeSocialLink": "Link entfernen",
       "hasDomain": "Domainname",
       "domainName": "Ihr Domainname",
       "domainNamePlaceholder": "z. B. meinefirma.de",
@@ -171,7 +188,7 @@
       "budget": "Geschätztes Budget",
       "timeline": "Gewünschter Zeitplan",
       "notes": "Sonstiges",
-      "notesPlaceholder": "Designwünsche, Inspirationslinks, Sprachen oder weitere Details..."
+      "notesPlaceholder": "Alles Weitere, das ich über Ihr Projekt wissen sollte..."
     },
     "websiteTypes": {
       "onePage": "One-Page-Website",

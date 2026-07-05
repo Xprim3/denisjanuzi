@@ -9,6 +9,8 @@ interface WebFormPayload {
   websiteType?: string
   description?: string
   features?: string
+  languages?: string | string[]
+  socialLinks?: string | string[]
   websiteReferences?: string[]
   existingWebsite?: string
   colorNotes?: string
@@ -160,6 +162,12 @@ function label(map: Record<string, string>, value?: string): string {
   return map[value.trim()] || value.trim()
 }
 
+function normalizeList(value?: string | string[]): string[] {
+  if (Array.isArray(value)) return value.map((item) => item.trim()).filter(Boolean)
+  if (value?.trim()) return [value.trim()]
+  return []
+}
+
 function formatDomainAnswer(body: WebFormPayload): string {
   const answer = label(ASSET_ANSWERS, body.hasDomain)
   const name = body.domainName?.trim()
@@ -167,7 +175,7 @@ function formatDomainAnswer(body: WebFormPayload): string {
   return answer
 }
 
-function buildPlainText(body: WebFormPayload, name: string, email: string, description: string, websiteType: string, referenceUrls: string[]): string {
+function buildPlainText(body: WebFormPayload, name: string, email: string, description: string, websiteType: string, referenceUrls: string[], languages: string[], socialLinks: string[]): string {
   const lines = [
     'New Website Request',
     'Submitted via denisjanuzi.com/webform',
@@ -177,6 +185,7 @@ function buildPlainText(body: WebFormPayload, name: string, email: string, descr
     `Email: ${email}`,
     body.phone?.trim() ? `Phone: ${body.phone.trim()}` : '',
     body.company?.trim() ? `Company: ${body.company.trim()}` : '',
+    socialLinks.length ? `\nSocial Links:\n${socialLinks.join('\n')}` : '',
     '',
     '--- Project ---',
     `Website Type: ${label(WEBSITE_TYPES, websiteType)}`,
@@ -184,10 +193,11 @@ function buildPlainText(body: WebFormPayload, name: string, email: string, descr
     'Description:',
     description,
     body.features?.trim() ? `\nFeatures / Pages:\n${body.features.trim()}` : '',
-    referenceUrls.length ? `\nWebsite References:\n${referenceUrls.join('\n')}` : '',
+    languages.length ? `Languages: ${languages.join(', ')}` : '',
     '',
-    '--- Brand & Content ---',
-    body.colorNotes?.trim() ? `Preferred Colors:\n${body.colorNotes.trim()}` : '',
+    '--- Design & Content ---',
+    referenceUrls.length ? `Website References:\n${referenceUrls.join('\n')}` : '',
+    body.colorNotes?.trim() ? `\nPreferred Colors:\n${body.colorNotes.trim()}` : '',
     label(ASSET_ANSWERS, body.hasLogo) ? `Business Logo: ${label(ASSET_ANSWERS, body.hasLogo)}` : '',
     label(ASSET_ANSWERS, body.hasPhotos) ? `Photos: ${label(ASSET_ANSWERS, body.hasPhotos)}` : '',
     label(ASSET_ANSWERS, body.hasVideos) ? `Videos: ${label(ASSET_ANSWERS, body.hasVideos)}` : '',
@@ -206,7 +216,7 @@ function buildPlainText(body: WebFormPayload, name: string, email: string, descr
   return lines.filter((line, index, all) => !(line === '' && all[index - 1] === '')).join('\n')
 }
 
-function buildHtml(body: WebFormPayload, name: string, email: string, description: string, websiteType: string, referenceUrls: string[]): string {
+function buildHtml(body: WebFormPayload, name: string, email: string, description: string, websiteType: string, referenceUrls: string[], languages: string[], socialLinks: string[]): string {
   const submittedAt = new Date().toLocaleString('en-GB', {
     dateStyle: 'medium',
     timeStyle: 'short',
@@ -222,16 +232,20 @@ function buildHtml(body: WebFormPayload, name: string, email: string, descriptio
 
   const projectRows = [
     row('Website type', label(WEBSITE_TYPES, websiteType)),
-    row('Budget', label(BUDGETS, body.budget)),
-    row('Timeline', label(TIMELINES, body.timeline)),
+    row('Languages', languages.join(', ')),
   ].join('')
 
   const contentRows = [
+    row('Preferred colors', body.colorNotes?.trim() || ''),
     row('Business logo', label(ASSET_ANSWERS, body.hasLogo)),
     row('Photos', label(ASSET_ANSWERS, body.hasPhotos)),
     row('Videos', label(ASSET_ANSWERS, body.hasVideos)),
     row('Text / copy', label(ASSET_ANSWERS, body.hasText)),
-    row('Preferred colors', body.colorNotes?.trim() || ''),
+  ].join('')
+
+  const budgetRows = [
+    row('Budget', label(BUDGETS, body.budget)),
+    row('Timeline', label(TIMELINES, body.timeline)),
   ].join('')
 
   const hostingRows = [
@@ -270,12 +284,14 @@ function buildHtml(body: WebFormPayload, name: string, email: string, descriptio
             <td style="padding:0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                 ${dataTableSection('Contact details', contactRows)}
-                ${dataTableSection('Project overview', projectRows)}
+                ${linkListSection('Social links', socialLinks)}
+                ${dataTableSection('Your website', projectRows)}
                 ${textSection('Project description', description)}
                 ${body.features?.trim() ? textSection('Pages & features', body.features.trim()) : ''}
                 ${linkListSection('Website references', referenceUrls)}
-                ${dataTableSection('Brand & content', contentRows)}
+                ${dataTableSection('Design & content', contentRows)}
                 ${dataTableSection('Domain & hosting', hostingRows)}
+                ${dataTableSection('Budget & timeline', budgetRows)}
                 ${body.notes?.trim() ? textSection('Additional notes', body.notes.trim()) : ''}
               </table>
             </td>
@@ -391,9 +407,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       : []
   ).map((url) => url.trim()).filter(Boolean)
 
+  if (!referenceUrls.length) {
+    return res.status(400).json({ error: 'Please add at least one website reference.' })
+  }
+
+  const languages = normalizeList(body.languages)
+  const socialLinks = normalizeList(body.socialLinks)
   const toEmail = process.env.CONTACT_EMAIL || 'denisjanuzi@gmail.com'
-  const html = buildHtml(body, name, email, description, websiteType, referenceUrls)
-  const text = buildPlainText(body, name, email, description, websiteType, referenceUrls)
+  const html = buildHtml(body, name, email, description, websiteType, referenceUrls, languages, socialLinks)
+  const text = buildPlainText(body, name, email, description, websiteType, referenceUrls, languages, socialLinks)
   const subject = `Website Request: ${name}${body.company?.trim() ? ` (${body.company.trim()})` : ''}`
   const mailOptions = { to: toEmail, replyTo: email, subject, html, text }
 

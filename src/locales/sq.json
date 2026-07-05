@@ -124,21 +124,26 @@
     "agreeLabel": "Konfirmoj se informacioni i dhënë është i saktë dhe pajtohem që të dërgohet te Denis Januzi vetëm për shqyrtimin dhe përgjigjen e kërkesës sime për website.",
     "agreeNotice": "Ju lutem prisni 1–2 ditë që kërkesa juaj të shqyrtohet. Nëse aprovohet, do të njoftoheni dhe do t'ju kontaktoj për diskutim të mëtejshëm.",
     "agreeRequired": "Ju lutem konfirmoni pëlqimin tuaj para se të dërgoni formularin.",
+    "websiteReferencesRequired": "Ju lutem shtoni të paktën një referencë website.",
     "sections": {
       "contact": "Të Dhënat Tuaja",
-      "project": "Përmbledhje Projekti",
-      "brand": "Marka & Ngjyrat",
+      "project": "Website-i Juaj",
+      "brand": "Dizajni & Përmbajtja",
       "hosting": "Domain & Hosting",
       "details": "Buxheti & Afati"
     },
     "sectionHints": {
-      "contact": "Si mund t'ju kontaktoj?",
-      "project": "Çfarë duhet ndërtuar?",
-      "brand": "Ngjyrat dhe materialet që keni gati",
-      "hosting": "A mund t'i siguroni këto për publikimin?",
-      "details": "Opsionale — ndihmon në planifikim"
+      "contact": "Kush jeni dhe si mund t'ju kontaktoj.",
+      "project": "Çfarë duhet të përfshijë website-i.",
+      "brand": "Inspirim stili, ngjyra dhe materiale që mund të siguroni.",
+      "hosting": "Çfarë keni tashmë për ta publikuar online.",
+      "details": "Buxheti dhe afati i përafërt — opsionale, por e dobishme."
     },
     "hostingNotice": "Domain-i dhe hosting-u duhet të regjistrohen në emrin tuaj dhe të paguhen direkt nga ju. Ato nevojiten vetëm për të publikuar website-in online. Ju jeni përgjegjës për t'i mbajtur të dyja shërbimet aktive dhe për të mbuluar të gjitha tarifat e rinovimit.",
+    "namecheapProvider": {
+      "title": "Bli te Namecheap",
+      "hint": "Mund të regjistroni domain-in dhe hosting-un në emrin tuaj te Namecheap."
+    },
     "fields": {
       "name": "Emri i Plotë",
       "email": "Adresa Email",
@@ -149,8 +154,14 @@
       "descriptionPlaceholder": "Për çfarë është biznesi juaj? Çfarë duhet të arrijë website-i?",
       "features": "Faqet ose funksionet e nevojshme",
       "featuresPlaceholder": "p.sh. Ballina, Rreth nesh, Menu, Formular kontakti, Galeri...",
-      "websiteReferences": "Referenca website (opsionale)",
-      "websiteReferencesHint": "Shtoni deri në 3 website që ju pëlqejnë — për inspirim ose si shembuj stili.",
+      "languages": "Gjuhët e website-it",
+      "languagesHint": "Shtoni gjuhët në të cilat duhet të jetë i disponueshëm website-i.",
+      "languagePlaceholder": "p.sh. Shqip",
+      "languageLabel": "Gjuha {number}",
+      "addLanguage": "Shto gjuhë",
+      "removeLanguage": "Hiq gjuhën",
+      "websiteReferences": "Referenca website",
+      "websiteReferencesHint": "Shtoni të paktën një website që ju pëlqen — për inspirim ose si shembull stili (deri në 3).",
       "websiteReferenceLabel": "Referenca {number}",
       "websiteReferencePlaceholder": "https://shembull.com",
       "addWebsiteReference": "Shto referencë",
@@ -164,6 +175,12 @@
       "hasPhotos": "Foto",
       "hasVideos": "Video",
       "hasText": "Tekst / përmbajtje",
+      "socialLinks": "Linqet sociale të biznesit",
+      "socialLinksHint": "Opsionale — Instagram, Facebook, LinkedIn, etj.",
+      "socialLinkPlaceholder": "https://instagram.com/biznesi",
+      "socialLinkLabel": "Link social {number}",
+      "addSocialLink": "Shto link social",
+      "removeSocialLink": "Hiq linkun social",
       "hasDomain": "Emri i domain-it",
       "domainName": "Domain-i juaj",
       "domainNamePlaceholder": "p.sh. biznesiim.com",
@@ -171,7 +188,7 @@
       "budget": "Buxheti i Vlerësuar",
       "timeline": "Afati i Preferuar",
       "notes": "Diçka tjetër?",
-      "notesPlaceholder": "Preferenca dizajni, linke inspirimi, gjuhë, ose detaje të tjera..."
+      "notesPlaceholder": "Çdo gjë tjetër që duhet të di për projektin tuaj..."
     },
     "websiteTypes": {
       "onePage": "Website me Një Faqe",

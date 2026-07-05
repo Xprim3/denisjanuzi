@@ -41,8 +41,13 @@
             <form id="webform" @submit.prevent="handleSubmit" class="webform-form">
               <!-- Contact -->
               <section class="webform-group" aria-labelledby="wf-section-contact">
-                <h2 id="wf-section-contact" class="webform-group-title">{{ $t('webform.sections.contact') }}</h2>
-                <p class="webform-group-hint">{{ $t('webform.sectionHints.contact') }}</p>
+                <header class="webform-group-head">
+                  <div class="webform-group-head-text">
+                    <h2 id="wf-section-contact" class="webform-group-title">{{ $t('webform.sections.contact') }}</h2>
+                    <p class="webform-group-hint">{{ $t('webform.sectionHints.contact') }}</p>
+                  </div>
+                  <i class="fas fa-user webform-group-head-icon" aria-hidden="true"></i>
+                </header>
 
                 <div class="webform-fields">
                   <div class="webform-field-row">
@@ -65,18 +70,71 @@
                       <input id="wf-company" v-model="form.company" type="text" autocomplete="organization" class="form-input webform-input" />
                     </div>
                   </div>
+                  <div class="webform-field">
+                    <div class="webform-references-head">
+                      <label class="form-label webform-references-label">{{ $t('webform.fields.socialLinks') }}</label>
+                      <button
+                        v-if="socialLinks.length < 5"
+                        type="button"
+                        class="webform-reference-add"
+                        @click="addSocialLink"
+                      >
+                        {{ $t('webform.fields.addSocialLink') }}
+                      </button>
+                    </div>
+
+                    <div class="webform-references space-y-3">
+                      <div
+                        v-for="(_, index) in socialLinks"
+                        :key="index"
+                        class="webform-reference-row"
+                      >
+                        <label :for="`wf-social-${index}`" class="sr-only">
+                          {{ $t('webform.fields.socialLinkLabel', { number: index + 1 }) }}
+                        </label>
+                        <input
+                          :id="`wf-social-${index}`"
+                          v-model="socialLinks[index]"
+                          type="url"
+                          inputmode="url"
+                          class="form-input webform-input"
+                          :placeholder="$t('webform.fields.socialLinkPlaceholder')"
+                        />
+                        <button
+                          v-if="socialLinks.length > 1"
+                          type="button"
+                          class="webform-reference-remove"
+                          :aria-label="$t('webform.fields.removeSocialLink')"
+                          @click="removeSocialLink(index)"
+                        >
+                          <i class="fas fa-times" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </section>
 
               <!-- Project -->
               <section class="webform-group" aria-labelledby="wf-section-project">
-                <h2 id="wf-section-project" class="webform-group-title">{{ $t('webform.sections.project') }}</h2>
-                <p class="webform-group-hint">{{ $t('webform.sectionHints.project') }}</p>
+                <header class="webform-group-head">
+                  <div class="webform-group-head-text">
+                    <h2 id="wf-section-project" class="webform-group-title">{{ $t('webform.sections.project') }}</h2>
+                    <p class="webform-group-hint">{{ $t('webform.sectionHints.project') }}</p>
+                  </div>
+                  <i class="fas fa-globe webform-group-head-icon" aria-hidden="true"></i>
+                </header>
 
                 <div class="webform-fields">
                   <div class="webform-field">
                     <label for="wf-type" class="form-label">{{ $t('webform.fields.websiteType') }} <span class="text-accent-blue">*</span></label>
-                    <select id="wf-type" v-model="form.websiteType" required class="form-input webform-input webform-select">
+                    <select
+                      id="wf-type"
+                      v-model="form.websiteType"
+                      required
+                      class="form-input webform-input webform-select"
+                      :class="{ 'webform-select--placeholder': !form.websiteType }"
+                    >
                       <option value="" disabled>{{ $t('webform.selectPlaceholder') }}</option>
                       <option v-for="type in websiteTypes" :key="type.value" :value="type.value">{{ type.label }}</option>
                     </select>
@@ -104,7 +162,63 @@
                   </div>
                   <div class="webform-field">
                     <div class="webform-references-head">
-                      <label class="form-label webform-references-label">{{ $t('webform.fields.websiteReferences') }}</label>
+                      <label class="form-label webform-references-label">{{ $t('webform.fields.languages') }}</label>
+                      <button
+                        v-if="websiteLanguages.length < 5"
+                        type="button"
+                        class="webform-reference-add"
+                        @click="addLanguage"
+                      >
+                        {{ $t('webform.fields.addLanguage') }}
+                      </button>
+                    </div>
+                    <p class="webform-field-hint">{{ $t('webform.fields.languagesHint') }}</p>
+
+                    <div class="webform-references space-y-3">
+                      <div
+                        v-for="(_, index) in websiteLanguages"
+                        :key="index"
+                        class="webform-reference-row"
+                      >
+                        <label :for="`wf-lang-${index}`" class="sr-only">
+                          {{ $t('webform.fields.languageLabel', { number: index + 1 }) }}
+                        </label>
+                        <input
+                          :id="`wf-lang-${index}`"
+                          v-model="websiteLanguages[index]"
+                          type="text"
+                          class="form-input webform-input"
+                          :placeholder="$t('webform.fields.languagePlaceholder')"
+                        />
+                        <button
+                          v-if="websiteLanguages.length > 1"
+                          type="button"
+                          class="webform-reference-remove"
+                          :aria-label="$t('webform.fields.removeLanguage')"
+                          @click="removeLanguage(index)"
+                        >
+                          <i class="fas fa-times" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Design & Content -->
+              <section class="webform-group" aria-labelledby="wf-section-brand">
+                <header class="webform-group-head">
+                  <div class="webform-group-head-text">
+                    <h2 id="wf-section-brand" class="webform-group-title">{{ $t('webform.sections.brand') }}</h2>
+                    <p class="webform-group-hint">{{ $t('webform.sectionHints.brand') }}</p>
+                  </div>
+                  <i class="fas fa-palette webform-group-head-icon" aria-hidden="true"></i>
+                </header>
+
+                <div class="webform-fields">
+                  <div class="webform-field">
+                    <div class="webform-references-head">
+                      <label class="form-label webform-references-label">{{ $t('webform.fields.websiteReferences') }} <span class="text-accent-blue">*</span></label>
                       <button
                         v-if="websiteReferences.length < 3"
                         type="button"
@@ -130,6 +244,7 @@
                           v-model="websiteReferences[index]"
                           type="url"
                           inputmode="url"
+                          :required="index === 0"
                           class="form-input webform-input"
                           :placeholder="$t('webform.fields.websiteReferencePlaceholder')"
                         />
@@ -145,13 +260,6 @@
                       </div>
                     </div>
                   </div>
-                </div>
-              </section>
-
-              <!-- Brand & Design -->
-              <section class="webform-group" :aria-label="$t('webform.sections.brand')">
-
-                <div class="webform-fields">
                   <div class="webform-field">
                     <label for="wf-colors" class="form-label">{{ $t('webform.fields.colors') }}</label>
                     <p class="webform-field-hint">{{ $t('webform.fields.colorsHint') }}</p>
@@ -169,28 +277,48 @@
                     <div class="webform-field-row">
                       <div class="webform-field">
                         <label for="wf-has-logo" class="form-label">{{ $t('webform.fields.hasLogo') }}</label>
-                        <select id="wf-has-logo" v-model="form.hasLogo" class="form-input webform-input webform-select">
+                        <select
+                          id="wf-has-logo"
+                          v-model="form.hasLogo"
+                          class="form-input webform-input webform-select"
+                          :class="{ 'webform-select--placeholder': !form.hasLogo }"
+                        >
                           <option value="">{{ $t('webform.selectPlaceholder') }}</option>
                           <option v-for="option in assetAnswers" :key="option.value" :value="option.value">{{ option.label }}</option>
                         </select>
                       </div>
                       <div class="webform-field">
                         <label for="wf-has-photos" class="form-label">{{ $t('webform.fields.hasPhotos') }}</label>
-                        <select id="wf-has-photos" v-model="form.hasPhotos" class="form-input webform-input webform-select">
+                        <select
+                          id="wf-has-photos"
+                          v-model="form.hasPhotos"
+                          class="form-input webform-input webform-select"
+                          :class="{ 'webform-select--placeholder': !form.hasPhotos }"
+                        >
                           <option value="">{{ $t('webform.selectPlaceholder') }}</option>
                           <option v-for="option in assetAnswers" :key="option.value" :value="option.value">{{ option.label }}</option>
                         </select>
                       </div>
                       <div class="webform-field">
                         <label for="wf-has-videos" class="form-label">{{ $t('webform.fields.hasVideos') }}</label>
-                        <select id="wf-has-videos" v-model="form.hasVideos" class="form-input webform-input webform-select">
+                        <select
+                          id="wf-has-videos"
+                          v-model="form.hasVideos"
+                          class="form-input webform-input webform-select"
+                          :class="{ 'webform-select--placeholder': !form.hasVideos }"
+                        >
                           <option value="">{{ $t('webform.selectPlaceholder') }}</option>
                           <option v-for="option in assetAnswers" :key="option.value" :value="option.value">{{ option.label }}</option>
                         </select>
                       </div>
                       <div class="webform-field">
                         <label for="wf-has-text" class="form-label">{{ $t('webform.fields.hasText') }}</label>
-                        <select id="wf-has-text" v-model="form.hasText" class="form-input webform-input webform-select">
+                        <select
+                          id="wf-has-text"
+                          v-model="form.hasText"
+                          class="form-input webform-input webform-select"
+                          :class="{ 'webform-select--placeholder': !form.hasText }"
+                        >
                           <option value="">{{ $t('webform.selectPlaceholder') }}</option>
                           <option v-for="option in assetAnswers" :key="option.value" :value="option.value">{{ option.label }}</option>
                         </select>
@@ -202,14 +330,24 @@
 
               <!-- Domain & Hosting -->
               <section class="webform-group" aria-labelledby="wf-section-hosting">
-                <h2 id="wf-section-hosting" class="webform-group-title">{{ $t('webform.sections.hosting') }}</h2>
-                <p class="webform-group-hint">{{ $t('webform.sectionHints.hosting') }}</p>
+                <header class="webform-group-head">
+                  <div class="webform-group-head-text">
+                    <h2 id="wf-section-hosting" class="webform-group-title">{{ $t('webform.sections.hosting') }}</h2>
+                    <p class="webform-group-hint">{{ $t('webform.sectionHints.hosting') }}</p>
+                  </div>
+                  <i class="fas fa-server webform-group-head-icon" aria-hidden="true"></i>
+                </header>
 
                 <div class="webform-fields">
                   <div class="webform-field-row">
                     <div class="webform-field">
                       <label for="wf-has-domain" class="form-label">{{ $t('webform.fields.hasDomain') }}</label>
-                      <select id="wf-has-domain" v-model="form.hasDomain" class="form-input webform-input webform-select">
+                      <select
+                        id="wf-has-domain"
+                        v-model="form.hasDomain"
+                        class="form-input webform-input webform-select"
+                        :class="{ 'webform-select--placeholder': !form.hasDomain }"
+                      >
                         <option value="">{{ $t('webform.selectPlaceholder') }}</option>
                         <option v-for="option in yesNoAnswers" :key="option.value" :value="option.value">{{ option.label }}</option>
                       </select>
@@ -228,11 +366,30 @@
                     </div>
                     <div class="webform-field">
                       <label for="wf-has-hosting" class="form-label">{{ $t('webform.fields.hasHosting') }}</label>
-                      <select id="wf-has-hosting" v-model="form.hasHosting" class="form-input webform-input webform-select">
+                      <select
+                        id="wf-has-hosting"
+                        v-model="form.hasHosting"
+                        class="form-input webform-input webform-select"
+                        :class="{ 'webform-select--placeholder': !form.hasHosting }"
+                      >
                         <option value="">{{ $t('webform.selectPlaceholder') }}</option>
                         <option v-for="option in yesNoAnswers" :key="option.value" :value="option.value">{{ option.label }}</option>
                       </select>
                     </div>
+                  </div>
+
+                  <div v-if="form.hasDomain === 'no' || form.hasHosting === 'no'" class="webform-provider-box">
+                    <p class="webform-provider-title">{{ $t('webform.namecheapProvider.title') }}</p>
+                    <p class="webform-field-hint">{{ $t('webform.namecheapProvider.hint') }}</p>
+                    <a
+                      href="https://www.namecheap.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="webform-provider-link"
+                    >
+                      Namecheap
+                      <i class="fas fa-external-link-alt text-[10px] ml-1 opacity-70" aria-hidden="true"></i>
+                    </a>
                   </div>
 
                   <div class="webform-notice" role="note">
@@ -242,23 +399,38 @@
                 </div>
               </section>
 
-              <!-- Details -->
+              <!-- Budget & Timeline -->
               <section class="webform-group" aria-labelledby="wf-section-details">
-                <h2 id="wf-section-details" class="webform-group-title">{{ $t('webform.sections.details') }}</h2>
-                <p class="webform-group-hint">{{ $t('webform.sectionHints.details') }}</p>
+                <header class="webform-group-head">
+                  <div class="webform-group-head-text">
+                    <h2 id="wf-section-details" class="webform-group-title">{{ $t('webform.sections.details') }}</h2>
+                    <p class="webform-group-hint">{{ $t('webform.sectionHints.details') }}</p>
+                  </div>
+                  <i class="fas fa-calendar-alt webform-group-head-icon" aria-hidden="true"></i>
+                </header>
 
                 <div class="webform-fields">
                   <div class="webform-field-row">
                     <div class="webform-field">
                       <label for="wf-budget" class="form-label">{{ $t('webform.fields.budget') }}</label>
-                      <select id="wf-budget" v-model="form.budget" class="form-input webform-input webform-select">
+                      <select
+                        id="wf-budget"
+                        v-model="form.budget"
+                        class="form-input webform-input webform-select"
+                        :class="{ 'webform-select--placeholder': !form.budget }"
+                      >
                         <option value="">{{ $t('webform.selectPlaceholder') }}</option>
                         <option v-for="b in budgets" :key="b.value" :value="b.value">{{ b.label }}</option>
                       </select>
                     </div>
                     <div class="webform-field">
                       <label for="wf-timeline" class="form-label">{{ $t('webform.fields.timeline') }}</label>
-                      <select id="wf-timeline" v-model="form.timeline" class="form-input webform-input webform-select">
+                      <select
+                        id="wf-timeline"
+                        v-model="form.timeline"
+                        class="form-input webform-input webform-select"
+                        :class="{ 'webform-select--placeholder': !form.timeline }"
+                      >
                         <option value="">{{ $t('webform.selectPlaceholder') }}</option>
                         <option v-for="tl in timelines" :key="tl.value" :value="tl.value">{{ tl.label }}</option>
                       </select>
@@ -367,6 +539,8 @@ const form = ref({
 })
 
 const websiteReferences = ref([''])
+const websiteLanguages = ref([''])
+const socialLinks = ref([''])
 
 const isSubmitting = ref(false)
 const submitted = ref(false)
@@ -430,12 +604,42 @@ const removeReference = (index: number) => {
   }
 }
 
+const addLanguage = () => {
+  if (websiteLanguages.value.length < 5) {
+    websiteLanguages.value.push('')
+  }
+}
+
+const removeLanguage = (index: number) => {
+  if (websiteLanguages.value.length > 1) {
+    websiteLanguages.value.splice(index, 1)
+  }
+}
+
+const addSocialLink = () => {
+  if (socialLinks.value.length < 5) {
+    socialLinks.value.push('')
+  }
+}
+
+const removeSocialLink = (index: number) => {
+  if (socialLinks.value.length > 1) {
+    socialLinks.value.splice(index, 1)
+  }
+}
+
 const handleSubmit = async () => {
   errorMessage.value = ''
   agreeError.value = false
 
   if (!agreed.value) {
     agreeError.value = true
+    return
+  }
+
+  const referenceUrls = websiteReferences.value.map((url) => url.trim()).filter(Boolean)
+  if (!referenceUrls.length) {
+    errorMessage.value = t('webform.websiteReferencesRequired')
     return
   }
 
@@ -447,7 +651,9 @@ const handleSubmit = async () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         ...form.value,
-        websiteReferences: websiteReferences.value.map((url) => url.trim()).filter(Boolean),
+        websiteReferences: referenceUrls,
+        languages: websiteLanguages.value.map((lang) => lang.trim()).filter(Boolean),
+        socialLinks: socialLinks.value.map((url) => url.trim()).filter(Boolean),
       }),
     })
 

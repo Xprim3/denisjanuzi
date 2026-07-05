@@ -619,17 +619,40 @@ fieldset {
 }
 
 .webform-group-title {
-  margin: 0 0 0.375rem;
+  margin: 0 0 0.25rem;
   font-size: 1.0625rem;
   font-weight: 600;
   color: #fff;
   line-height: 1.35;
 }
 
-.webform-group-hint {
+.webform-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   margin: 0 0 1.25rem;
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.webform-group-head-text {
+  min-width: 0;
+  flex: 1;
+}
+
+.webform-group-head-icon {
+  flex-shrink: 0;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: rgba(96, 165, 250, 0.75);
+}
+
+.webform-group-hint {
+  margin: 0;
   font-size: 0.8125rem;
-  color: #64748b;
+  color: #94a3b8;
   line-height: 1.5;
 }
 
@@ -693,16 +716,15 @@ fieldset {
   align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
-  border: 1px solid #374151;
-  background: rgba(15, 23, 42, 0.4);
+  border: none;
+  background: rgba(0, 0, 0, 0.38);
   color: #94a3b8;
-  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .webform-reference-remove:hover {
   color: #f87171;
-  border-color: rgba(248, 113, 113, 0.4);
-  background: rgba(248, 113, 113, 0.08);
+  background: rgba(248, 113, 113, 0.12);
 }
 
 .webform-reference-add {
@@ -736,9 +758,39 @@ fieldset {
   min-height: 2.875rem;
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
-  background-color: rgba(15, 23, 42, 0.4);
+  border: none;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.38);
+  box-shadow: none;
   -webkit-appearance: none;
   appearance: none;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+.webform-input::placeholder {
+  color: #64748b;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 1;
+}
+
+.webform-input:hover:not(:focus):not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.44);
+}
+
+.webform-input:focus {
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.52);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.webform-input option {
+  background-color: #0f172a;
+  color: #ffffff;
 }
 
 .webform-textarea {
@@ -750,11 +802,30 @@ fieldset {
 }
 
 .webform-select {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color-scheme: dark;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.875rem center;
   background-size: 1.125rem;
   padding-right: 2.75rem;
+}
+
+.webform-select.webform-select--placeholder {
+  color: #64748b;
+}
+
+.webform-select option {
+  color: #ffffff;
+  font-size: 16px;
+  background-color: #0f172a;
+}
+
+.webform-select option[value=""] {
+  color: #64748b;
 }
 
 .webform-footer {
@@ -908,6 +979,45 @@ fieldset {
   line-height: 1.55;
 }
 
+.webform-provider-box {
+  padding: 1rem 1.125rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(55, 65, 81, 0.8);
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.webform-provider-title {
+  margin: 0 0 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  line-height: 1.4;
+}
+
+.webform-provider-list {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+}
+
+.webform-provider-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #60A5FA;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.webform-provider-link:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
 .webform-success-icon {
   width: 4rem;
   height: 4rem;
@@ -964,6 +1074,15 @@ fieldset {
 
   .webform-group-title {
     font-size: 1.125rem;
+  }
+
+  .webform-group-head {
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.125rem;
+  }
+
+  .webform-group-head-icon {
+    font-size: 1.25rem;
   }
 
   .webform-group-hint {
