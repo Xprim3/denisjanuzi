@@ -171,5 +171,4 @@ const hobbies = computed(() => [
   t('about.hobbyList.learning'),
   t('about.hobbyList.traveling')
 ])
-
 </script>

@@ -80,6 +80,9 @@
     "description1": "Prihvaćam ograničen broj web projekata samostalno i izvan radnog vremena. Uvijek sam otvoren za promišljene razgovore o idejama, osobnim projektima ili jednostavnim web rješenjima koja imaju koristi od jasnog i praktičnog pristupa.",
     "description2": "Ako vam treba jednostavna, kvalitetno izrađena web stranica za vaš posao ili imate manji web projekt na umu, rado ću istražiti ima li suradnja smisla.",
     "description3": "Sa sjedištem u Trieru, Njemačka, surađujem na daljinu kada vrijeme to dopušta. Slobodno me kontaktirajte putem emaila ili se povežite sa mnom na društvenim mrežama.",
+    "clientFormBadge": "Važno",
+    "clientFormTitle": "Web projekt? Možda ćete morati ispuniti obrazac",
+    "clientFormNote": "Kada me kontaktirate o web stranici, mogu vam prvo poslati kratki obrazac zahtjeva za projekt. To mi pomaže razumjeti vaše ciljeve, rokove i zahtjeve prije nego što razgovaramo o detaljima.",
     "email": "Email",
     "sendEmail": "Pošalji mi email",
     "directMessaging": "Izravne poruke",
@@ -106,5 +109,69 @@
     "builtWith": "Izrađeno s",
     "using": "koristeći",
     "rightsReserved": "Sva prava pridržana."
+  },
+  "webform": {
+    "title": "Zahtjev za web stranicu",
+    "heroTitle": "Recite mi o svom projektu",
+    "subtitle": "Ispunite detalje ispod i javit ću vam se s pažnjom — obično unutar 1–2 dana.",
+    "backHome": "Natrag na portfolio",
+    "close": "Zatvori",
+    "selectPlaceholder": "Odaberite opciju",
+    "submit": "Pošalji zahtjev",
+    "submitting": "Slanje...",
+    "error": "Nešto je pošlo po krivu. Pokušajte ponovno ili mi pišite izravno na email.",
+    "privacyNote": "Vaši podaci koriste se samo za odgovor na vaš zahtjev. Ne dijelim ih s trećim stranama.",
+    "sections": {
+      "contact": "Vaši podaci",
+      "project": "Pregled projekta",
+      "details": "Budžet i rok"
+    },
+    "sectionHints": {
+      "contact": "Kako vas mogu kontaktirati?",
+      "project": "Što treba izgraditi?",
+      "details": "Opcionalno — pomaže u planiranju"
+    },
+    "fields": {
+      "name": "Puno ime",
+      "email": "Email adresa",
+      "phone": "Broj telefona",
+      "company": "Naziv tvrtke / posla",
+      "websiteType": "Vrsta web stranice",
+      "description": "Opišite projekt",
+      "descriptionPlaceholder": "Čime se bavi vaš posao? Što web stranica treba postići?",
+      "features": "Potrebne stranice ili značajke",
+      "featuresPlaceholder": "npr. Početna, O nama, Jelovnik, Kontakt obrazac, Galerija...",
+      "existingWebsite": "Postojeća web stranica (ako postoji)",
+      "budget": "Procijenjeni budžet",
+      "timeline": "Željeni rok",
+      "notes": "Nešto drugo?",
+      "notesPlaceholder": "Preferencije dizajna, linkovi inspiracije, jezici ili drugi detalji..."
+    },
+    "websiteTypes": {
+      "business": "Poslovna / tvrtkina web stranica",
+      "restaurant": "Restoran / kafić",
+      "showroom": "Showroom / prikaz proizvoda",
+      "portfolio": "Portfolio / osobno",
+      "landing": "Landing stranica / promotivna",
+      "ecommerce": "Online trgovina",
+      "other": "Ostalo"
+    },
+    "budgets": {
+      "under500": "Ispod €500",
+      "500to1000": "€500 – €1.000",
+      "1000to2500": "€1.000 – €2.500",
+      "2500plus": "€2.500+",
+      "discuss": "Radije razgovaramo"
+    },
+    "timelines": {
+      "asap": "Što prije",
+      "1month": "Unutar 1 mjeseca",
+      "2to3months": "2–3 mjeseca",
+      "flexible": "Fleksibilno / bez žurbe"
+    },
+    "success": {
+      "title": "Zahtjev poslan!",
+      "message": "Hvala na javljanju. Primio sam vaš zahtjev i javit ću vam se što prije — obično unutar 1–2 dana."
+    }
   }
 }

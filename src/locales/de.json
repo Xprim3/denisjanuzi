@@ -3,7 +3,8 @@
     "home": "Startseite",
     "about": "Über mich",
     "projects": "Projekte",
-    "getInTouch": "Kontakt aufnehmen"
+    "getInTouch": "Kontakt aufnehmen",
+    "requestWebsite": "Website anfragen"
   },
   "hero": {
     "headline": "Entwicklung klarer, praktischer",
@@ -80,6 +81,9 @@
     "description1": "Ich übernehme eine begrenzte Anzahl von Webprojekten unabhängig und außerhalb der Arbeitszeiten. Ich bin immer offen für durchdachte Gespräche über Ideen, persönliche Projekte oder einfache Web-Lösungen, die von einem klaren und praktischen Ansatz profitieren.",
     "description2": "Wenn Sie eine einfache, gut gebaute Website für Ihr Unternehmen benötigen oder ein kleines Webprojekt im Kopf haben, erkunde ich gerne, ob eine Zusammenarbeit sinnvoll ist.",
     "description3": "Mit Sitz in Trier, Deutschland, arbeite ich remote zusammen, wenn die Zeit es erlaubt. Kontaktieren Sie mich gerne per E-Mail oder verbinden Sie sich mit mir in den sozialen Medien.",
+    "clientFormBadge": "Wichtig",
+    "clientFormTitle": "Website-Projekt? Möglicherweise müssen Sie ein Formular ausfüllen",
+    "clientFormNote": "Wenn Sie mich wegen einer Website kontaktieren, sende ich Ihnen gegebenenfalls zuerst ein kurzes Projekt-Anfrageformular. So verstehe ich Ihre Ziele, den Zeitplan und Ihre Anforderungen, bevor wir die Details besprechen.",
     "email": "E-Mail",
     "sendEmail": "Senden Sie mir eine E-Mail",
     "directMessaging": "Direktnachrichten",
@@ -106,5 +110,69 @@
     "builtWith": "Erstellt mit",
     "using": "mit",
     "rightsReserved": "Alle Rechte vorbehalten."
+  },
+  "webform": {
+    "title": "Website-Anfrage",
+    "heroTitle": "Erzählen Sie mir von Ihrem Projekt",
+    "subtitle": "Füllen Sie die Details unten aus — ich melde mich mit einer durchdachten Antwort, in der Regel innerhalb von 1–2 Tagen.",
+    "backHome": "Zurück zum Portfolio",
+    "close": "Schließen",
+    "selectPlaceholder": "Option wählen",
+    "submit": "Anfrage senden",
+    "submitting": "Wird gesendet...",
+    "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt per E-Mail.",
+    "privacyNote": "Ihre Angaben werden nur zur Beantwortung Ihrer Website-Anfrage verwendet. Ich gebe sie nicht an Dritte weiter.",
+    "sections": {
+      "contact": "Ihre Angaben",
+      "project": "Projektübersicht",
+      "details": "Budget & Zeitplan"
+    },
+    "sectionHints": {
+      "contact": "Wie kann ich Sie erreichen?",
+      "project": "Was soll gebaut werden?",
+      "details": "Optional — hilft bei der Planung"
+    },
+    "fields": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "phone": "Telefonnummer",
+      "company": "Firma / Unternehmen",
+      "websiteType": "Art der Website",
+      "description": "Projekt beschreiben",
+      "descriptionPlaceholder": "Worum geht es in Ihrem Unternehmen? Was soll die Website erreichen?",
+      "features": "Benötigte Seiten oder Funktionen",
+      "featuresPlaceholder": "z. B. Startseite, Über uns, Menü, Kontaktformular, Galerie...",
+      "existingWebsite": "Bestehende Website (falls vorhanden)",
+      "budget": "Geschätztes Budget",
+      "timeline": "Gewünschter Zeitplan",
+      "notes": "Sonstiges",
+      "notesPlaceholder": "Designwünsche, Inspirationslinks, Sprachen oder weitere Details..."
+    },
+    "websiteTypes": {
+      "business": "Unternehmenswebsite",
+      "restaurant": "Restaurant / Café",
+      "showroom": "Showroom / Produktpräsentation",
+      "portfolio": "Portfolio / Persönlich",
+      "landing": "Landing Page / Werbeseite",
+      "ecommerce": "Online-Shop",
+      "other": "Sonstiges"
+    },
+    "budgets": {
+      "under500": "Unter €500",
+      "500to1000": "€500 – €1.000",
+      "1000to2500": "€1.000 – €2.500",
+      "2500plus": "€2.500+",
+      "discuss": "Lieber besprechen"
+    },
+    "timelines": {
+      "asap": "So schnell wie möglich",
+      "1month": "Innerhalb 1 Monat",
+      "2to3months": "2–3 Monate",
+      "flexible": "Flexibel / Keine Eile"
+    },
+    "success": {
+      "title": "Anfrage gesendet!",
+      "message": "Vielen Dank für Ihre Nachricht. Ich habe Ihre Website-Anfrage erhalten und melde mich so schnell wie möglich — in der Regel innerhalb von 1–2 Tagen."
+    }
   }
 }

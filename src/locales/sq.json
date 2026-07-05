@@ -3,7 +3,8 @@
     "home": "Ballina",
     "about": "Rreth meje",
     "projects": "Projektet",
-    "getInTouch": "Kontakto"
+    "getInTouch": "Kontakto",
+    "requestWebsite": "Kërko Website"
   },
   "hero": {
     "headline": "Ndërtoj përvoja web",
@@ -80,6 +81,9 @@
     "description1": "Marr një numër të kufizuar projektesh web në mënyrë të pavarur dhe jashtë orarit të punës. Jam gjithmonë i hapur për biseda të menduara rreth ideve, projekteve personale ose zgjidhjeve të thjeshta web me qasje të qartë dhe praktike.",
     "description2": "Nëse ke nevojë për një faqe interneti të thjeshtë dhe të ndërtuar mirë për biznesin tënd, ose ke një projekt të vogël web në mendje, me kënaqësi mund të shohim nëse bashkëpunimi ka kuptim.",
     "description3": "Me bazë në Trier, Gjermani, bashkëpunoj në distancë kur koha e lejon. Mos hezito të më kontaktosh me email ose në rrjetet sociale.",
+    "clientFormBadge": "E rëndësishme",
+    "clientFormTitle": "Projekt website? Mund të duhet të plotësoni një formular",
+    "clientFormNote": "Kur më kontaktoni për një website, mund t'ju dërgoj fillimisht një formular të shkurtër kërkesë projekti. Kjo më ndihmon të kuptoj qëllimet, afatin kohor dhe kërkesat tuaja para se të diskutojmë detajet.",
     "email": "Email",
     "sendEmail": "Më dërgo një email",
     "directMessaging": "Mesazhe direkte",
@@ -106,5 +110,69 @@
     "builtWith": "Ndërtuar me",
     "using": "duke përdorur",
     "rightsReserved": "Të gjitha të drejtat e rezervuara."
+  },
+  "webform": {
+    "title": "Kërkesë për Website",
+    "heroTitle": "Më tregoni për projektin tuaj",
+    "subtitle": "Plotësoni detajet më poshtë dhe do t'ju përgjigjem me kujdes — zakonisht brenda 1–2 ditëve.",
+    "backHome": "Kthehu te Portofoli",
+    "close": "Mbyll",
+    "selectPlaceholder": "Zgjidh një opsion",
+    "submit": "Dërgo Kërkesën",
+    "submitting": "Duke dërguar...",
+    "error": "Diçka shkoi keq. Ju lutem provoni përsëri ose më shkruani direkt me email.",
+    "privacyNote": "Informacioni juaj përdoret vetëm për t'iu përgjigjur kërkesës suaj. Nuk e ndaj me palë të treta.",
+    "sections": {
+      "contact": "Të Dhënat Tuaja",
+      "project": "Përmbledhje Projekti",
+      "details": "Buxheti & Afati"
+    },
+    "sectionHints": {
+      "contact": "Si mund t'ju kontaktoj?",
+      "project": "Çfarë duhet ndërtuar?",
+      "details": "Opsionale — ndihmon në planifikim"
+    },
+    "fields": {
+      "name": "Emri i Plotë",
+      "email": "Adresa Email",
+      "phone": "Numri i Telefonit",
+      "company": "Emri i Biznesit / Kompanisë",
+      "websiteType": "Lloji i Website-it",
+      "description": "Përshkruani projektin",
+      "descriptionPlaceholder": "Për çfarë është biznesi juaj? Çfarë duhet të arrijë website-i?",
+      "features": "Faqet ose funksionet e nevojshme",
+      "featuresPlaceholder": "p.sh. Ballina, Rreth nesh, Menu, Formular kontakti, Galeri...",
+      "existingWebsite": "Website ekzistues (nëse ka)",
+      "budget": "Buxheti i Vlerësuar",
+      "timeline": "Afati i Preferuar",
+      "notes": "Diçka tjetër?",
+      "notesPlaceholder": "Preferenca dizajni, linke inspirimi, gjuhë, ose detaje të tjera..."
+    },
+    "websiteTypes": {
+      "business": "Website Biznesi / Kompanie",
+      "restaurant": "Restorant / Kafene",
+      "showroom": "Showroom / Prezantim Produktesh",
+      "portfolio": "Portfolio / Personal",
+      "landing": "Faqe Promovuese / Landing Page",
+      "ecommerce": "Dyqan Online",
+      "other": "Tjetër"
+    },
+    "budgets": {
+      "under500": "Nën €500",
+      "500to1000": "€500 – €1.000",
+      "1000to2500": "€1.000 – €2.500",
+      "2500plus": "€2.500+",
+      "discuss": "Preferoj ta diskutojmë"
+    },
+    "timelines": {
+      "asap": "Sa më shpejt të jetë e mundur",
+      "1month": "Brenda 1 muaji",
+      "2to3months": "2–3 muaj",
+      "flexible": "Flexible / Pa nxitim"
+    },
+    "success": {
+      "title": "Kërkesa u Dërgua!",
+      "message": "Faleminderit që më kontaktuat. E kam marrë kërkesën tuaj dhe do t'ju përgjigjem sa më shpejt — zakonisht brenda 1–2 ditëve."
+    }
   }
 }

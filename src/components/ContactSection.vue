@@ -112,10 +112,37 @@
           </div>
         </div>
       </div>
+
+      <!-- Client form notice -->
+      <div
+        class="contact-client-notice relative overflow-hidden rounded-2xl border-2 border-accent-blue/50 bg-gradient-to-br from-accent-blue/20 via-dark-secondary/90 to-dark-secondary/70 p-5 sm:p-6 md:p-8 mt-8 sm:mt-10 md:mt-12 shadow-[0_0_40px_rgba(59,130,246,0.15)]"
+        v-reveal="{ delay: 180 }"
+      >
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-accent-blue/20 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+        <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+        <div class="relative flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-5 md:gap-6">
+          <div class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-accent-blue/25 border border-accent-blue/40 flex items-center justify-center shadow-lg shadow-accent-blue/20">
+            <i class="fas fa-clipboard-list text-accent-light text-2xl sm:text-3xl" aria-hidden="true"></i>
+          </div>
+
+          <div class="flex-1 min-w-0">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-blue/20 border border-accent-blue/30 text-accent-light text-xs sm:text-sm font-semibold uppercase tracking-wider mb-3">
+              <i class="fas fa-info-circle text-[10px] sm:text-xs" aria-hidden="true"></i>
+              {{ $t('contact.clientFormBadge') }}
+            </span>
+            <h3 class="text-xl sm:text-2xl md:text-[1.65rem] font-bold text-white mb-3 leading-tight">
+              {{ $t('contact.clientFormTitle') }}
+            </h3>
+            <p class="text-gray-100 text-base sm:text-lg leading-relaxed">
+              {{ $t('contact.clientFormNote') }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-// Contact section - no form needed, just email and social links
 </script>
