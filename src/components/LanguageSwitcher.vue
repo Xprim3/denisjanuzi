@@ -7,7 +7,7 @@
       :aria-label="`Language: ${currentLang.name}`"
     >
       <LanguageFlag :locale="currentLanguage" :alt="currentLang.name" />
-      <span class="hidden sm:inline">{{ currentLanguage.toUpperCase() }}</span>
+      <span class="hidden lg:inline">{{ currentLang.name }}</span>
       <i class="fas fa-chevron-down text-xs transition-transform duration-200" :class="{ 'rotate-180': isOpen }"></i>
     </button>
 
