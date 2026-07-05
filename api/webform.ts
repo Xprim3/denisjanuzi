@@ -35,27 +35,88 @@ function escapeHtml(text: string): string {
 
 function row(label: string, value: string): string {
   if (!value?.trim()) return ''
-  return `<tr><td style="padding:8px 12px;border-bottom:1px solid #334155;color:#94a3b8;font-weight:600;width:180px;vertical-align:top;">${label}</td><td style="padding:8px 12px;border-bottom:1px solid #334155;color:#f1f5f9;white-space:pre-wrap;line-height:1.6;">${escapeHtml(value)}</td></tr>`
+  return `
+    <tr>
+      <td style="padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#64748b;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;width:160px;vertical-align:top;line-height:1.5;">${label}</td>
+      <td style="padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#0f172a;font-family:Arial,Helvetica,sans-serif;font-size:14px;vertical-align:top;line-height:1.6;">${escapeHtml(value)}</td>
+    </tr>
+  `
 }
 
-function block(title: string, content: string): string {
+function emailRow(label: string, value: string): string {
+  if (!value?.trim()) return ''
+  const safe = escapeHtml(value)
+  return `
+    <tr>
+      <td style="padding:12px 16px;border-bottom:1px solid #e2e8f0;color:#64748b;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;width:160px;vertical-align:top;line-height:1.5;">${label}</td>
+      <td style="padding:12px 16px;border-bottom:1px solid #e2e8f0;font-family:Arial,Helvetica,sans-serif;font-size:14px;vertical-align:top;line-height:1.6;">
+        <a href="mailto:${safe}" style="color:#2563eb;text-decoration:none;font-weight:600;">${safe}</a>
+      </td>
+    </tr>
+  `
+}
+
+function sectionHeader(title: string): string {
+  return `
+    <tr>
+      <td colspan="2" style="padding:14px 16px;background:#f8fafc;border-bottom:1px solid #e2e8f0;color:#334155;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;">${title}</td>
+    </tr>
+  `
+}
+
+function textSection(title: string, content: string): string {
   if (!content.trim()) return ''
   return `
-    <div style="padding:16px 12px;border-top:1px solid #334155;">
-      <p style="margin:0 0 8px;color:#94a3b8;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:0.04em;">${title}</p>
-      <p style="margin:0;color:#f1f5f9;white-space:pre-wrap;line-height:1.6;">${escapeHtml(content)}</p>
-    </div>
+    <tr>
+      <td colspan="2" style="padding:0;border-bottom:1px solid #e2e8f0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          ${sectionHeader(title)}
+          <tr>
+            <td style="padding:16px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.7;color:#334155;white-space:pre-wrap;">${escapeHtml(content)}</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
   `
 }
 
-function listBlock(title: string, items: string[]): string {
+function linkListSection(title: string, items: string[]): string {
   if (!items.length) return ''
+  const links = items.map((item) => {
+    const safe = escapeHtml(item)
+    return `<a href="${safe}" style="color:#2563eb;text-decoration:none;word-break:break-all;">${safe}</a>`
+  }).join('<br style="line-height:1.8;">')
+
   return `
-    <div style="padding:16px 12px;border-top:1px solid #334155;">
-      <p style="margin:0 0 8px;color:#94a3b8;font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:0.04em;">${title}</p>
-      <p style="margin:0;color:#f1f5f9;line-height:1.8;">${items.map((item) => escapeHtml(item)).join('<br>')}</p>
-    </div>
+    <tr>
+      <td colspan="2" style="padding:0;border-bottom:1px solid #e2e8f0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          ${sectionHeader(title)}
+          <tr>
+            <td style="padding:16px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.8;color:#334155;">${links}</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
   `
+}
+
+function dataTable(rows: string): string {
+  if (!rows.trim()) return ''
+  return `
+    <tr>
+      <td colspan="2" style="padding:0;border-bottom:1px solid #e2e8f0;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          ${rows}
+        </table>
+      </td>
+    </tr>
+  `
+}
+
+function dataTableSection(title: string, rowsHtml: string): string {
+  if (!rowsHtml.trim()) return ''
+  return dataTable(sectionHeader(title) + rowsHtml)
 }
 
 const WEBSITE_TYPES: Record<string, string> = {
@@ -109,7 +170,7 @@ function formatDomainAnswer(body: WebFormPayload): string {
 function buildPlainText(body: WebFormPayload, name: string, email: string, description: string, websiteType: string, referenceUrls: string[]): string {
   const lines = [
     'New Website Request',
-    'Submitted via denisjanuzi.dev/webform',
+    'Submitted via denisjanuzi.com/webform',
     '',
     '--- Contact ---',
     `Name: ${name}`,
@@ -146,42 +207,91 @@ function buildPlainText(body: WebFormPayload, name: string, email: string, descr
 }
 
 function buildHtml(body: WebFormPayload, name: string, email: string, description: string, websiteType: string, referenceUrls: string[]): string {
-  return `
-    <div style="font-family:Inter,Arial,sans-serif;background:#0F172A;padding:32px;">
-      <div style="max-width:640px;margin:0 auto;background:#1E293B;border-radius:12px;overflow:hidden;border:1px solid #334155;">
-        <div style="background:#3B82F6;padding:24px;">
-          <h1 style="margin:0;color:#fff;font-size:20px;">New Website Request</h1>
-          <p style="margin:8px 0 0;color:#dbeafe;font-size:14px;">Submitted via denisjanuzi.dev/webform</p>
-        </div>
-        <table style="width:100%;border-collapse:collapse;">
-          ${row('Name', name)}
-          ${row('Email', email)}
-          ${row('Phone', body.phone?.trim() || '')}
-          ${row('Company', body.company?.trim() || '')}
+  const submittedAt = new Date().toLocaleString('en-GB', {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+    timeZone: 'Europe/Berlin',
+  })
+
+  const contactRows = [
+    row('Name', name),
+    emailRow('Email', email),
+    row('Phone', body.phone?.trim() || ''),
+    row('Company', body.company?.trim() || ''),
+  ].join('')
+
+  const projectRows = [
+    row('Website type', label(WEBSITE_TYPES, websiteType)),
+    row('Budget', label(BUDGETS, body.budget)),
+    row('Timeline', label(TIMELINES, body.timeline)),
+  ].join('')
+
+  const contentRows = [
+    row('Business logo', label(ASSET_ANSWERS, body.hasLogo)),
+    row('Photos', label(ASSET_ANSWERS, body.hasPhotos)),
+    row('Videos', label(ASSET_ANSWERS, body.hasVideos)),
+    row('Text / copy', label(ASSET_ANSWERS, body.hasText)),
+    row('Preferred colors', body.colorNotes?.trim() || ''),
+  ].join('')
+
+  const hostingRows = [
+    row('Domain name', formatDomainAnswer(body)),
+    row('Hosting', label(ASSET_ANSWERS, body.hasHosting)),
+  ].join('')
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Website Request</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f1f5f9;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f1f5f9;">
+    <tr>
+      <td align="center" style="padding:32px 16px;">
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;background-color:#ffffff;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;">
+          <tr>
+            <td style="padding:28px 24px;background-color:#1e293b;">
+              <p style="margin:0 0 6px;font-family:Arial,Helvetica,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#93c5fd;">New lead</p>
+              <h1 style="margin:0 0 8px;font-family:Arial,Helvetica,sans-serif;font-size:24px;line-height:1.3;font-weight:700;color:#ffffff;">Website Request</h1>
+              <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;color:#cbd5e1;">${escapeHtml(name)}${body.company?.trim() ? ` · ${escapeHtml(body.company.trim())}` : ''}</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:16px 24px;background-color:#eff6ff;border-bottom:1px solid #dbeafe;">
+              <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;color:#1e40af;">
+                Reply directly to this email to contact the client at
+                <a href="mailto:${escapeHtml(email)}" style="color:#2563eb;font-weight:700;text-decoration:none;">${escapeHtml(email)}</a>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                ${dataTableSection('Contact details', contactRows)}
+                ${dataTableSection('Project overview', projectRows)}
+                ${textSection('Project description', description)}
+                ${body.features?.trim() ? textSection('Pages & features', body.features.trim()) : ''}
+                ${linkListSection('Website references', referenceUrls)}
+                ${dataTableSection('Brand & content', contentRows)}
+                ${dataTableSection('Domain & hosting', hostingRows)}
+                ${body.notes?.trim() ? textSection('Additional notes', body.notes.trim()) : ''}
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px 24px;background-color:#f8fafc;border-top:1px solid #e2e8f0;">
+              <p style="margin:0 0 4px;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.5;color:#64748b;">Submitted via denisjanuzi.com/webform</p>
+              <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.5;color:#94a3b8;">${submittedAt} (Europe/Berlin)</p>
+            </td>
+          </tr>
         </table>
-        <table style="width:100%;border-collapse:collapse;border-top:1px solid #334155;">
-          ${row('Website Type', label(WEBSITE_TYPES, websiteType))}
-          ${row('Budget', label(BUDGETS, body.budget))}
-          ${row('Timeline', label(TIMELINES, body.timeline))}
-        </table>
-        ${block('Project Description', description)}
-        ${body.features?.trim() ? block('Features / Pages Needed', body.features.trim()) : ''}
-        ${listBlock('Website References', referenceUrls)}
-        ${body.colorNotes?.trim() ? block('Preferred Colors', body.colorNotes.trim()) : ''}
-        <table style="width:100%;border-collapse:collapse;border-top:1px solid #334155;">
-          ${row('Business Logo', label(ASSET_ANSWERS, body.hasLogo))}
-          ${row('Photos', label(ASSET_ANSWERS, body.hasPhotos))}
-          ${row('Videos', label(ASSET_ANSWERS, body.hasVideos))}
-          ${row('Text / Copy', label(ASSET_ANSWERS, body.hasText))}
-        </table>
-        <table style="width:100%;border-collapse:collapse;border-top:1px solid #334155;">
-          ${row('Domain Name', formatDomainAnswer(body))}
-          ${row('Hosting', label(ASSET_ANSWERS, body.hasHosting))}
-        </table>
-        ${body.notes?.trim() ? block('Additional Notes', body.notes.trim()) : ''}
-      </div>
-    </div>
-  `
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`
 }
 
 async function sendViaGmail(options: {
