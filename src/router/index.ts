@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import WebFormView from '../views/WebFormView.vue'
+import { applyPageMeta } from '../utils/pageMeta'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -14,7 +15,6 @@ const router = createRouter({
       path: '/webform',
       name: 'webform',
       component: WebFormView,
-      meta: { title: 'Website Request | Denis Januzi' },
     },
   ],
   scrollBehavior(_to, _from, savedPosition) {
@@ -24,10 +24,7 @@ const router = createRouter({
 })
 
 router.afterEach((to) => {
-  const title =
-    (to.meta.title as string) ||
-    'Denis Januzi - Web Developer | Portfolio'
-  document.title = title
+  applyPageMeta(to.name as string | undefined)
 })
 
 export default router

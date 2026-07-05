@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /webform
+Disallow: /webform.html
 
 Sitemap: https://denisjanuzi.com/sitemap.xml

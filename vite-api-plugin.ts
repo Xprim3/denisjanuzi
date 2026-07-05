@@ -46,6 +46,15 @@ export function apiDevPlugin(): Plugin {
   return {
     name: 'vite-api-dev',
     configureServer(server) {
+      server.middlewares.use((req, _res, next) => {
+        const url = req.url?.split('?')[0]
+        if (url === '/webform') {
+          const query = req.url?.includes('?') ? `?${req.url.split('?')[1]}` : ''
+          req.url = `/webform.html${query}`
+        }
+        next()
+      })
+
       server.middlewares.use(async (req, res, next) => {
         const url = req.url?.split('?')[0]
         if (url !== '/api/webform') return next()
