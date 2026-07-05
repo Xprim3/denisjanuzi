@@ -1,27 +1,26 @@
 <template>
   <div class="webform-page min-h-[100dvh] bg-dark-bg relative flex flex-col">
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      <div class="bg-gradient-orb bg-gradient-orb-1 opacity-10"></div>
-      <div class="bg-gradient-orb bg-gradient-orb-2 opacity-10"></div>
-      <div class="grid-pattern opacity-30"></div>
+      <div class="bg-gradient-orb bg-gradient-orb-1 opacity-[0.07]"></div>
+      <div class="bg-gradient-orb bg-gradient-orb-2 opacity-[0.07]"></div>
     </div>
 
     <WebFormHeader />
 
     <main class="webform-main relative z-10 flex-1 flex flex-col min-h-0">
       <!-- Success -->
-      <div v-if="submitted" class="flex-1 flex items-center justify-center px-4 py-8 sm:py-12">
-        <div class="webform-success-card w-full max-w-md text-center p-8 sm:p-10">
+      <div v-if="submitted" class="flex-1 flex items-center justify-center px-4 py-12 sm:py-16">
+        <div class="webform-success w-full max-w-md text-center">
           <div class="webform-success-icon mx-auto mb-6">
-            <i class="fas fa-check text-green-400 text-2xl"></i>
+            <i class="fas fa-check text-green-400 text-2xl" aria-hidden="true"></i>
           </div>
-          <h2 class="text-2xl font-bold text-white mb-3">{{ $t('webform.success.title') }}</h2>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">{{ $t('webform.success.title') }}</h2>
           <p class="text-gray-400 mb-8 leading-relaxed">{{ $t('webform.success.message') }}</p>
           <RouterLink
             to="/"
-            class="btn-primary inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-accent-blue hover:bg-accent-light text-white px-6 py-3.5 rounded-xl font-semibold"
+            class="btn-primary inline-flex items-center justify-center gap-2 bg-accent-blue hover:bg-accent-light text-white px-6 py-3 rounded-lg font-semibold"
           >
-            <i class="fas fa-arrow-left text-sm"></i>
+            <i class="fas fa-arrow-left text-sm" aria-hidden="true"></i>
             {{ $t('webform.backHome') }}
           </RouterLink>
         </div>
@@ -29,189 +28,310 @@
 
       <!-- Form -->
       <template v-else>
-        <!-- Scrollable content -->
         <div class="flex-1 overflow-y-auto overscroll-contain">
-          <div class="webform-hero px-4 sm:px-6 pt-[calc(4.5rem+env(safe-area-inset-top))] sm:pt-28 pb-5 sm:pb-8">
-            <div class="container mx-auto max-w-2xl">
-              <span class="webform-badge">{{ $t('webform.title') }}</span>
-              <h1 class="text-2xl sm:text-4xl font-bold text-white mt-3 mb-2 leading-tight">
+          <div class="webform-shell webform-page-body">
+            <header class="webform-intro">
+              <h1 class="text-2xl sm:text-3xl font-bold text-white mb-3 leading-tight">
                 {{ $t('webform.heroTitle') }}
               </h1>
               <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
                 {{ $t('webform.subtitle') }}
               </p>
-            </div>
+            </header>
+
+            <form id="webform" @submit.prevent="handleSubmit" class="webform-form">
+              <!-- Contact -->
+              <section class="webform-group" aria-labelledby="wf-section-contact">
+                <h2 id="wf-section-contact" class="webform-group-title">{{ $t('webform.sections.contact') }}</h2>
+                <p class="webform-group-hint">{{ $t('webform.sectionHints.contact') }}</p>
+
+                <div class="webform-fields">
+                  <div class="webform-field-row">
+                    <div class="webform-field">
+                      <label for="wf-name" class="form-label">{{ $t('webform.fields.name') }} <span class="text-accent-blue">*</span></label>
+                      <input id="wf-name" v-model="form.name" type="text" required autocomplete="name" class="form-input webform-input" />
+                    </div>
+                    <div class="webform-field">
+                      <label for="wf-email" class="form-label">{{ $t('webform.fields.email') }} <span class="text-accent-blue">*</span></label>
+                      <input id="wf-email" v-model="form.email" type="email" required autocomplete="email" inputmode="email" class="form-input webform-input" />
+                    </div>
+                  </div>
+                  <div class="webform-field-row">
+                    <div class="webform-field">
+                      <label for="wf-phone" class="form-label">{{ $t('webform.fields.phone') }}</label>
+                      <input id="wf-phone" v-model="form.phone" type="tel" autocomplete="tel" inputmode="tel" class="form-input webform-input" />
+                    </div>
+                    <div class="webform-field">
+                      <label for="wf-company" class="form-label">{{ $t('webform.fields.company') }}</label>
+                      <input id="wf-company" v-model="form.company" type="text" autocomplete="organization" class="form-input webform-input" />
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Project -->
+              <section class="webform-group" aria-labelledby="wf-section-project">
+                <h2 id="wf-section-project" class="webform-group-title">{{ $t('webform.sections.project') }}</h2>
+                <p class="webform-group-hint">{{ $t('webform.sectionHints.project') }}</p>
+
+                <div class="webform-fields">
+                  <div class="webform-field">
+                    <label for="wf-type" class="form-label">{{ $t('webform.fields.websiteType') }} <span class="text-accent-blue">*</span></label>
+                    <select id="wf-type" v-model="form.websiteType" required class="form-input webform-input webform-select">
+                      <option value="" disabled>{{ $t('webform.selectPlaceholder') }}</option>
+                      <option v-for="type in websiteTypes" :key="type.value" :value="type.value">{{ type.label }}</option>
+                    </select>
+                  </div>
+                  <div class="webform-field">
+                    <label for="wf-desc" class="form-label">{{ $t('webform.fields.description') }} <span class="text-accent-blue">*</span></label>
+                    <textarea
+                      id="wf-desc"
+                      v-model="form.description"
+                      required
+                      rows="4"
+                      class="form-input webform-input webform-textarea"
+                      :placeholder="$t('webform.fields.descriptionPlaceholder')"
+                    />
+                  </div>
+                  <div class="webform-field">
+                    <label for="wf-features" class="form-label">{{ $t('webform.fields.features') }}</label>
+                    <textarea
+                      id="wf-features"
+                      v-model="form.features"
+                      rows="3"
+                      class="form-input webform-input webform-textarea"
+                      :placeholder="$t('webform.fields.featuresPlaceholder')"
+                    />
+                  </div>
+                  <div class="webform-field">
+                    <div class="webform-references-head">
+                      <label class="form-label webform-references-label">{{ $t('webform.fields.websiteReferences') }}</label>
+                      <button
+                        v-if="websiteReferences.length < 3"
+                        type="button"
+                        class="webform-reference-add"
+                        @click="addReference"
+                      >
+                        {{ $t('webform.fields.addWebsiteReference') }}
+                      </button>
+                    </div>
+                    <p class="webform-field-hint">{{ $t('webform.fields.websiteReferencesHint') }}</p>
+
+                    <div class="webform-references space-y-3">
+                      <div
+                        v-for="(_, index) in websiteReferences"
+                        :key="index"
+                        class="webform-reference-row"
+                      >
+                        <label :for="`wf-ref-${index}`" class="sr-only">
+                          {{ $t('webform.fields.websiteReferenceLabel', { number: index + 1 }) }}
+                        </label>
+                        <input
+                          :id="`wf-ref-${index}`"
+                          v-model="websiteReferences[index]"
+                          type="url"
+                          inputmode="url"
+                          class="form-input webform-input"
+                          :placeholder="$t('webform.fields.websiteReferencePlaceholder')"
+                        />
+                        <button
+                          v-if="websiteReferences.length > 1"
+                          type="button"
+                          class="webform-reference-remove"
+                          :aria-label="$t('webform.fields.removeWebsiteReference')"
+                          @click="removeReference(index)"
+                        >
+                          <i class="fas fa-times" aria-hidden="true"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Brand & Design -->
+              <section class="webform-group" :aria-label="$t('webform.sections.brand')">
+
+                <div class="webform-fields">
+                  <div class="webform-field">
+                    <label for="wf-colors" class="form-label">{{ $t('webform.fields.colors') }}</label>
+                    <p class="webform-field-hint">{{ $t('webform.fields.colorsHint') }}</p>
+                    <textarea
+                      id="wf-colors"
+                      v-model="form.colorNotes"
+                      rows="2"
+                      class="form-input webform-input webform-textarea"
+                      :placeholder="$t('webform.fields.colorsPlaceholder')"
+                    />
+                  </div>
+                  <div class="webform-field">
+                    <span class="form-label">{{ $t('webform.fields.assets') }}</span>
+                    <p class="webform-field-hint">{{ $t('webform.fields.assetsHint') }}</p>
+                    <div class="webform-field-row">
+                      <div class="webform-field">
+                        <label for="wf-has-logo" class="form-label">{{ $t('webform.fields.hasLogo') }}</label>
+                        <select id="wf-has-logo" v-model="form.hasLogo" class="form-input webform-input webform-select">
+                          <option value="">{{ $t('webform.selectPlaceholder') }}</option>
+                          <option v-for="option in assetAnswers" :key="option.value" :value="option.value">{{ option.label }}</option>
+                        </select>
+                      </div>
+                      <div class="webform-field">
+                        <label for="wf-has-photos" class="form-label">{{ $t('webform.fields.hasPhotos') }}</label>
+                        <select id="wf-has-photos" v-model="form.hasPhotos" class="form-input webform-input webform-select">
+                          <option value="">{{ $t('webform.selectPlaceholder') }}</option>
+                          <option v-for="option in assetAnswers" :key="option.value" :value="option.value">{{ option.label }}</option>
+                        </select>
+                      </div>
+                      <div class="webform-field">
+                        <label for="wf-has-videos" class="form-label">{{ $t('webform.fields.hasVideos') }}</label>
+                        <select id="wf-has-videos" v-model="form.hasVideos" class="form-input webform-input webform-select">
+                          <option value="">{{ $t('webform.selectPlaceholder') }}</option>
+                          <option v-for="option in assetAnswers" :key="option.value" :value="option.value">{{ option.label }}</option>
+                        </select>
+                      </div>
+                      <div class="webform-field">
+                        <label for="wf-has-text" class="form-label">{{ $t('webform.fields.hasText') }}</label>
+                        <select id="wf-has-text" v-model="form.hasText" class="form-input webform-input webform-select">
+                          <option value="">{{ $t('webform.selectPlaceholder') }}</option>
+                          <option v-for="option in assetAnswers" :key="option.value" :value="option.value">{{ option.label }}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Domain & Hosting -->
+              <section class="webform-group" aria-labelledby="wf-section-hosting">
+                <h2 id="wf-section-hosting" class="webform-group-title">{{ $t('webform.sections.hosting') }}</h2>
+                <p class="webform-group-hint">{{ $t('webform.sectionHints.hosting') }}</p>
+
+                <div class="webform-fields">
+                  <div class="webform-field-row">
+                    <div class="webform-field">
+                      <label for="wf-has-domain" class="form-label">{{ $t('webform.fields.hasDomain') }}</label>
+                      <select id="wf-has-domain" v-model="form.hasDomain" class="form-input webform-input webform-select">
+                        <option value="">{{ $t('webform.selectPlaceholder') }}</option>
+                        <option v-for="option in yesNoAnswers" :key="option.value" :value="option.value">{{ option.label }}</option>
+                      </select>
+                      <div v-if="form.hasDomain === 'yes'" class="webform-field-nested">
+                        <label for="wf-domain-name" class="webform-sub-label">{{ $t('webform.fields.domainName') }}</label>
+                        <input
+                          id="wf-domain-name"
+                          v-model="form.domainName"
+                          type="text"
+                          inputmode="url"
+                          autocomplete="off"
+                          class="form-input webform-input"
+                          :placeholder="$t('webform.fields.domainNamePlaceholder')"
+                        />
+                      </div>
+                    </div>
+                    <div class="webform-field">
+                      <label for="wf-has-hosting" class="form-label">{{ $t('webform.fields.hasHosting') }}</label>
+                      <select id="wf-has-hosting" v-model="form.hasHosting" class="form-input webform-input webform-select">
+                        <option value="">{{ $t('webform.selectPlaceholder') }}</option>
+                        <option v-for="option in yesNoAnswers" :key="option.value" :value="option.value">{{ option.label }}</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="webform-notice" role="note">
+                    <i class="fas fa-info-circle webform-notice-icon" aria-hidden="true"></i>
+                    <p class="webform-notice-text">{{ $t('webform.hostingNotice') }}</p>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Details -->
+              <section class="webform-group" aria-labelledby="wf-section-details">
+                <h2 id="wf-section-details" class="webform-group-title">{{ $t('webform.sections.details') }}</h2>
+                <p class="webform-group-hint">{{ $t('webform.sectionHints.details') }}</p>
+
+                <div class="webform-fields">
+                  <div class="webform-field-row">
+                    <div class="webform-field">
+                      <label for="wf-budget" class="form-label">{{ $t('webform.fields.budget') }}</label>
+                      <select id="wf-budget" v-model="form.budget" class="form-input webform-input webform-select">
+                        <option value="">{{ $t('webform.selectPlaceholder') }}</option>
+                        <option v-for="b in budgets" :key="b.value" :value="b.value">{{ b.label }}</option>
+                      </select>
+                    </div>
+                    <div class="webform-field">
+                      <label for="wf-timeline" class="form-label">{{ $t('webform.fields.timeline') }}</label>
+                      <select id="wf-timeline" v-model="form.timeline" class="form-input webform-input webform-select">
+                        <option value="">{{ $t('webform.selectPlaceholder') }}</option>
+                        <option v-for="tl in timelines" :key="tl.value" :value="tl.value">{{ tl.label }}</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="webform-field">
+                    <label for="wf-notes" class="form-label">{{ $t('webform.fields.notes') }}</label>
+                    <textarea
+                      id="wf-notes"
+                      v-model="form.notes"
+                      rows="3"
+                      class="form-input webform-input webform-textarea"
+                      :placeholder="$t('webform.fields.notesPlaceholder')"
+                    />
+                  </div>
+                </div>
+              </section>
+
+              <input
+                v-model="form._gotcha"
+                type="text"
+                name="_gotcha"
+                tabindex="-1"
+                autocomplete="off"
+                class="sr-only"
+                aria-hidden="true"
+              />
+
+              <div class="webform-footer">
+                <p v-if="errorMessage" class="webform-error" role="alert">
+                  <i class="fas fa-exclamation-circle" aria-hidden="true"></i>
+                  {{ errorMessage }}
+                </p>
+
+                <div class="webform-footer-actions">
+                  <div class="webform-agree-wrap">
+                    <div class="webform-notice webform-agree-notice" :class="{ 'webform-agree-notice--invalid': agreeError }">
+                      <label class="webform-agree">
+                        <input
+                          v-model="agreed"
+                          type="checkbox"
+                          class="webform-agree-input"
+                          :aria-invalid="agreeError ? 'true' : 'false'"
+                        />
+                        <span class="webform-agree-box" aria-hidden="true">
+                          <i v-if="agreed" class="fas fa-check text-[10px]"></i>
+                        </span>
+                        <span class="webform-agree-content">
+                          <span class="webform-agree-text">{{ $t('webform.agreeLabel') }}</span>
+                          <span class="webform-agree-note">{{ $t('webform.agreeNotice') }}</span>
+                        </span>
+                      </label>
+                    </div>
+
+                    <p v-if="agreeError" class="webform-agree-error" role="alert">
+                      {{ $t('webform.agreeRequired') }}
+                    </p>
+                  </div>
+
+                  <button
+                    type="submit"
+                    :disabled="isSubmitting || !agreed"
+                    class="webform-submit-btn btn-primary bg-accent-blue hover:bg-accent-light disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold inline-flex items-center justify-center gap-2"
+                  >
+                    <i v-if="isSubmitting" class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                    <i v-else class="fas fa-paper-plane" aria-hidden="true"></i>
+                    {{ isSubmitting ? $t('webform.submitting') : $t('webform.submit') }}
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
-
-          <form
-            id="webform"
-            @submit.prevent="handleSubmit"
-            class="container mx-auto max-w-2xl px-4 sm:px-6 pb-4 sm:pb-8 space-y-4 sm:space-y-5"
-          >
-            <!-- Section 1: Contact -->
-            <section class="webform-section" aria-labelledby="section-contact">
-              <div class="webform-section-header">
-                <span class="webform-section-step" aria-hidden="true">1</span>
-                <div>
-                  <h2 id="section-contact" class="webform-section-title">{{ $t('webform.sections.contact') }}</h2>
-                  <p class="webform-section-desc">{{ $t('webform.sectionHints.contact') }}</p>
-                </div>
-              </div>
-              <div class="webform-section-body space-y-4">
-                <div class="webform-field">
-                  <label for="wf-name" class="form-label">{{ $t('webform.fields.name') }} <span class="text-accent-blue">*</span></label>
-                  <input id="wf-name" v-model="form.name" type="text" required autocomplete="name" class="form-input webform-input" />
-                </div>
-                <div class="webform-field">
-                  <label for="wf-email" class="form-label">{{ $t('webform.fields.email') }} <span class="text-accent-blue">*</span></label>
-                  <input id="wf-email" v-model="form.email" type="email" required autocomplete="email" inputmode="email" class="form-input webform-input" />
-                </div>
-                <div class="grid sm:grid-cols-2 gap-4">
-                  <div class="webform-field">
-                    <label for="wf-phone" class="form-label">{{ $t('webform.fields.phone') }}</label>
-                    <input id="wf-phone" v-model="form.phone" type="tel" autocomplete="tel" inputmode="tel" class="form-input webform-input" />
-                  </div>
-                  <div class="webform-field">
-                    <label for="wf-company" class="form-label">{{ $t('webform.fields.company') }}</label>
-                    <input id="wf-company" v-model="form.company" type="text" autocomplete="organization" class="form-input webform-input" />
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <!-- Section 2: Project -->
-            <section class="webform-section" aria-labelledby="section-project">
-              <div class="webform-section-header">
-                <span class="webform-section-step" aria-hidden="true">2</span>
-                <div>
-                  <h2 id="section-project" class="webform-section-title">{{ $t('webform.sections.project') }}</h2>
-                  <p class="webform-section-desc">{{ $t('webform.sectionHints.project') }}</p>
-                </div>
-              </div>
-              <div class="webform-section-body space-y-4">
-                <div class="webform-field">
-                  <label for="wf-type" class="form-label">{{ $t('webform.fields.websiteType') }} <span class="text-accent-blue">*</span></label>
-                  <select id="wf-type" v-model="form.websiteType" required class="form-input webform-input webform-select">
-                    <option value="" disabled>{{ $t('webform.selectPlaceholder') }}</option>
-                    <option v-for="type in websiteTypes" :key="type.value" :value="type.value">{{ type.label }}</option>
-                  </select>
-                </div>
-                <div class="webform-field">
-                  <label for="wf-desc" class="form-label">{{ $t('webform.fields.description') }} <span class="text-accent-blue">*</span></label>
-                  <textarea
-                    id="wf-desc"
-                    v-model="form.description"
-                    required
-                    rows="4"
-                    class="form-input webform-input resize-none min-h-[120px]"
-                    :placeholder="$t('webform.fields.descriptionPlaceholder')"
-                  />
-                </div>
-                <div class="webform-field">
-                  <label for="wf-features" class="form-label">{{ $t('webform.fields.features') }}</label>
-                  <textarea
-                    id="wf-features"
-                    v-model="form.features"
-                    rows="3"
-                    class="form-input webform-input resize-none min-h-[88px]"
-                    :placeholder="$t('webform.fields.featuresPlaceholder')"
-                  />
-                </div>
-                <div class="webform-field">
-                  <label for="wf-existing" class="form-label">{{ $t('webform.fields.existingWebsite') }}</label>
-                  <input id="wf-existing" v-model="form.existingWebsite" type="url" inputmode="url" class="form-input webform-input" placeholder="https://" />
-                </div>
-              </div>
-            </section>
-
-            <!-- Section 3: Details -->
-            <section class="webform-section" aria-labelledby="section-details">
-              <div class="webform-section-header">
-                <span class="webform-section-step" aria-hidden="true">3</span>
-                <div>
-                  <h2 id="section-details" class="webform-section-title">{{ $t('webform.sections.details') }}</h2>
-                  <p class="webform-section-desc">{{ $t('webform.sectionHints.details') }}</p>
-                </div>
-              </div>
-              <div class="webform-section-body space-y-4">
-                <div class="grid sm:grid-cols-2 gap-4">
-                  <div class="webform-field">
-                    <label for="wf-budget" class="form-label">{{ $t('webform.fields.budget') }}</label>
-                    <select id="wf-budget" v-model="form.budget" class="form-input webform-input webform-select">
-                      <option value="">{{ $t('webform.selectPlaceholder') }}</option>
-                      <option v-for="b in budgets" :key="b.value" :value="b.value">{{ b.label }}</option>
-                    </select>
-                  </div>
-                  <div class="webform-field">
-                    <label for="wf-timeline" class="form-label">{{ $t('webform.fields.timeline') }}</label>
-                    <select id="wf-timeline" v-model="form.timeline" class="form-input webform-input webform-select">
-                      <option value="">{{ $t('webform.selectPlaceholder') }}</option>
-                      <option v-for="tl in timelines" :key="tl.value" :value="tl.value">{{ tl.label }}</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="webform-field">
-                  <label for="wf-notes" class="form-label">{{ $t('webform.fields.notes') }}</label>
-                  <textarea
-                    id="wf-notes"
-                    v-model="form.notes"
-                    rows="3"
-                    class="form-input webform-input resize-none min-h-[88px]"
-                    :placeholder="$t('webform.fields.notesPlaceholder')"
-                  />
-                </div>
-              </div>
-            </section>
-
-            <input
-              v-model="form._gotcha"
-              type="text"
-              name="_gotcha"
-              tabindex="-1"
-              autocomplete="off"
-              class="sr-only"
-              aria-hidden="true"
-            />
-
-            <!-- Desktop submit (inline) -->
-            <div class="hidden sm:block pt-2">
-              <p v-if="errorMessage" class="webform-error mb-4">
-                <i class="fas fa-exclamation-circle"></i>
-                {{ errorMessage }}
-              </p>
-              <button
-                type="submit"
-                :disabled="isSubmitting"
-                class="webform-submit-btn btn-primary bg-accent-blue hover:bg-accent-light disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold flex items-center justify-center gap-2"
-              >
-                <i v-if="isSubmitting" class="fas fa-spinner fa-spin"></i>
-                <i v-else class="fas fa-paper-plane"></i>
-                {{ isSubmitting ? $t('webform.submitting') : $t('webform.submit') }}
-              </button>
-              <p class="text-gray-500 text-xs leading-relaxed mt-4">{{ $t('webform.privacyNote') }}</p>
-            </div>
-
-            <!-- Spacer for mobile sticky footer -->
-            <div class="h-28 sm:hidden" aria-hidden="true"></div>
-          </form>
-        </div>
-
-        <!-- Mobile sticky footer -->
-        <div class="webform-mobile-footer sm:hidden safe-bottom">
-          <p v-if="errorMessage" class="webform-error mb-3">
-            <i class="fas fa-exclamation-circle"></i>
-            {{ errorMessage }}
-          </p>
-          <button
-            type="submit"
-            form="webform"
-            :disabled="isSubmitting"
-            class="webform-submit-btn btn-primary w-full bg-accent-blue hover:bg-accent-light disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold flex items-center justify-center gap-2"
-          >
-            <i v-if="isSubmitting" class="fas fa-spinner fa-spin"></i>
-            <i v-else class="fas fa-paper-plane"></i>
-            {{ isSubmitting ? $t('webform.submitting') : $t('webform.submit') }}
-          </button>
         </div>
       </template>
     </main>
@@ -219,7 +339,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { RouterLink } from 'vue-router'
 import WebFormHeader from '../components/WebFormHeader.vue'
@@ -234,24 +354,43 @@ const form = ref({
   websiteType: '',
   description: '',
   features: '',
-  existingWebsite: '',
+  colorNotes: '',
+  hasLogo: '',
+  hasPhotos: '',
+  hasVideos: '',
+  hasText: '',
+  hasDomain: '',
+  hasHosting: '',
+  domainName: '',
   budget: '',
   timeline: '',
   notes: '',
   _gotcha: '',
 })
 
+const websiteReferences = ref([''])
+
 const isSubmitting = ref(false)
 const submitted = ref(false)
 const errorMessage = ref('')
+const agreed = ref(false)
+const agreeError = ref(false)
+
+watch(agreed, (value) => {
+  if (value) agreeError.value = false
+})
+
+watch(
+  () => form.value.hasDomain,
+  (value) => {
+    if (value !== 'yes') form.value.domainName = ''
+  },
+)
 
 const websiteTypes = computed(() => [
-  { value: 'business', label: t('webform.websiteTypes.business') },
-  { value: 'restaurant', label: t('webform.websiteTypes.restaurant') },
-  { value: 'showroom', label: t('webform.websiteTypes.showroom') },
-  { value: 'portfolio', label: t('webform.websiteTypes.portfolio') },
-  { value: 'landing', label: t('webform.websiteTypes.landing') },
-  { value: 'ecommerce', label: t('webform.websiteTypes.ecommerce') },
+  { value: 'onePage', label: t('webform.websiteTypes.onePage') },
+  { value: 'multiPage', label: t('webform.websiteTypes.multiPage') },
+  { value: 'adminDashboard', label: t('webform.websiteTypes.adminDashboard') },
   { value: 'other', label: t('webform.websiteTypes.other') },
 ])
 
@@ -270,15 +409,48 @@ const timelines = computed(() => [
   { value: 'flexible', label: t('webform.timelines.flexible') },
 ])
 
+const assetAnswers = computed(() => [
+  { value: 'yes', label: t('webform.assetAnswers.yes') },
+  { value: 'no', label: t('webform.assetAnswers.no') },
+  { value: 'partial', label: t('webform.assetAnswers.partial') },
+])
+
+const yesNoAnswers = computed(() => [
+  { value: 'yes', label: t('webform.assetAnswers.yes') },
+  { value: 'no', label: t('webform.assetAnswers.no') },
+])
+
+const addReference = () => {
+  if (websiteReferences.value.length < 3) {
+    websiteReferences.value.push('')
+  }
+}
+
+const removeReference = (index: number) => {
+  if (websiteReferences.value.length > 1) {
+    websiteReferences.value.splice(index, 1)
+  }
+}
+
 const handleSubmit = async () => {
   errorMessage.value = ''
+  agreeError.value = false
+
+  if (!agreed.value) {
+    agreeError.value = true
+    return
+  }
+
   isSubmitting.value = true
 
   try {
     const response = await fetch('/api/webform', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form.value),
+      body: JSON.stringify({
+        ...form.value,
+        websiteReferences: websiteReferences.value.map((url) => url.trim()).filter(Boolean),
+      }),
     })
 
     const data = await response.json().catch(() => ({}))

@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/webform.ts": {
+      "maxDuration": 10
+    }
+  },
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]

@@ -1,6 +1,6 @@
 <template>
   <header class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/95 backdrop-blur-sm shadow-lg">
-    <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 safe-top">
+    <nav class="webform-shell py-3 sm:py-4 safe-top">
       <div class="flex items-center justify-between">
         <RouterLink
           to="/"
