@@ -76,7 +76,7 @@ npm run preview
 denisjanuzi/
 ├── public/                 # Static assets
 │   ├── logo.png           # Logo for social media
-│   ├── profile.jpg.jpg     # Profile image
+│   ├── profile.png         # Profile image
 │   └── ...
 ├── src/
 │   ├── components/         # Vue components

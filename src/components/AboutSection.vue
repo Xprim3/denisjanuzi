@@ -11,7 +11,7 @@
                 v-if="profileImage && !imageError"
                 :src="profileImage" 
                 alt="Denis Januzi"
-                class="w-full h-full object-cover transition-transform duration-700 ease-smooth hover:scale-105"
+                class="w-full h-full object-cover object-[68%_18%] transition-transform duration-700 ease-smooth hover:scale-105"
                 @error="handleImageError"
               />
               <!-- Fallback -->
@@ -132,8 +132,8 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
 const imageError = ref(false)
-// Profile image - place your image in the public folder as 'profile.jpg'
-const profileImage = ref<string | null>('/profile.jpg.jpg')
+// Profile image - place your image in the public folder as 'profile.png'
+const profileImage = ref<string | null>('/profile.png')
 
 const handleImageError = () => {
   imageError.value = true
